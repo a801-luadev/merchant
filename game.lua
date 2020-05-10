@@ -17,9 +17,9 @@ tfm.exec.newGame([[<C><P F="0" L="1600"/><Z><S><S X="79" o="aac4d2" L="162" Y="1
 tips = {}
 
 local CONSTANTS = {
-    BAR_WIDTH = 720,
-    BAR_X = 75,
-    STAT_BAR_Y = 30
+	BAR_WIDTH = 720,
+	BAR_X = 75,
+	STAT_BAR_Y = 30
 }
 
 local year = 3000
@@ -48,141 +48,141 @@ local cmds = [[
 ]]
 
 local credits = [[
-    <p align='center'><font size='20'><b><J>Credits</J></b></font></p>
-    <b>All the credits go to these people for helping me with different things</b>
-    <b><u>Coders</u>
-            <BV>• Overforyou#9290                                               • Cyanny#0000</BV>
-    <u>Icons and Images</u>
-            <BV>• <a href='event:help:icons'>See all »</a></BV>
-    <u>Editing</u>
-            <BV>• Haxor_333#0000                                                • Rail#9727</BV></b>
-    And special thanks for <BV><b>Haxor_333#0000</b></BV>, <BV><b>Dorjanoruci#0000</b></BV> and <BV><b>We talk a lot</b></BV> tribe members for encouring me to do this <3
+	<p align='center'><font size='20'><b><J>Credits</J></b></font></p>
+	<b>All the credits go to these people for helping me with different things</b>
+	<b><u>Coders</u>
+			<BV>• Overforyou#9290                                               • Cyanny#0000</BV>
+	<u>Icons and Images</u>
+			<BV>• <a href='event:help:icons'>See all »</a></BV>
+	<u>Editing</u>
+			<BV>• Haxor_333#0000                                                • Rail#9727</BV></b>
+	And special thanks for <BV><b>Haxor_333#0000</b></BV>, <BV><b>Dorjanoruci#0000</b></BV> and <BV><b>We talk a lot</b></BV> tribe members for encouring me to do this <3
 ]]
 
 local iconProviders = closeButton .. [[
-    <a href='event:credits'>« Go back</a>
-    <p align='center'><font size='20'><b><J>Icons and Images</J></b></font></p>         <b><BV>Freepik</BV> from <BV>flaticons.com</BV></b>
-            • Work button       • Job search icon
-            • Companies icon
-        <b><BV>Vector Market</BV> from <BV>flaticons.com</BV></b>
-            • Idea bulb icon
-        <b><BV>Payungkead</BV> from <BV>flaticons.com</BV></b>
-            • Bag icon
-        <b><BV>Dinosoft labs</BV> from <BV>flaticons.com</BV></b>
-            • School image
-        <b><BV>Nikita Golubev</BV> from <BV>flaticons.com</BV></b>
-            • Lottery kiosk image
+	<a href='event:credits'>« Go back</a>
+	<p align='center'><font size='20'><b><J>Icons and Images</J></b></font></p>         <b><BV>Freepik</BV> from <BV>flaticons.com</BV></b>
+			• Work button       • Job search icon
+			• Companies icon
+		<b><BV>Vector Market</BV> from <BV>flaticons.com</BV></b>
+			• Idea bulb icon
+		<b><BV>Payungkead</BV> from <BV>flaticons.com</BV></b>
+			• Bag icon
+		<b><BV>Dinosoft labs</BV> from <BV>flaticons.com</BV></b>
+			• School image
+		<b><BV>Nikita Golubev</BV> from <BV>flaticons.com</BV></b>
+			• Lottery kiosk image
 ]]
 
 local gameplay = {[[
-    <p align='center'><font size='20'><b><J>Gameplay Overview</J></b></font></p>
-    <font size='12'>This is a game which is largely based on businesses we see everywhere. You start as a little mouse with a basic job, but with a great story to write! Your goal is to earn money, buy companies, hire workers and be the best businessman in transformice!
-    Click each title to know more about each thing in depth:
-    <b><BV>
-            <a href='event:page:help:2'>• Working</a>                       <a href='event:page:help:6'>• Shop</a>
-            <a href='event:page:help:3'>• Learning</a>                      <a href='event:page:help:7'>• Jobs</a>
-            <a href='event:page:help:4'>• Companies</a>
-            <a href='event:page:help:5'>• Investing and Shares</a>
-    </BV></b></font>
-    ]],
-    [[
-    <p align='center'><font size='20'><b><J>Working</J></b></font></p>
-    <font size='12'>This is the starting point for many players in this game. Working gives you money, and also it increases your XP level. To work, simply click the button in the bottom-left corner saying <b>Work!</b>
-    As you work, your energy reduces. The amount of energy depends on the job you are currently doing. There are lots of jobs available (and you can create as well) and all of them have varying salaries and energy levels.
-    If you do a good job, then surely you will get lot of money with minimum effort. Please read the page at <a href='event:page:help:7'><b><BV>jobs</BV></b></a> to know more about them.
-    </font>
-    ]],
-    [[
-    <p align='center'><font size='20'><b><J>Learning</J></b></font></p>
-    <font size='12'>Learning makes a person better, so do here.
-    <b><u>Why learning?</u></b>
-    When you learn, you'll get qualifications to do many jobs with many benefits. Also according to the level of your education, the amount of energy you spend on jobs decreases. So why not learning?
-    <b><u>How?</u></b>
-    You can learn by entering the school. Then enroll a course of your choice and start learning. Your learning progress is displayed on top of the school, so you can plan things accordingly
-    </font>
-    ]],
-    [[
-    <p align='center'><font size='20'><b><J>Companies</J></b></font></p>
-    <font size='12'>Companies are the most important things in this game; and it's the fastest way to become rich! You can view information about a company using the <i><font color='#6A7495'>!company COMPANY_NAME</font></i> command.
-    There are 2 ways to own a company: By buying shares of an existing company or buying a new company for money.
-    To buy a company you need to spend $5000 in your hand. Click 'Company' button and follow the instructions. If you already own companies, click the 'Create a new company' button in companies menu. To buy shares of a company of a company, simply view the desired company and do 'Buy shares' if the company has issued shares). After that you'd get the ownership of that company and you can do anything.         <i><font color='#6A7495'>(to be  continued...)</font></i>
-    </font>
-    ]],
-    [[
-    <p align='center'><font size='20'><b><J>Companies - Investing, Issuing and buying shares</J></b></font></p>
-    <font size='12'>Share is based on the ownership for a ceratain company. Sometimes you may need more money to grow your business. In such cases issuing shares is a good idea. By doing so you'll improve the capital and also share the ownership of your company. Click the 'Issue Shares' button in the company's menu and follow the instructions. 1 share worths $100 in this game.
-    When a certain company issue shares in the above manner, the public will be able to buy some shares to get more profit. You can buy shares buy following the instructions mentioned in the previous section.
-    You can also increase the capital without issuing any sharing. That's by investing into your own company. Click the invest button and follow the instructions to invest!
-    </font>
-    ]],
-    [[
-    <p align='center'><font size='20'><b><J>Shop</J></b></font></p>
-    <font size='12'>
-    Shop includes healthpacks which can be used to increase your health. After buying things in shop, they will get stored in your inventory temporarily. So check your inventory and use the things you bought according to your choice!
-    </font>
-    ]],
-    [[
-    <p align='center'><font size='20'><b><J>Jobs</J></b></font></p>
-    <font size='12'>You need a job to work. Each job has different salaries and energies. You can apply for a job by visiting the job menu (NOTE: You can only see jobs that you are qualified). To become qualified for a certain job, your level should be higher than the minimum level required for that job. You may also need to complete some degrees by learning, to apply for some jobs. Jobs with higher level and educational level usually have low energy consumption and higher salaries. Also if you have achieved a certain educational level, you will spend less energy when working. So keep in mind that learning is always good!
-    Jobs are offered by company owners, so doing a job means you are working for a particular company. When you work you, company owners and company get profit...
-    </font>
-    ]],
-    [[
-    <p align='center'><font size='20'><b><J>Creating Jobs</J></b></font></p>
-    <font size='12'>You need to become an owner to create a job. You can start creating a job by clicking the 'Create job' button in the company. You would see a dialogue asking some information about the job
-        • Job Name (required): The name of the job
-        • Salary (required): The salary. For a company, there's a maximum limit of salary that could be assigned to a job, which depends on the amount of invested capital. It will cost more energy if you created the job with a salary close to the minimum amount, and vice-versa.
-        • Energy (required): The amount of energy spend. Energy depends on the salary, minimum level of the job and the qualifications for it.  <i><font color='#6A7495'>(to be  continued...)</font></i>
-    </font>
-    ]],
-    [[
-    <p align='center'><font size='20'><b><J>Creating Jobs</J></b></font></p>
-    <font size='12'><i><font color='#6A7495'>(from the last page...)</font></i>
-        • Minimum level (required): The minimum level of a player to apply for this job. Increasing the level would decrease the energy
-        • Qualifications (optional): The educational qualifications required for this job. Increasing this would decrease the energy further!
-    Salary and the energy consumed is the factor that many workers are looking for. So be careful when choosing this!
-    <b><J>GOOD LUCK!</J></b>
-    </font>
-    ]]
+	<p align='center'><font size='20'><b><J>Gameplay Overview</J></b></font></p>
+	<font size='12'>This is a game which is largely based on businesses we see everywhere. You start as a little mouse with a basic job, but with a great story to write! Your goal is to earn money, buy companies, hire workers and be the best businessman in transformice!
+	Click each title to know more about each thing in depth:
+	<b><BV>
+			<a href='event:page:help:2'>• Working</a>                       <a href='event:page:help:6'>• Shop</a>
+			<a href='event:page:help:3'>• Learning</a>                      <a href='event:page:help:7'>• Jobs</a>
+			<a href='event:page:help:4'>• Companies</a>
+			<a href='event:page:help:5'>• Investing and Shares</a>
+	</BV></b></font>
+	]],
+	[[
+	<p align='center'><font size='20'><b><J>Working</J></b></font></p>
+	<font size='12'>This is the starting point for many players in this game. Working gives you money, and also it increases your XP level. To work, simply click the button in the bottom-left corner saying <b>Work!</b>
+	As you work, your energy reduces. The amount of energy depends on the job you are currently doing. There are lots of jobs available (and you can create as well) and all of them have varying salaries and energy levels.
+	If you do a good job, then surely you will get lot of money with minimum effort. Please read the page at <a href='event:page:help:7'><b><BV>jobs</BV></b></a> to know more about them.
+	</font>
+	]],
+	[[
+	<p align='center'><font size='20'><b><J>Learning</J></b></font></p>
+	<font size='12'>Learning makes a person better, so do here.
+	<b><u>Why learning?</u></b>
+	When you learn, you'll get qualifications to do many jobs with many benefits. Also according to the level of your education, the amount of energy you spend on jobs decreases. So why not learning?
+	<b><u>How?</u></b>
+	You can learn by entering the school. Then enroll a course of your choice and start learning. Your learning progress is displayed on top of the school, so you can plan things accordingly
+	</font>
+	]],
+	[[
+	<p align='center'><font size='20'><b><J>Companies</J></b></font></p>
+	<font size='12'>Companies are the most important things in this game; and it's the fastest way to become rich! You can view information about a company using the <i><font color='#6A7495'>!company COMPANY_NAME</font></i> command.
+	There are 2 ways to own a company: By buying shares of an existing company or buying a new company for money.
+	To buy a company you need to spend $5000 in your hand. Click 'Company' button and follow the instructions. If you already own companies, click the 'Create a new company' button in companies menu. To buy shares of a company of a company, simply view the desired company and do 'Buy shares' if the company has issued shares). After that you'd get the ownership of that company and you can do anything.         <i><font color='#6A7495'>(to be  continued...)</font></i>
+	</font>
+	]],
+	[[
+	<p align='center'><font size='20'><b><J>Companies - Investing, Issuing and buying shares</J></b></font></p>
+	<font size='12'>Share is based on the ownership for a ceratain company. Sometimes you may need more money to grow your business. In such cases issuing shares is a good idea. By doing so you'll improve the capital and also share the ownership of your company. Click the 'Issue Shares' button in the company's menu and follow the instructions. 1 share worths $100 in this game.
+	When a certain company issue shares in the above manner, the public will be able to buy some shares to get more profit. You can buy shares buy following the instructions mentioned in the previous section.
+	You can also increase the capital without issuing any sharing. That's by investing into your own company. Click the invest button and follow the instructions to invest!
+	</font>
+	]],
+	[[
+	<p align='center'><font size='20'><b><J>Shop</J></b></font></p>
+	<font size='12'>
+	Shop includes healthpacks which can be used to increase your health. After buying things in shop, they will get stored in your inventory temporarily. So check your inventory and use the things you bought according to your choice!
+	</font>
+	]],
+	[[
+	<p align='center'><font size='20'><b><J>Jobs</J></b></font></p>
+	<font size='12'>You need a job to work. Each job has different salaries and energies. You can apply for a job by visiting the job menu (NOTE: You can only see jobs that you are qualified). To become qualified for a certain job, your level should be higher than the minimum level required for that job. You may also need to complete some degrees by learning, to apply for some jobs. Jobs with higher level and educational level usually have low energy consumption and higher salaries. Also if you have achieved a certain educational level, you will spend less energy when working. So keep in mind that learning is always good!
+	Jobs are offered by company owners, so doing a job means you are working for a particular company. When you work you, company owners and company get profit...
+	</font>
+	]],
+	[[
+	<p align='center'><font size='20'><b><J>Creating Jobs</J></b></font></p>
+	<font size='12'>You need to become an owner to create a job. You can start creating a job by clicking the 'Create job' button in the company. You would see a dialogue asking some information about the job
+		• Job Name (required): The name of the job
+		• Salary (required): The salary. For a company, there's a maximum limit of salary that could be assigned to a job, which depends on the amount of invested capital. It will cost more energy if you created the job with a salary close to the minimum amount, and vice-versa.
+		• Energy (required): The amount of energy spend. Energy depends on the salary, minimum level of the job and the qualifications for it.  <i><font color='#6A7495'>(to be  continued...)</font></i>
+	</font>
+	]],
+	[[
+	<p align='center'><font size='20'><b><J>Creating Jobs</J></b></font></p>
+	<font size='12'><i><font color='#6A7495'>(from the last page...)</font></i>
+		• Minimum level (required): The minimum level of a player to apply for this job. Increasing the level would decrease the energy
+		• Qualifications (optional): The educational qualifications required for this job. Increasing this would decrease the energy further!
+	Salary and the energy consumed is the factor that many workers are looking for. So be careful when choosing this!
+	<b><J>GOOD LUCK!</J></b>
+	</font>
+	]]
 }
 
 local titles = {
-    [1] = "Newbie",
-    [2] = "Worker",
-    [3] = "Getting Experience",
-    [4] = "Little Learner",
-    [5] = "Dedicated Learner",
-    [6] = "Degree Holder",
-    [7] = "Investor",
-    [8] = "Businessman"
+	[1] = "Newbie",
+	[2] = "Worker",
+	[3] = "Getting Experience",
+	[4] = "Little Learner",
+	[5] = "Dedicated Learner",
+	[6] = "Degree Holder",
+	[7] = "Investor",
+	[8] = "Businessman"
 }
 
 local coursesHelper = {
-    [1] = "School",
-    [2] = "Junior Sports Club",
-    [3] = "High School",
-    [4] = "Cheese mining",
-    [5] = "Cheese trading",
-    [6] = "Cheese developing",
-    [7] = "Law",
-    [8] = "Cheese trading-II",
-    [9] = "Fullstack cheese developing"
+	[1] = "School",
+	[2] = "Junior Sports Club",
+	[3] = "High School",
+	[4] = "Cheese mining",
+	[5] = "Cheese trading",
+	[6] = "Cheese developing",
+	[7] = "Law",
+	[8] = "Cheese trading-II",
+	[9] = "Fullstack cheese developing"
 }
 
 local items = {
-    [1] = "Cheese",
-    [2] = "Candy",
-    [3] = "Apple",
-    [4] = "Pastry",
-    [5] = "Lasagne",
-    [6] = "Cheese Pizza",
-    [7] = "Magician`s Portion",
-    [8] = "Rotten Cheese",
-    [9] = "Cheef`s food",
-    [10] = "Cheese Pizza - Large",
-    [11] = "Vito`s Pizza",
-    [12] = "Vito`s Lasagne",
-    [13] = "Ambulance!"
+	[1] = "Cheese",
+	[2] = "Candy",
+	[3] = "Apple",
+	[4] = "Pastry",
+	[5] = "Lasagne",
+	[6] = "Cheese Pizza",
+	[7] = "Magician`s Portion",
+	[8] = "Rotten Cheese",
+	[9] = "Cheef`s food",
+	[10] = "Cheese Pizza - Large",
+	[11] = "Vito`s Pizza",
+	[12] = "Vito`s Lasagne",
+	[13] = "Ambulance!"
 }
 
 local ab = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
@@ -191,104 +191,104 @@ local lottoWins = {}
 local lottoBuyers = {}
 
 local dHandler = DataHandler.new("merchant", {
-    money = {index = 1, type = "number", default = 100},
-    title = {index = 2, type = "number", default = 1},
-    xp =    {index = 3, type = "number", default = 1},
-    level = {index = 4, type = "number", default = 1},
-    learning = {index = 5, type = "number", default = 0},
-    learnProgress = {index = 6, type = "number", default = 0},
-    eduLvl = {index = 7, type = "number", default = 1},
-    eduStream = {index =  8, type = "string", default = ""},
-    degrees = {index = 9, type = "table", default = {}},
-    inventory = {index = 10, type = "table", default = {}},
-    titles = {index = 11, type = "table", default = {}}
+	money = {index = 1, type = "number", default = 100},
+	title = {index = 2, type = "number", default = 1},
+	xp =    {index = 3, type = "number", default = 1},
+	level = {index = 4, type = "number", default = 1},
+	learning = {index = 5, type = "number", default = 0},
+	learnProgress = {index = 6, type = "number", default = 0},
+	eduLvl = {index = 7, type = "number", default = 1},
+	eduStream = {index =  8, type = "string", default = ""},
+	degrees = {index = 9, type = "table", default = {}},
+	inventory = {index = 10, type = "table", default = {}},
+	titles = {index = 11, type = "table", default = {}}
 })
 
 local chart = LineChart(1, 944, 60, 450, 185)
 local dummySeries = Series({0}, {0}, "dummy") -- *sigh*
 local timer = Timer("time-sys", function()
-    day = day + 1
-    if day == 31 then
-        day = 1
-        month = month + 1
-        companies["Atelier801"]:issueShares(50, "shaman")
-        --updating the stock market dashboard
-        chart:addSeries(dummySeries)
-        for comp, data in next, companies do
-            for i=1, 11, 1 do
-                data.shareVal[i] = data.shareVal[i+1]
-            end
-            data.shareVal[12] = data.incomePerMonth / data.outstandingShares + 100
-            data.chartSeries:setData(range(1, 12, 1), data.shareVal)
-            data.incomePerMonth = 0
-            chart:removeSeries("<a href='event:com:" .. comp .. "'>" .. comp .. "</a>")
-        end
-        for _, comp in next, getTopCompanies(10) do
-            chart:addSeries(companies[comp[1]].chartSeries)
-        end
-        chart:removeSeries("dummy")
-        chart:showLabels()
-        chart:show()
-        --checking lottery winners
-        latestLotto = {math.random(1, 100), math.random(1, 100), math.random(1, 100), ab[math.random(1, 26)]}
-        checkLottoWinners()
-        for name, wins in next, lottoWins do
-            players[name]:setMoney(wins, true)
-        end
-        lottoBuyers = {}
-        if month == 13 then
-            month = 1
-            year = year + 1
-        end
-    end
-    ui.updateTextArea(12, "<p align='center'><b>YR " .. year .. "</b><br><b>" .. day .. "</b> of <b>" .. months[month] .. "</b></p>")
+	day = day + 1
+	if day == 31 then
+		day = 1
+		month = month + 1
+		companies["Atelier801"]:issueShares(50, "shaman")
+		--updating the stock market dashboard
+		chart:addSeries(dummySeries)
+		for comp, data in next, companies do
+			for i=1, 11, 1 do
+				data.shareVal[i] = data.shareVal[i+1]
+			end
+			data.shareVal[12] = data.incomePerMonth / data.outstandingShares + 100
+			data.chartSeries:setData(range(1, 12, 1), data.shareVal)
+			data.incomePerMonth = 0
+			chart:removeSeries("<a href='event:com:" .. comp .. "'>" .. comp .. "</a>")
+		end
+		for _, comp in next, getTopCompanies(10) do
+			chart:addSeries(companies[comp[1]].chartSeries)
+		end
+		chart:removeSeries("dummy")
+		chart:showLabels()
+		chart:show()
+		--checking lottery winners
+		latestLotto = {math.random(1, 100), math.random(1, 100), math.random(1, 100), ab[math.random(1, 26)]}
+		checkLottoWinners()
+		for name, wins in next, lottoWins do
+			players[name]:setMoney(wins, true)
+		end
+		lottoBuyers = {}
+		if month == 13 then
+			month = 1
+			year = year + 1
+		end
+	end
+	ui.updateTextArea(12, "<p align='center'><b>YR " .. year .. "</b><br><b>" .. day .. "</b> of <b>" .. months[month] .. "</b></p>")
 end, 1000, true)
 
 local saveDataTimer = Timer("dataTimer", function()
-    if pCount >= 5 then
-        for name, _ in next, tfm.get.room.playerList do
-            system.savePlayerData(name, "v2" .. dHandler:dumpPlayer(name))
-        end
-        print('Player Data Saved!')
-    end
+	if pCount >= 5 then
+		for name, _ in next, tfm.get.room.playerList do
+			system.savePlayerData(name, "v2" .. dHandler:dumpPlayer(name))
+		end
+		print('Player Data Saved!')
+	end
 end, 1000 * 60 * 5, true)
 
 --creating the class Player
 local Player = {}
 Player.__index = Player
 Player.__tostring = function(self)
-    return "[name=" .. self.name .. ",money=" .. self.money .. ", health=" .. self.health .. "]"
+	return "[name=" .. self.name .. ",money=" .. self.money .. ", health=" .. self.health .. "]"
 end
 
 setmetatable(Player, {
-    __call = function (cls, name, config)
-        return cls.new(name, config)
-    end,
+	__call = function (cls, name, config)
+		return cls.new(name, config)
+	end,
 })
 
 function Player.new(name, config)
-    local self = setmetatable({}, Player)
-    self.name = name
-    self.money = config.money or 100
-    self.title = config.title or "Newbie"
-    self.health = 1.0
-    self.healthRate = 0.002
-    self.xp = config.xp or 1
-    self.level = config.level or 1
-    self.learning = config.learning or ""
-    self.learnProgress = config.learnProgress or 0
-    self.eduLvl = config.eduLvl or 1
-    self.eduStream = config.eduStream or ""
-    self.degrees = config.degrees or {}
-    self.job = ""
-    self.ownedCompanies = {}
-    self.totalCompanies = 0
-    self.company = "Atelier801"
-    self.inventory = config.inventory or {}
-    self.titles = config.titles
-    ui.addTextArea(1000, "", name, CONSTANTS.BAR_X, 340, CONSTANTS.BAR_WIDTH, 20, 0xff0000, 0xee0000, 1, true)
-    ui.addTextArea(2000, "", name, CONSTANTS.BAR_X, 370, CONSTANTS.BAR_WIDTH, 17, 0x00ff00, 0x00ee00, 1, true)
-    return self
+	local self = setmetatable({}, Player)
+	self.name = name
+	self.money = config.money or 100
+	self.title = config.title or "Newbie"
+	self.health = 1.0
+	self.healthRate = 0.002
+	self.xp = config.xp or 1
+	self.level = config.level or 1
+	self.learning = config.learning or ""
+	self.learnProgress = config.learnProgress or 0
+	self.eduLvl = config.eduLvl or 1
+	self.eduStream = config.eduStream or ""
+	self.degrees = config.degrees or {}
+	self.job = ""
+	self.ownedCompanies = {}
+	self.totalCompanies = 0
+	self.company = "Atelier801"
+	self.inventory = config.inventory or {}
+	self.titles = config.titles
+	ui.addTextArea(1000, "", name, CONSTANTS.BAR_X, 340, CONSTANTS.BAR_WIDTH, 20, 0xff0000, 0xee0000, 1, true)
+	ui.addTextArea(2000, "", name, CONSTANTS.BAR_X, 370, CONSTANTS.BAR_WIDTH, 17, 0x00ff00, 0x00ee00, 1, true)
+	return self
 end
 
 function Player:getName() return self.name end
@@ -309,262 +309,262 @@ function Player:getTitle() return self.title end
 function Player:getTitles() return self.titles end
 
 function Player:work()
-    local job = jobs[self.job]
-    if self.health - job.energy > 0 then
-        self.setHealth(self, -job.energy, true)
-        self:setMoney(job.salary + job.salary * self.eduLvl * 0.1, true)
-        self:setXP(1, true)
-        companies[self.company]:setIncome(job.salary * 0.5, true)
-        for name, shares in next, companies[self.company]:getShareHolders() do
-            players[name]:setMoney(shares.shares * job.salary * 0.1, true)
-        end
-        self:levelUp()
-    end
+	local job = jobs[self.job]
+	if self.health - job.energy > 0 then
+		self.setHealth(self, -job.energy, true)
+		self:setMoney(job.salary + job.salary * self.eduLvl * 0.1, true)
+		self:setXP(1, true)
+		companies[self.company]:setIncome(job.salary * 0.5, true)
+		for name, shares in next, companies[self.company]:getShareHolders() do
+			players[name]:setMoney(shares.shares * job.salary * 0.1, true)
+		end
+		self:levelUp()
+	end
 end
 
 function Player:setHealth(val, add)
-    if add then
-        self.health = self.health + val
-    else
-        self.health = val
-    end
-    self.health = self.health > 1  and 1 or self.health < 0 and 0 or self.health
-    ui.addTextArea(1000, "", self.name, CONSTANTS.BAR_X, 340, CONSTANTS.BAR_WIDTH * self.health, 20, 0xff0000, 0xee0000, 1, true)
-    ui.updateTextArea(2, "<p align='center'>" .. math.ceil(self.health * 100) .. "%</p>", self.name)
+	if add then
+		self.health = self.health + val
+	else
+		self.health = val
+	end
+	self.health = self.health > 1  and 1 or self.health < 0 and 0 or self.health
+	ui.addTextArea(1000, "", self.name, CONSTANTS.BAR_X, 340, CONSTANTS.BAR_WIDTH * self.health, 20, 0xff0000, 0xee0000, 1, true)
+	ui.updateTextArea(2, "<p align='center'>" .. math.ceil(self.health * 100) .. "%</p>", self.name)
 end
 
 function Player:setMoney(val, add)
-    if add then
-        self.money = self.money + val
-    else
-        self.money = val
-    end
-    self.money = self.money < 0 and 0 or self.money
-    if self.name ~= 'shaman' then
-        dHandler:set(self.name, "money", self.money)
-    end
-    self:updateStatsBar()
+	if add then
+		self.money = self.money + val
+	else
+		self.money = val
+	end
+	self.money = self.money < 0 and 0 or self.money
+	if self.name ~= 'shaman' then
+		dHandler:set(self.name, "money", self.money)
+	end
+	self:updateStatsBar()
 end
 
 function Player:setXP(val, add)
-    if add then
-        self.xp = self.xp + val
-    else
-        self.xp = val
-    end
-    dHandler:set(self.name, "xp", self.xp)
-    ui.addTextArea(2000, "", self.name, CONSTANTS.BAR_X, 370, ((self.xp - calculateXP(self.level)) / (calculateXP(self.level + 1) - calculateXP(self.level)))  * CONSTANTS.BAR_WIDTH, 17, 0x00ff00, 0x00ee00, 1, true)
-    ui.updateTextArea(3, "<p align='center'>Level " .. self.level .. " - " ..self.xp .. "/" .. calculateXP(self.level + 1) .. "XP", self.name)
+	if add then
+		self.xp = self.xp + val
+	else
+		self.xp = val
+	end
+	dHandler:set(self.name, "xp", self.xp)
+	ui.addTextArea(2000, "", self.name, CONSTANTS.BAR_X, 370, ((self.xp - calculateXP(self.level)) / (calculateXP(self.level + 1) - calculateXP(self.level)))  * CONSTANTS.BAR_WIDTH, 17, 0x00ff00, 0x00ee00, 1, true)
+	ui.updateTextArea(3, "<p align='center'><font color = '#000000'>Level " .. self.level .. " - " ..self.xp .. "/" .. calculateXP(self.level + 1) .. "XP", self.name)
 end
 
 function Player:setTitle(newTitle)
-    for id, title in next, titles do
-        print(self.titles[id])
-        if title == newTitle and find(id, self.titles, true) then
-            print("found")
-            self.title = newTitle
-            self:updateStatsBar()
-            dHandler:set(self.name, "title", id)
-            break
-        end
-    end
+	for id, title in next, titles do
+		print(self.titles[id])
+		if title == newTitle and find(id, self.titles, true) then
+			print("found")
+			self.title = newTitle
+			self:updateStatsBar()
+			dHandler:set(self.name, "title", id)
+			break
+		end
+	end
 end
 
 function Player:addTitle(newTitle)
-    --getting the title id
-    local tid = nil
-    for id, title in next, titles do
-        if title == newTitle then tid = id end
-    end
+	--getting the title id
+	local tid = nil
+	for id, title in next, titles do
+		if title == newTitle then tid = id end
+	end
 
-    if not find(tid, self.titles, true) then
-        table.insert(self.titles, tid)
-        dHandler:set(self.name, "titles", self.titles)
-        tfm.exec.chatMessage("<D>Congratulations, " ..  self.name .. " achieved a new title\n« " .. titles[tid] .. " »</D>")
-    end
+	if not find(tid, self.titles, true) then
+		table.insert(self.titles, tid)
+		dHandler:set(self.name, "titles", self.titles)
+		tfm.exec.chatMessage("<D>Congratulations, " ..  self.name .. " achieved a new title\n« " .. titles[tid] .. " »</D>")
+	end
 end
 
 function Player:setCourse(course)
-    self.learning = course.name
-    self.learnProgress = 0
-    self.eduLvl = course.level
-    self.eduStream = course.stream
-    dHandler:set(self.name, "learning", course.id)
-    dHandler:set(self.name, "learnProgress", self.learnProgress)
-    dHandler:set(self.name, "eduLvl", self.eduLvl)
-    dHandler:set(self.name, "eduStream", self.eduStream)
-    ui.updateTextArea(5, "<a href='event:courses'><font size='15'><b>Learn</b></font></a>", self.name)
-    ui.addTextArea(3000, "<p align='center'><b>Lessons left: 0 / " .. courses[self.learning].lessons .. "</b></p>", self.name, 480, 180, 300, 20, nil, nil, 0, false)
+	self.learning = course.name
+	self.learnProgress = 0
+	self.eduLvl = course.level
+	self.eduStream = course.stream
+	dHandler:set(self.name, "learning", course.id)
+	dHandler:set(self.name, "learnProgress", self.learnProgress)
+	dHandler:set(self.name, "eduLvl", self.eduLvl)
+	dHandler:set(self.name, "eduStream", self.eduStream)
+	ui.updateTextArea(5, "<a href='event:courses'><font size='15'><b>Learn</b></font></a>", self.name)
+	ui.addTextArea(3000, "<p align='center'><b>Lessons Learned: 0 / " .. courses[self.learning].lessons .. "</b></p>", self.name, 480, 180, 300, 20, nil, nil, 0, false)
 end
 
 function Player:setJob(job)
-    local jobRef = jobs[job]
-    if jobRef and jobRef.minLvl <= self.level and (jobRef.qualifications == nil or self.degrees[jobRef.qualifications] ~= nil) then
-        self.job = job
-        if self.company ~= jobRef.company then
-            companies[self.company]:removeMember(self.name)
-        end
-        self.company = jobRef.company
-        companies[self.company]:addMember(self.name)
-    end
+	local jobRef = jobs[job]
+	if jobRef and jobRef.minLvl <= self.level and (jobRef.qualifications == nil or self.degrees[jobRef.qualifications] ~= nil) then
+		self.job = job
+		if self.company ~= jobRef.company then
+			companies[self.company]:removeMember(self.name)
+		end
+		self.company = jobRef.company
+		companies[self.company]:addMember(self.name)
+	end
 end
 
 function Player:addOwnedCompanies(comName)
-    if not self.ownedCompanies[comName] then
-        self:addTitle("Businessman")
-        self.ownedCompanies[comName] = companies[comName]
-        self.totalCompanies = self.totalCompanies + 1
-    end
+	if not self.ownedCompanies[comName] then
+		self:addTitle("Businessman")
+		self.ownedCompanies[comName] = companies[comName]
+		self.totalCompanies = self.totalCompanies + 1
+	end
 end
 
 function Player:investTo(comName, amount, sharePurchase)
-    if self.money < amount then
-        tfm.exec.chatMessage('<R>[Error] Not Enough money!</R>', self.name)
-    else
-        if sharePurchase then
-            if companies[comName]:getUnownedShares() < amount / 100 then
-                tfm.exec.chatMessage("<R>[Error]Company doesn't issue shares of the specified amount</R>", self.name)
-                return
-            end
-                companies[comName]:setShares(-amount / 100, true)
-            tfm.exec.chatMessage("<J>Bought shares from <b>" .. comName .. "</b></J>", self.name)
-        end
-        companies[comName]:addShareHolder(self.name, amount)
-        self:setMoney(-amount, true)
-        self:addOwnedCompanies(comName)
-        self:addTitle("Investor")
-        displayCompany(comName, self.name)
-    end
+	if self.money < amount then
+		tfm.exec.chatMessage('<R>[Error] Not Enough money!</R>', self.name)
+	else
+		if sharePurchase then
+			if companies[comName]:getUnownedShares() < amount / 100 then
+				tfm.exec.chatMessage("<R>[Error]Company doesn't issue shares of the specified amount</R>", self.name)
+				return
+			end
+				companies[comName]:setShares(-amount / 100, true)
+			tfm.exec.chatMessage("<J>Bought shares from <b>" .. comName .. "</b></J>", self.name)
+		end
+		companies[comName]:addShareHolder(self.name, amount)
+		self:setMoney(-amount, true)
+		self:addOwnedCompanies(comName)
+		self:addTitle("Investor")
+		displayCompany(comName, self.name)
+	end
 end
 
 function Player:addDegree(id)
-    self:addTitle("Degree Holder")
-    if not find(id, self.degrees, true) then
-        table.insert(self.degrees, id)
-    end
-    dHandler:set(self.name, "degrees", self.degrees)
+	self:addTitle("Degree Holder")
+	if not find(id, self.degrees, true) then
+		table.insert(self.degrees, id)
+	end
+	dHandler:set(self.name, "degrees", self.degrees)
 end
 
 function Player:learn()
-    if not (self.learning == "") and self.money > courses[self.learning].feePerLesson then
-        self:addTitle("Little Learner")
-        self.learnProgress = self.learnProgress + 1
-        ui.updateTextArea(3000, "<b><p align='center'>Lessons left: " .. self.learnProgress .. " / " .. courses[self.learning].lessons .. "</b></p>", self.name)
-        self:setMoney(-courses[self.learning].feePerLesson, true)
-        if self.learnProgress >= courses[self.learning].lessons then
-            self:addDegree(courses[self.learning].id)
-            self.learning = ""
-            self.eduLvl = self.eduLvl + 1
-            if self.eduLvl == 3 then
-                self:addTitle("Dedicated Learner")
-            end
-        end
-        dHandler:set(self.name, "learning", courses[self.learning] and courses[self.learning].id or 0)
-        dHandler:set(self.name, "learnProgress", self.learnProgress)
-        dHandler:set(self.name, "eduLvl", self.eduLvl)
-        dHandler:set(self.name, "eduStream", self.eduStream)
-    end
+	if not (self.learning == "") and self.money > courses[self.learning].feePerLesson then
+		self:addTitle("Little Learner")
+		self.learnProgress = self.learnProgress + 1
+		ui.updateTextArea(3000, "<font color = '#ffffff'><b><p align='center'>Lessons Learned: " .. self.learnProgress .. " / " .. courses[self.learning].lessons .. "</b></p>", self.name)
+		self:setMoney(-courses[self.learning].feePerLesson, true)
+		if self.learnProgress >= courses[self.learning].lessons then
+			self:addDegree(courses[self.learning].id)
+			self.learning = ""
+			self.eduLvl = self.eduLvl + 1
+			if self.eduLvl == 3 then
+				self:addTitle("Dedicated Learner")
+			end
+		end
+		dHandler:set(self.name, "learning", courses[self.learning] and courses[self.learning].id or 0)
+		dHandler:set(self.name, "learnProgress", self.learnProgress)
+		dHandler:set(self.name, "eduLvl", self.eduLvl)
+		dHandler:set(self.name, "eduStream", self.eduStream)
+	end
 end
 
 function Player:levelUp()
-    if self.xp >= calculateXP(self.level + 1) then
-        self.level = self.level + 1
-        self:setHealth(1.0, false)
-        self:setMoney(5 * self.level, true)
-        dHandler:set(self.name, "level", self.level)
-        displayParticles(self.name, tfm.enum.particle.star)
-        self:addTitle("Worker")
-        if self.level == 3 then
-            self:addTitle("Getting Experience")
-        end
-    end
+	if self.xp >= calculateXP(self.level + 1) then
+		self.level = self.level + 1
+		self:setHealth(1.0, false)
+		self:setMoney(5 * self.level, true)
+		dHandler:set(self.name, "level", self.level)
+		displayParticles(self.name, tfm.enum.particle.star)
+		self:addTitle("Worker")
+		if self.level == 3 then
+			self:addTitle("Getting Experience")
+		end
+	end
 end
 
 function Player:useMed(med)
-    if not (self.health >= 1) then
-        self:setHealth(med.regainVal, med.adding)
-        displayParticles(self.name, tfm.enum.particle.heart)
-    end
+	if not (self.health >= 1) then
+		self:setHealth(med.regainVal, med.adding)
+		displayParticles(self.name, tfm.enum.particle.heart)
+	end
 end
 
 function Player:updateStatsBar()
-    ui.updateTextArea(10, "<p align='right'>Money: $" .. formatNumber(self.money) .." </p> ", self.name)
-    ui.updateTextArea(11, " Level: " .. self.level, self.name)
-    ui.updateTextArea(1, "<br><p align='center'><b>" .. self.name .. "</b><br>« " .. self.title .. "»</p>", self.name)
+	ui.updateTextArea(10, "<p align='right'>Money: $" .. formatNumber(self.money) .." </p> ", self.name)
+	ui.updateTextArea(11, " Level: " .. self.level, self.name)
+	ui.updateTextArea(1, "<br><p align='center'><b>" .. self.name .. "</b><br>« " .. self.title .. "»</p>", self.name)
 end
 
 function Player:grabItem(item)
-    if self.inventory[item] == nil then
-        self.inventory[item] = 1
-    else
-        self.inventory[item] = self.inventory[item] + 1
-    end
+	if self.inventory[item] == nil then
+		self.inventory[item] = 1
+	else
+		self.inventory[item] = self.inventory[item] + 1
+	end
 
-    for id, value in next, items do
-        if item == value then
-            self:storeInventory(id, self.inventory[item])
-        end
-    end
-    --dHandler:set(self.name, "inventory", self.inventory)
+	for id, value in next, items do
+		if item == value then
+			self:storeInventory(id, self.inventory[item])
+		end
+	end
+	--dHandler:set(self.name, "inventory", self.inventory)
 end
 
 function Player:useItem(item)
-    if self.inventory[item] ~= nil then
-        self.inventory[item] = self.inventory[item] - 1
-        if self.inventory[item] < 1 then
-            self.inventory[item] = nil
-        end
-    end
-    for id, value in next, items do
-        if item == value then
-            self:storeInventory(id, self.inventory[item])
-        end
-    end
+	if self.inventory[item] ~= nil then
+		self.inventory[item] = self.inventory[item] - 1
+		if self.inventory[item] < 1 then
+			self.inventory[item] = nil
+		end
+	end
+	for id, value in next, items do
+		if item == value then
+			self:storeInventory(id, self.inventory[item])
+		end
+	end
 end
 
 function Player:storeInventory(item, amount)
-    local inv = dHandler:get(self.name, "inventory")
-    local found = false
-    for k, data in next, inv do
-        if data[1] == item then
-            found = true
-            if not amount then
-                table.remove(inv, k)
-            else
-                inv[k] = {item, amount}
-            end
+	local inv = dHandler:get(self.name, "inventory")
+	local found = false
+	for k, data in next, inv do
+		if data[1] == item then
+			found = true
+			if not amount then
+				table.remove(inv, k)
+			else
+				inv[k] = {item, amount}
+			end
 
-            break
-        end
-    end
-    if not found then
-        table.insert(inv, {item, amount})
-    end
-    dHandler:set(self.name, "inventory", inv)
+			break
+		end
+	end
+	if not found then
+		table.insert(inv, {item, amount})
+	end
+	dHandler:set(self.name, "inventory", inv)
 end
 
 function Player:buyLottery(choices)
-    local invalid = not choices:find("%s*%d+%s+%d+%s+%d+%s+[a-zA-Z]%s*")
-    if invalid then
-        return tfm.exec.chatMessage('<R>[Error] Invalid input!</R>', self.name)
-    end
-    choices = map(split(choices:gsub("%s+", " "), " "), function(x)
-        if x:find("%d+") then
-            local n = tonumber(x)
-            if n < 0 or n > 100 then invalid = true end
-            return n
-        end
-        if x:find("[a-zA-Z]") then return x:upper() end
-        invalid = true
-    end)
-    if invalid then
-        tfm.exec.chatMessage("<R>[Error] Invalid input!</R>", self.name)
-    else
-        self:setMoney(-20, true)
-        if not lottoBuyers[self.name] then lottoBuyers[self.name] = {} end
-        table.insert(lottoBuyers[self.name], choices)
-        tfm.exec.chatMessage("<J>Bought a lottery!</J>", self.name)
-    end
+	local invalid = not choices:find("%s*%d+%s+%d+%s+%d+%s+[a-zA-Z]%s*")
+	if invalid then
+		return tfm.exec.chatMessage('<R>[Error] Invalid input!</R>', self.name)
+	end
+	choices = map(split(choices:gsub("%s+", " "), " "), function(x)
+		if x:find("%d+") then
+			local n = tonumber(x)
+			if n < 0 or n > 100 then invalid = true end
+			return n
+		end
+		if x:find("[a-zA-Z]") then return x:upper() end
+		invalid = true
+	end)
+	if invalid then
+		tfm.exec.chatMessage("<R>[Error] Invalid input!</R>", self.name)
+	else
+		self:setMoney(-20, true)
+		if not lottoBuyers[self.name] then lottoBuyers[self.name] = {} end
+		table.insert(lottoBuyers[self.name], choices)
+		tfm.exec.chatMessage("<J>Bought a lottery!</J>", self.name)
+	end
 end
 
 --class creation(Player) ends
@@ -573,33 +573,33 @@ end
 local Company = {}
 Company.__index = Company
 Company.__tostring = function(self)
-    return "[name=" .. self.name .. ",owner=" .. self.owner .. "]"
+	return "[name=" .. self.name .. ",owner=" .. self.owner .. "]"
 end
 
 setmetatable(Company, {
-    __call = function (cls, ...)
-        return cls.new(...)
-    end,
+	__call = function (cls, ...)
+		return cls.new(...)
+	end,
 })
 
 function Company.new(name, owner)
-    local self = setmetatable({}, Company)
-    self.name = name
-    self.owner = owner
-    self.shareholders = {[owner]={capital=5000, shares=1.0}}
-    self.totalHolders = 1
-    self.capital = 5000
-    self.members = {}
-    self.totalWorkers = 0
-    self.jobs = {}
-    self.unownedShares = 0
-    self.outstandingShares = 50
-    self.incomePerMonth = 0
-    self.shareVal = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100}
-    self.chartSeries = Series(range(1, 12, 1), self.shareVal, "<a href='event:com:" .. name .. "'>" .. name .. "</a>")
-    chart:addSeries(self.chartSeries)
-    self.uid = "com:" .. name
-    return self
+	local self = setmetatable({}, Company)
+	self.name = name
+	self.owner = owner
+	self.shareholders = {[owner]={capital=5000, shares=1.0}}
+	self.totalHolders = 1
+	self.capital = 5000
+	self.members = {}
+	self.totalWorkers = 0
+	self.jobs = {}
+	self.unownedShares = 0
+	self.outstandingShares = 50
+	self.incomePerMonth = 0
+	self.shareVal = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100}
+	self.chartSeries = Series(range(1, 12, 1), self.shareVal, "<a href='event:com:" .. name .. "'>" .. name .. "</a>")
+	chart:addSeries(self.chartSeries)
+	self.uid = "com:" .. name
+	return self
 end
 
 function Company:getName() return self.name end
@@ -615,48 +615,48 @@ function Company:getOutstandingShares() return self.outstandingShares end
 function Company:getIncomePerMonth() return self.incomePerMonth end
 
 function Company:addMember(name)
-    if not self.members[name] then
-        self.members[name] = true
-        self.totalWorkers = self.totalWorkers + 1
-    end
+	if not self.members[name] then
+		self.members[name] = true
+		self.totalWorkers = self.totalWorkers + 1
+	end
 end
 
 function Company:removeMember(name)
-    self.members[name] = nil
-    self.totalWorkers = self.totalWorkers - 1
+	self.members[name] = nil
+	self.totalWorkers = self.totalWorkers - 1
 end
 
 function Company:addShareHolder(name, inCapital)
-    self.capital = self.capital + inCapital
-    local newCap = self.shareholders[name] == nil and inCapital or self.shareholders[name].capital + inCapital
-    if not self.shareholders[name] then self.totalHolders = self.totalHolders + 1 end
-    self.shareholders[name] = {capital=newCap, shares=newCap/self.capital}
-    for n, d in next, self.shareholders do
-        self.shareholders[n] = {capital=d.capital, shares=d.capital/self.capital}
-    end
+	self.capital = self.capital + inCapital
+	local newCap = self.shareholders[name] == nil and inCapital or self.shareholders[name].capital + inCapital
+	if not self.shareholders[name] then self.totalHolders = self.totalHolders + 1 end
+	self.shareholders[name] = {capital=newCap, shares=newCap/self.capital}
+	for n, d in next, self.shareholders do
+		self.shareholders[n] = {capital=d.capital, shares=d.capital/self.capital}
+	end
 end
 
 function Company:addCapital(amount)
-    self.capital = self.capital + amount
-    self.shareVal[month] = self.capital
+	self.capital = self.capital + amount
+	self.shareVal[month] = self.capital
 end
 
 function Company:issueShares(number, auth)
-    if self.shareholders[auth] then
-        self.unownedShares = self.unownedShares + number
-    end
+	if self.shareholders[auth] then
+		self.unownedShares = self.unownedShares + number
+	end
 end
 
 function Company:setShares(amount, add, category)
-    if category == "outstanding" then
-        self.outstandingShares = add and self.outstandingShares + amout or amount
-    else
-        self.unownedShares = add and self.unownedShares + amount or amount
-    end
+	if category == "outstanding" then
+		self.outstandingShares = add and self.outstandingShares + amout or amount
+	else
+		self.unownedShares = add and self.unownedShares + amount or amount
+	end
 end
 
 function Company:setIncome(amount, add)
-    self.incomePerMonth = add and self.incomePerMonth + amount or amount
+	self.incomePerMonth = add and self.incomePerMonth + amount or amount
 end
 
 --class creation(Company) ends
@@ -664,310 +664,310 @@ end
 --game functions
 
 function displayShop(target, page)
-    local medicTxt = ""
-    for id, medic in next, {healthPacks[((page - 1) * 2) + 1], healthPacks[page * 2]} do
-        medicTxt = medicTxt .. "<b><font size='13'>" .. medic.name  .. "</font></b><br><p align='right'><VP><a href='event:buy:" .. medic.uid .."'><b>| Buy |</b></a></VP></p>Price: " .. medic.price .. "  Energy: " .. (medic.regainVal * 100) .. "%<br>" .. medic.desc .. "<br><br>"
-    end
-    ui.addTextArea(100, closeButton .. "<p align='center'><font size='20'><b><J>Shop</J></b></font></p><br></br>" .. (medicTxt == "" and nothing or medicTxt), target, 200, 90, 400, 200, nil, nil, 1, true)
-    ui.addTextArea(101, "<p align='center'><a href='event:page:shop:" .. page - 1 .."'>«</a></p>", target, 500, 310, 10, 15, nil, nil, 1, true)
-    ui.addTextArea(102, "Page " .. page, target, 523, 310, 50, 15, nil, nil, 1, true)
-    ui.addTextArea(103, "<p align='center'><a href='event:page:shop:" .. page + 1 .."'>»</a></p>", target, 585, 310, 15, 15, nil, nil, 1, true)
+	local medicTxt = ""
+	for id, medic in next, {healthPacks[((page - 1) * 2) + 1], healthPacks[page * 2]} do
+		medicTxt = medicTxt .. "<b><font size='13'>" .. medic.name  .. "</font></b><br><p align='right'><VP><a href='event:buy:" .. medic.uid .."'><b>| Buy |</b></a></VP></p>Price: " .. medic.price .. "  Energy: " .. (medic.regainVal * 100) .. "%<br>" .. medic.desc .. "<br><br>"
+	end
+	ui.addTextArea(100, closeButton .. "<p align='center'><font size='20'><b><J>Shop</J></b></font></p><br></br>" .. (medicTxt == "" and nothing or medicTxt), target, 200, 90, 400, 200, nil, nil, 1, true)
+	ui.addTextArea(101, "<p align='center'><a href='event:page:shop:" .. page - 1 .."'>«</a></p>", target, 500, 310, 10, 15, nil, nil, 1, true)
+	ui.addTextArea(102, "Page " .. page, target, 523, 310, 50, 15, nil, nil, 1, true)
+	ui.addTextArea(103, "<p align='center'><a href='event:page:shop:" .. page + 1 .."'>»</a></p>", target, 585, 310, 15, 15, nil, nil, 1, true)
 end
 
 function displayCourses(target)
-    local courseTxt = ""
-    local p = players[target]
-    for id, course in next, courses do
-        if p:getEducationLevel() == course.level and (p:getEducationStream() == course.stream or p:getEducationStream() == "") and learning ~= "" then
-            courseTxt = courseTxt .. "<b><font size='13'>" .. course.name .. "</font></b><VP><a href='event:" .. course.uid .. "'><b> | Enroll |</b></a></VP><br><font size='10'>(Fee: " .. course.fee .. " Lessons: " .. course.lessons .. ")</font><br>"
-        end
-    end
-    ui.addTextArea(200, closeButton .. "<p align='center'><font size='20'><b><J>Courses</J></b></font></p><br></br>" .. (courseTxt == "" and nothing or courseTxt), target, 200, 90, 400, 200, nil, nil, 1, true)
+	local courseTxt = ""
+	local p = players[target]
+	for id, course in next, courses do
+		if p:getEducationLevel() == course.level and (p:getEducationStream() == course.stream or p:getEducationStream() == "") and learning ~= "" then
+			courseTxt = courseTxt .. "<b><font size='13'>" .. course.name .. "</font></b><VP><a href='event:" .. course.uid .. "'><b> | Enroll |</b></a></VP><br><font size='10'>(Fee: " .. course.fee .. " Lessons: " .. course.lessons .. ")</font><br>"
+		end
+	end
+	ui.addTextArea(200, closeButton .. "<p align='center'><font size='20'><b><J>Courses</J></b></font></p><br></br>" .. (courseTxt == "" and nothing or courseTxt), target, 200, 90, 400, 200, nil, nil, 1, true)
 end
 
 function displayJobs(target, page)
-    local qualifiedJobTxt = ""
-    local disqualifedJobTxt = ""
-    local p = players[target]
-    local entry = 1
-    for key, value in next, getSortedJobList(players[target]) do
-        if (page - 1) * 2 + 1 <= entry and entry <= page * 2 then
-            if value[2] then
-                local job = value[1]
-                qualifiedJobTxt = qualifiedJobTxt .. "<b><font size='13'>" .. job.name .. " <a href='event:jobInfo:" .. job.name .. "'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><VP><a href='event:" .. job.uid .. "'> | Choose | </a></VP></b></p>Salary: " .. job.salary .. " Energy: " .. (job.energy * 100) .. "%<br>Offered by <b>" .. job.owner .. "</b> of <b>" .. job.company .. "</b><br><br>"
-            else
-                local job = value[1]
-                disqualifedJobTxt = disqualifedJobTxt .. "<N><b><font size='13'>" .. job.name .. " <a href='event:jobInfo:" .. job.name .. "'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><N2>| Choose |</N2></b></p>Salary: " .. job.salary .. " Energy: " .. (job.energy * 100) .. "%<br>Offered by <b>" .. job.owner .. "</b> of <b>" .. job.company .. "</b></N><br><br>"
-            end
-        elseif entry > page * 2 then
-            break
-        end
-        entry = entry + 1
-    end
+	local qualifiedJobTxt = ""
+	local disqualifedJobTxt = ""
+	local p = players[target]
+	local entry = 1
+	for key, value in next, getSortedJobList(players[target]) do
+		if (page - 1) * 2 + 1 <= entry and entry <= page * 2 then
+			if value[2] then
+				local job = value[1]
+				qualifiedJobTxt = qualifiedJobTxt .. "<b><font size='13'>" .. job.name .. " <a href='event:jobInfo:" .. job.name .. "'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><VP><a href='event:" .. job.uid .. "'> | Choose | </a></VP></b></p>Salary: " .. job.salary .. " Energy: " .. (job.energy * 100) .. "%<br>Offered by <b>" .. job.owner .. "</b> of <b>" .. job.company .. "</b><br><br>"
+			else
+				local job = value[1]
+				disqualifedJobTxt = disqualifedJobTxt .. "<N><b><font size='13'>" .. job.name .. " <a href='event:jobInfo:" .. job.name .. "'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><N2>| Choose |</N2></b></p>Salary: " .. job.salary .. " Energy: " .. (job.energy * 100) .. "%<br>Offered by <b>" .. job.owner .. "</b> of <b>" .. job.company .. "</b></N><br><br>"
+			end
+		elseif entry > page * 2 then
+			break
+		end
+		entry = entry + 1
+	end
 
-    local jobTxt = qualifiedJobTxt .. disqualifedJobTxt
+	local jobTxt = qualifiedJobTxt .. disqualifedJobTxt
 
-    ui.addTextArea(300, closeButton .. "<p align='center'><font size='20'><b><J>Jobs</J></b></font></p><br><br>" .. (jobTxt == "" and nothing or jobTxt), target, 200, 90, 400, 200, nil, nil, 1, true)
-    ui.addTextArea(301, "<p align='center'><a href='event:page:jobs:" .. page - 1 .."'>«</a></p>", target, 500, 310, 10, 15, nil, nil, 1, true)
-    ui.addTextArea(302, "Page " .. page, target, 523, 310, 50, 15, nil, nil, 1, true)
-    ui.addTextArea(303, "<p align='center'><a href='event:page:jobs:" .. page + 1 .."'>»</a></p>", target, 585, 310, 15, 15, nil, nil, 1, true)
+	ui.addTextArea(300, closeButton .. "<p align='center'><font size='20'><b><J>Jobs</J></b></font></p><br><br>" .. (jobTxt == "" and nothing or jobTxt), target, 200, 90, 400, 200, nil, nil, 1, true)
+	ui.addTextArea(301, "<p align='center'><a href='event:page:jobs:" .. page - 1 .."'>«</a></p>", target, 500, 310, 10, 15, nil, nil, 1, true)
+	ui.addTextArea(302, "Page " .. page, target, 523, 310, 50, 15, nil, nil, 1, true)
+	ui.addTextArea(303, "<p align='center'><a href='event:page:jobs:" .. page + 1 .."'>»</a></p>", target, 585, 310, 15, 15, nil, nil, 1, true)
 end
 
 function displayJobInfo(job, target)
-    local job = jobs[job]
-    ui.addTextArea(901, "", target, -10000, -10000, 20000, 20000, 0x333333, nil, 0.8, true)
-    ui.addTextArea(900, closeButton .. "<p align='center'><font size='15'><b><BV>" .. job.name .."</BV></b></font></p><br><br>" ..
-        "<b>Salary</b>: " .. job.salary .. "<br>" ..
-        "<b>Energy</b>: " .. (job.energy * 100) .. "%<br><br>" ..
-        "<b><u>Requirements</u></b><br><br>" ..
-        "<b>Minimum level</b>: " .. job.minLvl .. "<br>" ..
-        "<b>Qualifications</b>: " .. (job.qualifications or "NA") ..
-        "<br><br>Offered by <b>" .. job.owner .. "</b> of <b>" .. job.company .. "</b>",
-    target, 300, 90, 200, 200, nil, nil, 1, true)
+	local job = jobs[job]
+	ui.addTextArea(901, "", target, -10000, -10000, 20000, 20000, 0x333333, nil, 0.8, true)
+	ui.addTextArea(900, closeButton .. "<p align='center'><font size='15'><b><BV>" .. job.name .."</BV></b></font></p><br><br>" ..
+		"<b>Salary</b>: " .. job.salary .. "<br>" ..
+		"<b>Energy</b>: " .. (job.energy * 100) .. "%<br><br>" ..
+		"<b><u>Requirements</u></b><br><br>" ..
+		"<b>Minimum level</b>: " .. job.minLvl .. "<br>" ..
+		"<b>Qualifications</b>: " .. (job.qualifications or "NA") ..
+		"<br><br>Offered by <b>" .. job.owner .. "</b> of <b>" .. job.company .. "</b>",
+	target, 300, 90, 200, 200, nil, nil, 1, true)
 end
 
 function displayCompanyDialog(target, page)
-    page = page or 1
-    eventTextAreaCallback(400, target, "close")
-    if not next(players[target]:getOwnedCompanies()) then
-        ui.addPopup(400, 1, "<p align='center'>No owned companies<br>Do you want to own one?</p>", target, 300, 90, 200, true)
-    else
-        local companyTxt = ""
-        local p = players[target]
-        local entry = 1
-        for name, company in next, p:getOwnedCompanies() do
-            if (page - 1) * 8 + 1 <= entry and entry <= page * 8 then
-                companyTxt = companyTxt .. "<b><a href='event:" .. company:getUID() .. "'>" .. company:getName() .. "</a></b> <i>(Your Ownership: " .. math.ceil(company:getShareHolders()[target].shares * 100) .. "%)</i><br>"
-            elseif entry > page * 8 then
-                break
-            end
-            entry = entry + 1
-        end
-        ui.addTextArea(400, closeButton .. "<p align='center'><font size='20'><b><J>My Companies</J></b></font></p><br><br>" .. companyTxt, target, 200, 90, 400, 200, nil, nil, 1, true)
-        ui.addTextArea(401, "<a href='event:createCompany'>New Company</a>", target, 500, 305, 100, 20, nil, nil, 1, true)
-        ui.addTextArea(402, "<p align='center'><a href='event:page:comp:" .. (page - 1) .. "'>«</a></p>", target, 200, 305, 10, 20, nil, nil, 1, true)
-        ui.addTextArea(403, "Page " .. page, target, 225, 305, 50, 20, nil, nil, 1, true)
-        ui.addTextArea(404, "<p align='center'><a href='event:page:comp:" .. (page + 1) .. "'>»</a></p>", target, 290, 305, 15, 20, nil, nil, 1, true)
-    end
+	page = page or 1
+	eventTextAreaCallback(400, target, "close")
+	if not next(players[target]:getOwnedCompanies()) then
+		ui.addPopup(400, 1, "<p align='center'>No owned companies<br>Do you want to own one?</p>", target, 300, 90, 200, true)
+	else
+		local companyTxt = ""
+		local p = players[target]
+		local entry = 1
+		for name, company in next, p:getOwnedCompanies() do
+			if (page - 1) * 8 + 1 <= entry and entry <= page * 8 then
+				companyTxt = companyTxt .. "<b><a href='event:" .. company:getUID() .. "'>" .. company:getName() .. "</a></b> <i>(Your Ownership: " .. math.ceil(company:getShareHolders()[target].shares * 100) .. "%)</i><br>"
+			elseif entry > page * 8 then
+				break
+			end
+			entry = entry + 1
+		end
+		ui.addTextArea(400, closeButton .. "<p align='center'><font size='20'><b><J>My Companies</J></b></font></p><br><br>" .. companyTxt, target, 200, 90, 400, 200, nil, nil, 1, true)
+		ui.addTextArea(401, "<a href='event:createCompany'>New Company</a>", target, 500, 305, 100, 20, nil, nil, 1, true)
+		ui.addTextArea(402, "<p align='center'><a href='event:page:comp:" .. (page - 1) .. "'>«</a></p>", target, 200, 305, 10, 20, nil, nil, 1, true)
+		ui.addTextArea(403, "Page " .. page, target, 225, 305, 50, 20, nil, nil, 1, true)
+		ui.addTextArea(404, "<p align='center'><a href='event:page:comp:" .. (page + 1) .. "'>»</a></p>", target, 290, 305, 15, 20, nil, nil, 1, true)
+	end
 end
 
 function displayCompany(name, target)
-    if companies[name] ~= nil then
-        local com = companies[name]
-        local isOwner = false
-        tempData[target].jobCompany = name
-        local companyTxt = ""
-        local members = ""
-        ui.addTextArea(400, closeButton .. [[<p align='center'><font size='20'><b><J>]] .. name .. [[</J></b></font></p><br>
-        <b>Founder</b>: ]] ..  com:getOwner() .. [[<br>
-        <b>Total Owners / Shareholders:  </b>]] .. com.totalHolders .. [[<i>  <a href='event:page:owners]] .. com:getName() .. [[:1'>(See all)</a></i>
-        <b>Total Workers:</b>                ]] .. com.totalWorkers .. [[<i>  <a href='event:page:workers]] .. com:getName() .. [[:1'>(See all)</a></i>]], target, 200, 90, 400, 200, nil, nil, 1, true)
-        for n, _ in next, com:getShareHolders() do
-            if n == target then isOwner = true end
-        end
-        if isOwner then
-            ui.addTextArea(401, "<a href='event:createJob'>Create Job</a>", target, 500, 305, 100, 20, nil, nil, 1, true)
-            ui.addTextArea(402, "<a href='event:invest:" .. com:getName() .. "'> Invest!</a>", target, 200, 305, 100, 20, nil, nil, 1, true)
-            ui.addTextArea(403, "<a href='event:issueShares:" .. com:getName() .. "'>Issue Shares</a>", target, 405, 305, 80, 20, nil, nil, 1, true)
-        end
-        ui.addTextArea(404, (com:getUnownedShares() == 0 and "<BL>Buy Shares</BL>" or "<a href='event:buyShares:" .. com:getName() .. "'> Buy Shares <font size='10'>(all: " .. com:getUnownedShares() .. ")</font></a>"), target, 315, 305, isOwner and 80 or 170, 20, nil, nil, 1, true)
-    else
-        ui.addPopup(404, 0, "<p align='center'><b><font color='#CB546B'>Company doesn't exist!", target, 300, 90, 200, true)
-    end
+	if companies[name] ~= nil then
+		local com = companies[name]
+		local isOwner = false
+		tempData[target].jobCompany = name
+		local companyTxt = ""
+		local members = ""
+		ui.addTextArea(400, closeButton .. [[<p align='center'><font size='20'><b><J>]] .. name .. [[</J></b></font></p><br>
+		<b>Founder</b>: ]] ..  com:getOwner() .. [[<br>
+		<b>Total Owners / Shareholders:  </b>]] .. com.totalHolders .. [[<i>  <a href='event:page:owners]] .. com:getName() .. [[:1'>(See all)</a></i>
+		<b>Total Workers:</b>                ]] .. com.totalWorkers .. [[<i>  <a href='event:page:workers]] .. com:getName() .. [[:1'>(See all)</a></i>]], target, 200, 90, 400, 200, nil, nil, 1, true)
+		for n, _ in next, com:getShareHolders() do
+			if n == target then isOwner = true end
+		end
+		if isOwner then
+			ui.addTextArea(401, "<a href='event:createJob'>Create Job</a>", target, 500, 305, 100, 20, nil, nil, 1, true)
+			ui.addTextArea(402, "<a href='event:invest:" .. com:getName() .. "'> Invest!</a>", target, 200, 305, 100, 20, nil, nil, 1, true)
+			ui.addTextArea(403, "<a href='event:issueShares:" .. com:getName() .. "'>Issue Shares</a>", target, 405, 305, 80, 20, nil, nil, 1, true)
+		end
+		ui.addTextArea(404, (com:getUnownedShares() == 0 and "<BL>Buy Shares</BL>" or "<a href='event:buyShares:" .. com:getName() .. "'> Buy Shares <font size='10'>(all: " .. com:getUnownedShares() .. ")</font></a>"), target, 315, 305, isOwner and 80 or 170, 20, nil, nil, 1, true)
+	else
+		ui.addPopup(404, 0, "<p align='center'><b><font color='#CB546B'>Company doesn't exist!", target, 300, 90, 200, true)
+	end
 end
 
 function displayCompanyOwners(comp, target, page)
-    local entry = 1
-    local res = ""
-    for name, data in next, companies[comp]:getShareHolders() do
-        if (page - 1) * 6 + 1 <= entry and entry <= page * 6 then
-            res = res .. "<b><a href='event:profile:" .. name .. "'>" .. name .. "</a></b> <i>(Owns " .. math.ceil(data.shares * 100) .. "%)</i><br>"
-        elseif entry > page * 6 then
-            break
-        end
-        entry = entry + 1
-    end
-    ui.addTextArea(450, closeButton .. "<p align='center'><font size='20'><b><J>Shareholders of " .. comp .. "</J></b></font></p><br><br><b>Total: </b>" .. companies[comp].totalHolders .. "<br><br>" .. res, target, 200, 90, 400, 200, nil, nil, 1, true)
-    ui.addTextArea(451, "<p align='center'><a href='event:page:owners" .. comp .. ":" .. page - 1 .."'>«</a></p>", target, 500, 310, 10, 15, nil, nil, 1, true)
-    ui.addTextArea(452, "Page " .. page, target, 523, 310, 50, 15, nil, nil, 1, true)
-    ui.addTextArea(453, "<p align='center'><a href='event:page:owners" .. comp .. ":" .. page + 1 .."'>»</a></p>", target, 585, 310, 15, 15, nil, nil, 1, true)
+	local entry = 1
+	local res = ""
+	for name, data in next, companies[comp]:getShareHolders() do
+		if (page - 1) * 6 + 1 <= entry and entry <= page * 6 then
+			res = res .. "<b><a href='event:profile:" .. name .. "'>" .. name .. "</a></b> <i>(Owns " .. math.ceil(data.shares * 100) .. "%)</i><br>"
+		elseif entry > page * 6 then
+			break
+		end
+		entry = entry + 1
+	end
+	ui.addTextArea(450, closeButton .. "<p align='center'><font size='20'><b><J>Shareholders of " .. comp .. "</J></b></font></p><br><br><b>Total: </b>" .. companies[comp].totalHolders .. "<br><br>" .. res, target, 200, 90, 400, 200, nil, nil, 1, true)
+	ui.addTextArea(451, "<p align='center'><a href='event:page:owners" .. comp .. ":" .. page - 1 .."'>«</a></p>", target, 500, 310, 10, 15, nil, nil, 1, true)
+	ui.addTextArea(452, "Page " .. page, target, 523, 310, 50, 15, nil, nil, 1, true)
+	ui.addTextArea(453, "<p align='center'><a href='event:page:owners" .. comp .. ":" .. page + 1 .."'>»</a></p>", target, 585, 310, 15, 15, nil, nil, 1, true)
 end
 
 function displayCompanyMembers(comp, target, page)
-    local entry = 1
-    local res = ""
-    for name, data in next, companies[comp]:getMembers() do
-        if (page - 1) * 6 + 1 <= entry and entry <= page * 6 then
-            res = res .. "<b><a href='event:profile:" .. name .. "'>" .. name .. "</a></b>   <i>(" .. players[name]:getJob() .. ")</i><br>"
-        elseif entry > page * 6 then
-            break
-        end
-    end
-    entry = entry + 1
-    ui.addTextArea(460, closeButton .. "<p align='center'><font size='20'><b><J>Workers of " .. comp .. "</J></b></font></p><br><br><b>Total: </b>" .. companies[comp].totalWorkers .. "<br><br>" .. res, target, 200, 90, 400, 200, nil, nil, 1, true)
-    ui.addTextArea(461, "<p align='center'><a href='event:page:owners" .. comp .. ":" .. page - 1 .."'>«</a></p>", target, 500, 310, 10, 15, nil, nil, 1, true)
-    ui.addTextArea(462, "Page " .. page, target, 523, 310, 50, 15, nil, nil, 1, true)
-    ui.addTextArea(463, "<p align='center'><a href='event:page:owners" .. comp .. ":" .. page + 1 .."'>»</a></p>", target, 585, 310, 15, 15, nil, nil, 1, true)
+	local entry = 1
+	local res = ""
+	for name, data in next, companies[comp]:getMembers() do
+		if (page - 1) * 6 + 1 <= entry and entry <= page * 6 then
+			res = res .. "<b><a href='event:profile:" .. name .. "'>" .. name .. "</a></b>   <i>(" .. players[name]:getJob() .. ")</i><br>"
+		elseif entry > page * 6 then
+			break
+		end
+	end
+	entry = entry + 1
+	ui.addTextArea(460, closeButton .. "<p align='center'><font size='20'><b><J>Workers of " .. comp .. "</J></b></font></p><br><br><b>Total: </b>" .. companies[comp].totalWorkers .. "<br><br>" .. res, target, 200, 90, 400, 200, nil, nil, 1, true)
+	ui.addTextArea(461, "<p align='center'><a href='event:page:owners" .. comp .. ":" .. page - 1 .."'>«</a></p>", target, 500, 310, 10, 15, nil, nil, 1, true)
+	ui.addTextArea(462, "Page " .. page, target, 523, 310, 50, 15, nil, nil, 1, true)
+	ui.addTextArea(463, "<p align='center'><a href='event:page:owners" .. comp .. ":" .. page + 1 .."'>»</a></p>", target, 585, 310, 15, 15, nil, nil, 1, true)
 end
 
 function displayJobWizard(target)
-    ui.addTextArea(500, closeButton .. [[<p align='center'><font size='20'><b><J>Job Wizard</J></b></font></p><br><br>
-    <b>Job Name: </b><a href='event:selectJobName'>]] ..  (tempData[target].jobName == nil and "Select" or tempData[target].jobName) .. [[</a>
-    <b>Salary: </b><a href='event:selectJobSalary'> ]] .. (tempData[target].jobSalary == nil and "Select" or tempData[target].jobSalary) .. [[</a>
-    <b>Energy: </b><a href='event:selectJobEnergy'> ]] .. (tempData[target].jobEnergy == nil and "Select" or tempData[target].jobEnergy .. "%") .. [[</a>
-    <b>Minimum Level: </b><a href='event:chooseJobMinLvl'>]] .. (tempData[target].minLvl == nil and "Select" or tempData[target].minLvl) .. [[</a>
-    <b>Qualifcations: </b><a href='event:chooseJobDegree'>]] .. (tempData[target].qualification == nil and "Select" or tempData[target].qualification) .. [[</a><br>
-    ]], target, 200, 90, 400, 200, nil, nil, 1, true)
+	ui.addTextArea(500, closeButton .. [[<p align='center'><font size='20'><b><J>Job Wizard</J></b></font></p><br><br>
+	<b>Job Name: </b><a href='event:selectJobName'>]] ..  (tempData[target].jobName == nil and "Select" or tempData[target].jobName) .. [[</a>
+	<b>Salary: </b><a href='event:selectJobSalary'> ]] .. (tempData[target].jobSalary == nil and "Select" or tempData[target].jobSalary) .. [[</a>
+	<b>Energy: </b><a href='event:selectJobEnergy'> ]] .. (tempData[target].jobEnergy == nil and "Select" or tempData[target].jobEnergy .. "%") .. [[</a>
+	<b>Minimum Level: </b><a href='event:chooseJobMinLvl'>]] .. (tempData[target].minLvl == nil and "Select" or tempData[target].minLvl) .. [[</a>
+	<b>Qualifcations: </b><a href='event:chooseJobDegree'>]] .. (tempData[target].qualification == nil and "Select" or tempData[target].qualification) .. [[</a><br>
+	]], target, 200, 90, 400, 200, nil, nil, 1, true)
 end
 
 function displayAllDegrees(target)
-    local degreeTxt = ""
-    for k, v in next, courses do
-        degreeTxt = degreeTxt .. "<a href='event:degree:" .. v.name .. "'>" .. v.name .. "</a><br>"
-    end
-    ui.addTextArea(600, closeButton .. "<p align='center'><font size='20'><b><J>Choose a Degree</J></b></font></p>" .. degreeTxt, target, 200, 90, 400, 200, nil, nil, 1, true)
+	local degreeTxt = ""
+	for k, v in next, courses do
+		degreeTxt = degreeTxt .. "<a href='event:degree:" .. v.name .. "'>" .. v.name .. "</a><br>"
+	end
+	ui.addTextArea(600, closeButton .. "<p align='center'><font size='20'><b><J>Choose a Degree</J></b></font></p>" .. degreeTxt, target, 200, 90, 400, 200, nil, nil, 1, true)
 end
 
 function displayInventory(target)
-    local invTxt = ""
-    for k, v in next, players[target]:getInventory() do
-        invTxt = invTxt .. "<b><font size='12'>".. k .. "</font><a href='event:use:" .. k .."'><VP> | Use x" .. v .. " |</VP> </a></b> : <font size='10'>(Energy: " .. (find(k, healthPacks).regainVal * 100) .. "%)</font><br>"
-    end
-    ui.addTextArea(700, closeButton .. "<p align='center'><font size='20'><b><J>Inventory</J></b></font></p><br>" .. (invTxt == "" and nothing or invTxt), target, 200, 90, 400, 200, nil, nil, 1, true)
+	local invTxt = ""
+	for k, v in next, players[target]:getInventory() do
+		invTxt = invTxt .. "<b><font size='12'>".. k .. "</font><a href='event:use:" .. k .."'><VP> | Use x" .. v .. " |</VP> </a></b> : <font size='10'>(Energy: " .. (find(k, healthPacks).regainVal * 100) .. "%)</font><br>"
+	end
+	ui.addTextArea(700, closeButton .. "<p align='center'><font size='20'><b><J>Inventory</J></b></font></p><br>" .. (invTxt == "" and nothing or invTxt), target, 200, 90, 400, 200, nil, nil, 1, true)
 end
 
 function displayTips(target)
-    ui.addTextArea(800, tips[1], target, 6, 120, 120, 150, 0x324650, 0x000000, 1, true)
-    ui.addTextArea(801, "«", target, 10, 285, 10, 15, nil, nil, 1, true)
-    ui.addTextArea(802, "Page 1", target, 35, 285, 50, 15, nil, nil, 1, true)
-    ui.addTextArea(803, "<p align='center'><a href='event:page:tip:2'>»</a></p>", target, 100, 285, 15, 15, nil, nil, 1, true)
+	ui.addTextArea(800, tips[1], target, 6, 120, 120, 150, 0x324650, 0x000000, 1, true)
+	ui.addTextArea(801, "«", target, 10, 285, 10, 15, nil, nil, 1, true)
+	ui.addTextArea(802, "Page 1", target, 35, 285, 50, 15, nil, nil, 1, true)
+	ui.addTextArea(803, "<p align='center'><a href='event:page:tip:2'>»</a></p>", target, 100, 285, 15, 15, nil, nil, 1, true)
 end
 
 function displayProfile(name, target)
-    local up = upper(name)
-    local p = players[name] or players[up] or players[up .. "#0000"] or players[target]
-    if p then
-        ui.addTextArea(901, "", target, -10000, -10000, 20000, 20000, 0x333333, nil, 0.8, true)
-        ui.addTextArea(900, closeButton ..
-        "<p align='center'><font size='15'><b><BV>" .. p:getName() .."</BV></b></font><br>« " .. p:getTitle() .. " »</p><br><b>Level:</b> " .. tostring(p:getLevel()) .. "<BL><font size='12'> [" .. tostring(p:getXP()) .. "XP / " .. tostring(calculateXP(p:getLevel() + 1)) .. "XP]</font></BL><br><b>Money:</b> $" .. formatNumber(p:getMoney()) .. "<br><br><b>Working as a</b> " .. p:getJob() ..
-        "<br><b>Learning</b>: " .. (p:getLearningCourse() == "" and "NA" or p:getLearningCourse())
-        , target, 300, 100, 200, 140, nil, nil, 1, true)
-    end
+	local up = upper(name)
+	local p = players[name] or players[up] or players[up .. "#0000"] or players[target]
+	if p then
+		ui.addTextArea(901, "", target, -10000, -10000, 20000, 20000, 0x333333, nil, 0.8, true)
+		ui.addTextArea(900, closeButton ..
+		"<p align='center'><font size='15'><b><BV>" .. p:getName() .."</BV></b></font><br>« " .. p:getTitle() .. " »</p><br><b>Level:</b> " .. tostring(p:getLevel()) .. "<BL><font size='12'> [" .. tostring(p:getXP()) .. "XP / " .. tostring(calculateXP(p:getLevel() + 1)) .. "XP]</font></BL><br><b>Money:</b> $" .. formatNumber(p:getMoney()) .. "<br><br><b>Working as a</b> " .. p:getJob() ..
+		"<br><b>Learning</b>: " .. (p:getLearningCourse() == "" and "NA" or p:getLearningCourse())
+		, target, 300, 100, 200, 140, nil, nil, 1, true)
+	end
 end
 
 function displayHelp(target, mode, page)
-    ui.addTextArea(950, "<B><J><a href='event:cmds'>Commands</a>", target, 30, 120, 75, 20, nil, nil, 1, true)
-    ui.addTextArea(951, "<a href='event:game'><B><J>Gameplay", target, 30, 85, 75, 20, nil, nil, 1, true)
-    ui.addTextArea(956, "<B><J><a href='event:credits'>Credits</a>", target, 30, 155, 75, 20, nil, nil, 1, true)
-    ui.addTextArea(952, closeButton .. (mode == "game" and gameplay[page or 1] or (mode == "credits" and credits or cmds)), target, 110, 80, 600, 200, 0x324650, 0x000000, 1, true)
-    if mode == "game" then
-        ui.addTextArea(953, "«",  target, 600, 300, 15, 15, nil, nil, 1, true)
-        ui.addTextArea(954, "Page 1", target, 630, 300, 50, 15, nil, nil, 1, true)
-        ui.addTextArea(955, "<a href='event:page:help:2'>»</a></p>", target, 695, 300, 15, 15, nil, nil, 1, true)
-    end
+	ui.addTextArea(950, "<B><J><a href='event:cmds'>Commands</a>", target, 30, 120, 75, 20, nil, nil, 1, true)
+	ui.addTextArea(951, "<a href='event:game'><B><J>Gameplay", target, 30, 85, 75, 20, nil, nil, 1, true)
+	ui.addTextArea(956, "<B><J><a href='event:credits'>Credits</a>", target, 30, 155, 75, 20, nil, nil, 1, true)
+	ui.addTextArea(952, closeButton .. (mode == "game" and gameplay[page or 1] or (mode == "credits" and credits or cmds)), target, 110, 80, 600, 200, 0x324650, 0x000000, 1, true)
+	if mode == "game" then
+		ui.addTextArea(953, "«",  target, 600, 300, 15, 15, nil, nil, 1, true)
+		ui.addTextArea(954, "Page 1", target, 630, 300, 50, 15, nil, nil, 1, true)
+		ui.addTextArea(955, "<a href='event:page:help:2'>»</a></p>", target, 695, 300, 15, 15, nil, nil, 1, true)
+	end
 end
 
 function displayTitleList(target)
-    local titleTxt = "Listing owned titles. Use !title NEW_TITLE to set a new title."
-    for id, title in next, players[target]:getTitles() do
-        titleTxt = titleTxt .. "\n« " .. titles[title] .. " »"
-    end
-    tfm.exec.chatMessage(titleTxt, target)
+	local titleTxt = "Listing owned titles. Use !title NEW_TITLE to set a new title."
+	for id, title in next, players[target]:getTitles() do
+		titleTxt = titleTxt .. "\n« " .. titles[title] .. " »"
+	end
+	tfm.exec.chatMessage(titleTxt, target)
 end
 
 function displayLotto(target)
-    local txt = "<p align='center'><font size='20'><b><J>Lotto Info</J></b></font><br><br><b>This month's winning lotto: </b>" .. ((#latestLotto == 0) and 'No drawings yet!' or latestLotto[1] .. ", " .. latestLotto[2] ..  ", " .. latestLotto[3] .. ", " .. latestLotto[4]) .. "<br><br>"
-    txt = txt .. ((lottoWins[target] == nil or lottoWins[target] == 0) and "You have no wins in the past month!" or "You have won $" .. lottoWins[target] .. " in the past month") .. "</p>"
-    ui.addTextArea(4000, closeButton .. txt, target, 200, 90, 400, 200, nil, nil, 1, true)
+	local txt = "<p align='center'><font size='20'><b><J>Lotto Info</J></b></font><br><br><b>This month's winning lotto: </b>" .. ((#latestLotto == 0) and 'No drawings yet!' or latestLotto[1] .. ", " .. latestLotto[2] ..  ", " .. latestLotto[3] .. ", " .. latestLotto[4]) .. "<br><br>"
+	txt = txt .. ((lottoWins[target] == nil or lottoWins[target] == 0) and "You have no wins in the past month!" or "You have won $" .. lottoWins[target] .. " in the past month") .. "</p>"
+	ui.addTextArea(4000, closeButton .. txt, target, 200, 90, 400, 200, nil, nil, 1, true)
 end
 
 function calculateXP(lvl)
-    return 2.5 * (lvl + 2) * (lvl - 1)
+	return 2.5 * (lvl + 2) * (lvl - 1)
 end
 
 function getMaxSalary(comp)
-    local max = companies[comp]:getCapital() * 0.04
-    return (max > 10000000 or max < 0 --[[probably integer overloads]]) and 10000000 or max
+	local max = companies[comp]:getCapital() * 0.04
+	return (max > 10000000 or max < 0 --[[probably integer overloads]]) and 10000000 or max
 end
 
 function displayParticles(target, particle)
-    tfm.exec.displayParticle(particle, tfm.get.room.playerList[target].x, tfm.get.room.playerList[target].y, 0, -2, 0, 0, nil)
-    tfm.exec.displayParticle(particle, tfm.get.room.playerList[target].x - 10, tfm.get.room.playerList[target].y, 0, -3, 0, 0, nil)
-    tfm.exec.displayParticle(particle, tfm.get.room.playerList[target].x + 10, tfm.get.room.playerList[target].y, 0, -2, 0, 0, nil)
-    tfm.exec.displayParticle(particle, tfm.get.room.playerList[target].x + math.random(-15, 15) , tfm.get.room.playerList[target].y, 0, -1, 0, 0, nil)
+	tfm.exec.displayParticle(particle, tfm.get.room.playerList[target].x, tfm.get.room.playerList[target].y, 0, -2, 0, 0, nil)
+	tfm.exec.displayParticle(particle, tfm.get.room.playerList[target].x - 10, tfm.get.room.playerList[target].y, 0, -3, 0, 0, nil)
+	tfm.exec.displayParticle(particle, tfm.get.room.playerList[target].x + 10, tfm.get.room.playerList[target].y, 0, -2, 0, 0, nil)
+	tfm.exec.displayParticle(particle, tfm.get.room.playerList[target].x + math.random(-15, 15) , tfm.get.room.playerList[target].y, 0, -1, 0, 0, nil)
 end
 
 function isQualified(p, job)
-    return p:getLevel() >= job.minLvl and (job.qualifications == nil or find(courses[job.qualifications].id, p:getDegrees(), true) ~= nil)
+	return p:getLevel() >= job.minLvl and (job.qualifications == nil or find(courses[job.qualifications].id, p:getDegrees(), true) ~= nil)
 end
 
 function getSortedJobList(p)
-    local qJobs = {}
-    for id, job in next, jobs do
-        if isQualified(p, job) then
-            table.insert(qJobs, 1, {job, true})
-        else
-            table.insert(qJobs, {job, false})
-        end
-    end
-    return qJobs
+	local qJobs = {}
+	for id, job in next, jobs do
+		if isQualified(p, job) then
+			table.insert(qJobs, 1, {job, true})
+		else
+			table.insert(qJobs, {job, false})
+		end
+	end
+	return qJobs
 end
 
 function find(name, tbl, normalLists)
-    if not normalLists then
-        for k,v in ipairs(tbl) do
-            if (v.name == name) then
-                return v
-            end
-        end
-    else
-        for k, v in next, tbl do
-            if v == name then
-                return k
-            end
-        end
-    end
-    return nil
+	if not normalLists then
+		for k,v in ipairs(tbl) do
+			if (v.name == name) then
+				return v
+			end
+		end
+	else
+		for k, v in next, tbl do
+			if v == name then
+				return k
+			end
+		end
+	end
+	return nil
 end
 
 function createTip(tip, index)
-    tips[index] = closeButton .. "<p align='center'><J><b>Tips!</b></J><br><br>" .. tip
+	tips[index] = closeButton .. "<p align='center'><J><b>Tips!</b></J><br><br>" .. tip
 end
 
 function checkLottoWinners(p)
-    if p then
-        return lottoWins[p]
-    end
-    lottoWins = {}
-    for name, lottos in next, lottoBuyers do
-        local wins = 0
-        for _, lotto in next, lottos do
-            wins = wins + getWinPrice(lotto)
-        end
-        lottoWins[name] = wins
-    end
+	if p then
+		return lottoWins[p]
+	end
+	lottoWins = {}
+	for name, lottos in next, lottoBuyers do
+		local wins = 0
+		for _, lotto in next, lottos do
+			wins = wins + getWinPrice(lotto)
+		end
+		lottoWins[name] = wins
+	end
 end
 
 function getWinPrice(lotto)
-    local wins = 0
-    if latestLotto[1] == lotto[1] and latestLotto[2] == lotto[2] and latestLotto[3] == lotto[3] and latestLotto[4] == lotto[4] then
-        return 100000
-    elseif (latestLotto[1] == lotto[1] and latestLotto[2] == lotto[2]) or (latestLotto[2] == lotto[2] and latestLotto[3] == lotto[3]) or (latestLotto[1] == lotto[1] and latestLotto[3] == lotto[3]) then
-        wins = 5000
-    elseif (latestLotto[4] == lotto[4]) then
-        return wins + 1000
-    end
-    return wins
+	local wins = 0
+	if latestLotto[1] == lotto[1] and latestLotto[2] == lotto[2] and latestLotto[3] == lotto[3] and latestLotto[4] == lotto[4] then
+		return 100000
+	elseif (latestLotto[1] == lotto[1] and latestLotto[2] == lotto[2]) or (latestLotto[2] == lotto[2] and latestLotto[3] == lotto[3]) or (latestLotto[1] == lotto[1] and latestLotto[3] == lotto[3]) then
+		wins = 5000
+	elseif (latestLotto[4] == lotto[4]) then
+		return wins + 1000
+	end
+	return wins
 end
 
 function getBestParamsJobs(type, val--[[salary, energy, minLvl, eduLvl]], tempData)
-    --[[TODO: Refactor this function]]
+	--[[TODO: Refactor this function]]
 	if type == "salary" then
 		local salary = val
 		local minLvl = tempData.minLvl or 1
 		local eduLvl = tempData.eduLvl or 0
 		local energy = math.ceil(val / getMaxSalary(tempData.jobCompany) * 100)
-        energy =  energy - minLvl - eduLvl * 2
+		energy =  energy - minLvl - eduLvl * 2
 		energy = energy < 5 and 5 or energy
 		return salary, energy, minLvl, eduLvl
 	elseif type == "energy" then
@@ -986,19 +986,19 @@ end
   Question: https://stackoverflow.com/questions/1426954/split-string-in-lua
 ]]
 function split(s, delimiter)
-    result = {};
-    for match in (s..delimiter):gmatch("(.-)"..delimiter) do
-        table.insert(result, match);
-    end
-    return result;
+	result = {};
+	for match in (s..delimiter):gmatch("(.-)"..delimiter) do
+		table.insert(result, match);
+	end
+	return result;
 end
 
 function table.tostring(tbl)
-    s = "["
-    for k, v in next, tbl do
-        s = s .. k .. ":" .. v .. ", "
-    end
-    return s .. "]"
+	s = "["
+	for k, v in next, tbl do
+		s = s .. k .. ":" .. v .. ", "
+	end
+	return s .. "]"
 end
 
 function float(n, digits)
@@ -1007,18 +1007,18 @@ function float(n, digits)
 end
 
 function formatNumber(n)
-    if n >= 10e14 then
-        return float(math.floor(n / 10e14),1) .. "P"
-    elseif n >= 10e11 then
-        return float(math.floor(n / 10e11),1) .. "T"
-    elseif n >= 10e8 then
-        return float(math.floor(n / 10e8),1) .. "B"
-    elseif n >= 10e5 then
-        return float(math.floor(n / 10e5),1) .. "M"
-    elseif n >= 10e3 then
-        return float(math.floor(n / 10e2),1) .. "K"
-    end
-    return float(n, 1)
+	if n >= 10e14 then
+		return float(math.floor(n / 10e14),1) .. "P"
+	elseif n >= 10e11 then
+		return float(math.floor(n / 10e11),1) .. "T"
+	elseif n >= 10e8 then
+		return float(math.floor(n / 10e8),1) .. "B"
+	elseif n >= 10e5 then
+		return float(math.floor(n / 10e5),1) .. "M"
+	elseif n >= 10e3 then
+		return float(math.floor(n / 10e2),1) .. "K"
+	end
+	return float(n, 1)
 end
 
 function upper(str)
@@ -1026,450 +1026,450 @@ function upper(str)
 end
 
 function getTopCompanies(upto)
-    local temp = {}
-    for name, data in next, companies do
-        table.insert(temp, {name, data.incomePerMonth / data.outstandingShares + 100})
-    end
+	local temp = {}
+	for name, data in next, companies do
+		table.insert(temp, {name, data.incomePerMonth / data.outstandingShares + 100})
+	end
 
-    table.sort(temp, function(e1, e2)
-        return e1[2] > e2[2]
-    end)
+	table.sort(temp, function(e1, e2)
+		return e1[2] > e2[2]
+	end)
 
-    if not upto then return temp end
-    local top = {}
-    for i=1, upto, 1 do
-        if temp[i] then
-            table.insert(top, {temp[i][1], temp[i][2]})
-        end
-    end
-    return top
+	if not upto then return temp end
+	local top = {}
+	for i=1, upto, 1 do
+		if temp[i] then
+			table.insert(top, {temp[i][1], temp[i][2]})
+		end
+	end
+	return top
 end
 
 function getTotalPages(type, target)
-    if type == 'tip' then
-        return #tips
-    elseif type == 'shop' then
-        return #healthPacks / 2 + (#healthPacks % 2)
-    elseif type == 'jobs' then
-        return totalJobs / 2 + (totalJobs % 2)
-    elseif type == 'help' then
-        return #gameplay
-    elseif type == 'comp' then
-        return math.ceil(players[target].totalCompanies / 8)
-    elseif type:find("^owners") then
-        return math.ceil(companies[type:sub(7)].totalHolders / 6)
-    elseif type:find("^workers") then
-        return math.ceil(companies[type:sub(8)].totalWorkers / 6)
-    end
-    return 0
+	if type == 'tip' then
+		return #tips
+	elseif type == 'shop' then
+		return #healthPacks / 2 + (#healthPacks % 2)
+	elseif type == 'jobs' then
+		return totalJobs / 2 + (totalJobs % 2)
+	elseif type == 'help' then
+		return #gameplay
+	elseif type == 'comp' then
+		return math.ceil(players[target].totalCompanies / 8)
+	elseif type:find("^owners") then
+		return math.ceil(companies[type:sub(7)].totalHolders / 6)
+	elseif type:find("^workers") then
+		return math.ceil(companies[type:sub(8)].totalWorkers / 6)
+	end
+	return 0
 end
 
 function updatePages(name, type, page)
-    if not (page < 1 or page > getTotalPages(type, name)) then
-        if type == 'tip' then
-            ui.updateTextArea(800, tips[page] or "", name)
-            ui.updateTextArea(801, "<a href='event:page:tip:" .. (page - 1) .. "'>«</a>", name)
-            ui.updateTextArea(802, "<p align='center'>Page " .. page .. "</p>", name)
-            ui.updateTextArea(803, "<a href='event:page:tip:" .. (page + 1) .. "'>»</a>", name)
-        elseif type == 'help' then
-            ui.updateTextArea(952, closeButton .. gameplay[page], name)
-            ui.updateTextArea(953, "<a href='event:page:help:" .. (page - 1) .. "'>«</a>",  name)
-            ui.updateTextArea(954, "<p align='center'>Page " .. page .. "</p>", name)
-            ui.updateTextArea(955, "<a href='event:page:help:" .. (page + 1) .. "'>»</a>", name)
-        elseif type == 'shop' then
-            displayShop(name, page)
-        elseif type == 'jobs' then
-            displayJobs(name, page)
-        elseif type == 'comp' then
-            displayCompanyDialog(name, page)
-        elseif type:find("owners.+") then
-            displayCompanyOwners(type:sub(7), name, page)
-        elseif type:find("workers.+") then
-            displayCompanyMembers(type:sub(8), name, page)
-        end
-    end
+	if not (page < 1 or page > getTotalPages(type, name)) then
+		if type == 'tip' then
+			ui.updateTextArea(800, tips[page] or "", name)
+			ui.updateTextArea(801, "<a href='event:page:tip:" .. (page - 1) .. "'>«</a>", name)
+			ui.updateTextArea(802, "<p align='center'>Page " .. page .. "</p>", name)
+			ui.updateTextArea(803, "<a href='event:page:tip:" .. (page + 1) .. "'>»</a>", name)
+		elseif type == 'help' then
+			ui.updateTextArea(952, closeButton .. gameplay[page], name)
+			ui.updateTextArea(953, "<a href='event:page:help:" .. (page - 1) .. "'>«</a>",  name)
+			ui.updateTextArea(954, "<p align='center'>Page " .. page .. "</p>", name)
+			ui.updateTextArea(955, "<a href='event:page:help:" .. (page + 1) .. "'>»</a>", name)
+		elseif type == 'shop' then
+			displayShop(name, page)
+		elseif type == 'jobs' then
+			displayJobs(name, page)
+		elseif type == 'comp' then
+			displayCompanyDialog(name, page)
+		elseif type:find("owners.+") then
+			displayCompanyOwners(type:sub(7), name, page)
+		elseif type:find("workers.+") then
+			displayCompanyMembers(type:sub(8), name, page)
+		end
+	end
 end
 
 function HealthPack(_name, _price, _regainVal, _adding, _desc)
-    return {
-        name = _name,
-        price = _price,
-        regainVal = _regainVal,
-        adding = _adding,
-        uid = "health:" .. _name,
-        desc = _desc
-    }
+	return {
+		name = _name,
+		price = _price,
+		regainVal = _regainVal,
+		adding = _adding,
+		uid = "health:" .. _name,
+		desc = _desc
+	}
 end
 
 function Course(_id, _name, _fee, _lessons, _level, _stream)
-    return {
-        id = _id,
-        name = _name,
-        fee = _fee,
-        lessons = _lessons,
-        level = _level,
-        stream = _stream,
-        feePerLesson = _fee / _lessons,
-        uid = "course:" .. _name
-    }
+	return {
+		id = _id,
+		name = _name,
+		fee = _fee,
+		lessons = _lessons,
+		level = _level,
+		stream = _stream,
+		feePerLesson = _fee / _lessons,
+		uid = "course:" .. _name
+	}
 end
 
 function Job(_name, _salary, _energy, _minLvl, _qualifications, _owner, _company)
-    totalJobs = totalJobs + 1
-    return {
-        name = _name,
-        salary = _salary,
-        energy = _energy,
-        minLvl = _minLvl,
-        qualifications = _qualifications,
-        owner = _owner,
-        company = _company,
-        uid = "job:" .. _name
-    }
+	totalJobs = totalJobs + 1
+	return {
+		name = _name,
+		salary = _salary,
+		energy = _energy,
+		minLvl = _minLvl,
+		qualifications = _qualifications,
+		owner = _owner,
+		company = _company,
+		uid = "job:" .. _name
+	}
 end
 
 function setUI(name)
-    local p = players[name]
-    ui.setMapName("Merchant")
-    --textAreas and images
-    --work
-    tfm.exec.addImage("16f88de3629.png", ":10", 2, 333)
-    ui.addTextArea(0, "<a href='event:work'>\t<br><p align='center'><b><font size='16' color='#000000'>Work!</font></b></p><br>\t<br>\t", name, 3, 338, 60, 60, nil, nil, 0, true)
-    --stats
-    ui.addTextArea(10, "<p align='right'>Money: " .. formatNumber(p:getMoney()) .. " </p> ", name, 200, 25, 120, 20, nil, nil, 1, true)
-    ui.addTextArea(11, " Level: " .. p:getLevel(), name, 480, 25, 120, 20, nil, nil, 1, true)
-    ui.addTextArea(1, "<br><p align='center'><b>" .. name .. "</b><br>« " .. p:getTitle() .. " »</p>", name, 325, 20, 150, 45, nil, nil, 1, true )
-    --health bar area
-    ui.addTextArea(2, "<p align='center'>100%</p>", name, CONSTANTS.BAR_X, 340, CONSTANTS.BAR_WIDTH, 20, nil, nil, 0.5, true)
-    --xp bar area
-    ui.addTextArea(3, "<p align='center'>Level " .. p:getLevel() .. "  -  " .. p:getXP() .. "/" .. calculateXP(p:getLevel() + 1) .. "XP</p>", name, CONSTANTS.BAR_X, 370, CONSTANTS.BAR_WIDTH, 20, nil, nil, 0.5, true)
-    --shop button
-    ui.addTextArea(4, "<a href='event:shop'><b><font color='#000000' size='15'>Shop</font></b></a>", name, 100, 230, 50, 40, nil, nil, 0, false)
-    --school button
-    ui.addTextArea(5, "<a href='event:courses'><font size='15'><b>Enter</b></font></a>", name, 600, 270, 60, 20, nil, nil, 0, false)
-    if not p.learning == "" then
-        ui.addTextArea(3000, "<p align='center'><b>Lessons left: " .. p:getLearningProgress() .." / " .. courses[p.learning].lessons .. "</b></p>", name, 480, 180, 300, 20, nil, nil, 0, false)
-    end
-    --jobs button
-    tfm.exec.addImage("16f88c66ed1.png", ":10", 620, 30) -- Job search image by Freepik in 'Flaticon.com'
-    ui.addTextArea(6, "<a href='event:jobs'>\t\n\t\n\t\n</a>", name, 620, 30, 30, 30, nil, nil, 0, true)
-    --Company button
-    tfm.exec.addImage("16f88b93d41.png", ":10", 660, 30) -- Company buildings images by Freepik in 'Flaticon.com'
-    ui.addTextArea(7, "<a href='event:company'>\t\n\t\n\t\n</a>", name, 660, 30, 30, 30, nil, nil, 0, true)
-    --Tips buton
-    tfm.exec.addImage("16f88aaf19f.png", ":10", 110, 25) --Idea bulb image by Vectors Market in 'flaticon.com'
-    ui.addTextArea(8, "<a href='event:tips'>\t\n\t\n\t\n</a>", name, 110, 25, 30, 30, nil, nil, 0, true)
-    --Inventory button
-    tfm.exec.addImage("16f83fc33be.png", ":10", 150, 25) -- Bag image (icon made by Payungkead in 'flaticon.com')
-    ui.addTextArea(9, "<a href='event:inv'>\t\n\t\n\t\n", name, 150, 25, 30, 30, nil, nil, 0, true)
-    --Clock interface
-    ui.addTextArea(12, "<p align='center'><b>YR " .. year .. "</b><br><b>" .. day .. "</b> of <b>" .. months[month] .. "</b></p>", name, 288, 180, 100, 100, nil, nil, 0, false)
-    --Lottery board
-    ui.addTextArea(13, "<p align='center'><a href='event:getLottery'>Buy Lottery!</a><br><br><a href='event:checkLotto'>Check</a></p>", name, 1530, 250, 50, 65, nil, nil, 1, false)
-    p:setXP(0, true)
-    tfm.exec.addImage("16f2831a4b1.png", "_10", 60, 210) -- Shop image
-    tfm.exec.addImage("16f285ae02c.png", "_18", 500, 100) -- School image (icon made by Dinosoft labs in 'flaticon.com')
-    tfm.exec.addImage("16f3176f389.png", "_50", 1450, 260)-- Slot machine image (Icons made byNikita Golubev in flaticon.com)
-    LineChart.init()
-    chart:showLabels()
-    chart:setShowDataPoints(true)
-    chart:show()
-    tfm.exec.chatMessage("<BV><b>Welcome to #merchant!</b></BV><br><N>For more information type <J><b>!help</b></J> or press <J><b>H</b></J></V><br><br><CE>Warning! The game is under development. Your data might get deleted! Please report any bug to <b><V>King_seniru#5890</V></b><br><br><PT><b><u><i>https://atelier801.com/topic?f=6&t=886315</i></u></b></PT>", name)
+	local p = players[name]
+	ui.setMapName("Merchant")
+	--textAreas and images
+	--work
+	tfm.exec.addImage("16f88de3629.png", ":10", 2, 333)
+	ui.addTextArea(0, "<a href='event:work'>\t<br><p align='center'><b><font size='16' color='#000000'>Work!</font></b></p><br>\t<br>\t", name, 3, 338, 60, 60, nil, nil, 0, true)
+	--stats
+	ui.addTextArea(10, "<p align='right'>Money: " .. formatNumber(p:getMoney()) .. " </p> ", name, 200, 25, 120, 20, nil, nil, 1, true)
+	ui.addTextArea(11, " Level: " .. p:getLevel(), name, 480, 25, 120, 20, nil, nil, 1, true)
+	ui.addTextArea(1, "<br><p align='center'><b>" .. name .. "</b><br>« " .. p:getTitle() .. " »</p>", name, 325, 20, 150, 45, nil, nil, 1, true )
+	--health bar area
+	ui.addTextArea(2, "<p align='center'>100%</p>", name, CONSTANTS.BAR_X, 340, CONSTANTS.BAR_WIDTH, 20, nil, nil, 0.5, true)
+	--xp bar area
+	ui.addTextArea(3, "<p align='center'>Level " .. p:getLevel() .. "  -  " .. p:getXP() .. "/" .. calculateXP(p:getLevel() + 1) .. "XP</p>", name, CONSTANTS.BAR_X, 370, CONSTANTS.BAR_WIDTH, 20, nil, nil, 0.5, true)
+	--shop button
+	ui.addTextArea(4, "<a href='event:shop'><b><font color='#000000' size='15'>Shop</font></b></a>", name, 100, 230, 50, 40, nil, nil, 0, false)
+	--school button
+	ui.addTextArea(5, "<a href='event:courses'><font size='15'><b>Enter</b></font></a>", name, 600, 270, 60, 20, nil, nil, 0, false)
+	if not p.learning == "" then
+		ui.addTextArea(3000, "<font color = '#ffffff'><p align='center'><b>Lessons Learned: " .. p:getLearningProgress() .." / " .. courses[p.learning].lessons .. "</b></p>", name, 480, 180, 300, 20, nil, nil, 0, false)
+	end
+	--jobs button
+	tfm.exec.addImage("16f88c66ed1.png", ":10", 620, 30) -- Job search image by Freepik in 'Flaticon.com'
+	ui.addTextArea(6, "<a href='event:jobs'>\t\n\t\n\t\n</a>", name, 620, 30, 30, 30, nil, nil, 0, true)
+	--Company button
+	tfm.exec.addImage("16f88b93d41.png", ":10", 660, 30) -- Company buildings images by Freepik in 'Flaticon.com'
+	ui.addTextArea(7, "<a href='event:company'>\t\n\t\n\t\n</a>", name, 660, 30, 30, 30, nil, nil, 0, true)
+	--Tips buton
+	tfm.exec.addImage("16f88aaf19f.png", ":10", 110, 25) --Idea bulb image by Vectors Market in 'flaticon.com'
+	ui.addTextArea(8, "<a href='event:tips'>\t\n\t\n\t\n</a>", name, 110, 25, 30, 30, nil, nil, 0, true)
+	--Inventory button
+	tfm.exec.addImage("16f83fc33be.png", ":10", 150, 25) -- Bag image (icon made by Payungkead in 'flaticon.com')
+	ui.addTextArea(9, "<a href='event:inv'>\t\n\t\n\t\n", name, 150, 25, 30, 30, nil, nil, 0, true)
+	--Clock interface
+	ui.addTextArea(12, "<font color = '#ffffff'><p align='center'><b>YR " .. year .. "</b><br><b>" .. months[month] .. " " .. day .. "</b></p>", name, 288, 180, 100, 100, nil, nil, 0, false)
+	--Lottery board
+	ui.addTextArea(13, "<p align='center'><a href='event:getLottery'>Buy Lottery!</a><br><br><a href='event:checkLotto'>Check</a></p>", name, 1530, 250, 50, 65, nil, nil, 1, false)
+	p:setXP(0, true)
+	tfm.exec.addImage("16f2831a4b1.png", "_10", 60, 210) -- Shop image
+	tfm.exec.addImage("16f285ae02c.png", "_18", 500, 100) -- School image (icon made by Dinosoft labs in 'flaticon.com')
+	tfm.exec.addImage("16f3176f389.png", "_50", 1450, 260)-- Slot machine image (Icons made byNikita Golubev in flaticon.com)
+	LineChart.init()
+	chart:showLabels()
+	chart:setShowDataPoints(true)
+	chart:show()
+	tfm.exec.chatMessage("<BV><b>Welcome to #merchant!</b></BV><br><N>For more information type <J><b>!help</b></J> or press <J><b>H</b></J></V><br><br><CE>Warning! The game is under development. Your data might get deleted! Please report any bug to <b><V>King_seniru#5890</V></b><br><br><PT><b><u><i>https://atelier801.com/topic?f=6&t=886315</i></u></b></PT>", name)
 end
 
 --event handling
 
 function eventNewPlayer(name)
-    tfm.exec.respawnPlayer(name)
-    if not players[name] then
-        system.loadPlayerData(name)
-    else
-        setUI(name)
-        players[name]:setJob("Cheese collector")
-    end
-    system.bindKeyboard(name, 72, true, true)
-    pCount = pCount + 1
+	tfm.exec.respawnPlayer(name)
+	if not players[name] then
+		system.loadPlayerData(name)
+	else
+		setUI(name)
+		players[name]:setJob("Cheese collector")
+	end
+	system.bindKeyboard(name, 72, true, true)
+	pCount = pCount + 1
 end
 
 function eventPlayerLeft(name)
-    if pCount < 5 then
-        tfm.exec.chatMessage("You need atleast 5 players to save stats")
-    else
-        system.savePlayerData(name, "v2" .. dHandler:dumpPlayer(name))
-    end
-    pCount = pCount - 1
+	if pCount < 5 then
+		tfm.exec.chatMessage("You need atleast 5 players to save stats")
+	else
+		system.savePlayerData(name, "v2" .. dHandler:dumpPlayer(name))
+	end
+	pCount = pCount - 1
 end
 
 function eventPlayerDataLoaded(name, data)
-    print("Loaded player data (" .. name .. ")")-- .. data)
-    if data:find("^v2") then
-        dHandler:newPlayer(name, data:sub(3))
-    else
-        system.savePlayerData(name, "")
-        dHandler:newPlayer(name, "")
-    end
+	print("Loaded player data (" .. name .. ")")-- .. data)
+	if data:find("^v2") then
+		dHandler:newPlayer(name, data:sub(3))
+	else
+		system.savePlayerData(name, "")
+		dHandler:newPlayer(name, "")
+	end
 
-    local inv = {}
-    for _, data in next, dHandler:get(name, "inventory") do
-        inv[items[data[1]]] = data[2]
-    end
+	local inv = {}
+	for _, data in next, dHandler:get(name, "inventory") do
+		inv[items[data[1]]] = data[2]
+	end
 
-    players[name] = Player(name, {
-        money = dHandler:get(name, "money"),
-        title = titles[dHandler:get(name, "title")],
-        titles = dHandler:get(name, "titles"),
-        xp = dHandler:get(name, "xp"),
-        level = dHandler:get(name, "level"),
-        learning = coursesHelper[dHandler:get(name, "learning")],
-        learnProgress = dHandler:get(name, "learnProgress"),
-        eduLvl = dHandler:get(name, "eduLvl"),
-        eduStream = dHandler:get(name, "eduStream"),
-        degrees = dHandler:get(name, "degrees"),
-        inventory = inv
-    })
-    tempData[name] = {}
-    setUI(name)
-    players[name]:setJob("Cheese collector")
+	players[name] = Player(name, {
+		money = dHandler:get(name, "money"),
+		title = titles[dHandler:get(name, "title")],
+		titles = dHandler:get(name, "titles"),
+		xp = dHandler:get(name, "xp"),
+		level = dHandler:get(name, "level"),
+		learning = coursesHelper[dHandler:get(name, "learning")],
+		learnProgress = dHandler:get(name, "learnProgress"),
+		eduLvl = dHandler:get(name, "eduLvl"),
+		eduStream = dHandler:get(name, "eduStream"),
+		degrees = dHandler:get(name, "degrees"),
+		inventory = inv
+	})
+	tempData[name] = {}
+	setUI(name)
+	players[name]:setJob("Cheese collector")
 end
 
 function eventPlayerDied(name)
-    tfm.exec.respawnPlayer(name)
+	tfm.exec.respawnPlayer(name)
 end
 
 function eventTextAreaCallback(id, name, evt)
-    LineChart.handleClick(id, name, evt)
-    if evt == "work" then
-        players[name]:work()
-    elseif evt == "tips" then
-        displayTips(name)
-    elseif evt == "cmds" then
-        ui.removeTextArea(953, name)
-        ui.removeTextArea(954, name)
-        ui.removeTextArea(955, name)
-        displayHelp(name, "cmds")
-    elseif evt == "game" then
-        displayHelp(name, "game")
-    elseif evt == "credits" then
-        ui.removeTextArea(953, name)
-        ui.removeTextArea(954, name)
-        ui.removeTextArea(955, name)
-        displayHelp(name, "credits")
-    elseif string.sub(evt, 1, 4) == "page" then
-        local args = split(evt, ":")
-        updatePages(name, args[2], tonumber(args[3]))
-    elseif evt == "shop" then
-        displayShop(name, 1)
-    elseif evt == "courses" then
-        if players[name]:getLearningCourse() == "" then
-            displayCourses(name)
-        else
-            players[name]:learn()
-        end
-    elseif evt == "jobs" then
-        displayJobs(name, 1)
-    elseif evt == "inv" then
-        displayInventory(name)
-    elseif evt == "close" then
-        ui.removeTextArea(id, name)
-        if id == 400 then
-            ui.removeTextArea(401, name)
-            ui.removeTextArea(402, name)
-            ui.removeTextArea(403, name)
-            ui.removeTextArea(404, name)
-        elseif id == 450 then
-            ui.removeTextArea(451, name)
-            ui.removeTextArea(452, name)
-            ui.removeTextArea(453, name)
-        elseif id == 460 then
-            ui.removeTextArea(461, name)
-            ui.removeTextArea(462, name)
-            ui.removeTextArea(463, name)
-        elseif id == 800 then
-            ui.removeTextArea(801, name)
-            ui.removeTextArea(802, name)
-            ui.removeTextArea(803, name)
-        elseif id == 100 then
-            ui.removeTextArea(101, name)
-            ui.removeTextArea(102, name)
-            ui.removeTextArea(103, name)
-        elseif id == 300 then
-            ui.removeTextArea(301, name)
-            ui.removeTextArea(302, name)
-            ui.removeTextArea(303, name)
-        elseif id == 900 then
-            ui.removeTextArea(900, name)
-            ui.removeTextArea(901, name)
-        elseif id == 952 then
-            for i=950, 956, 1 do
-                ui.removeTextArea(i, name)
-            end
-        end
-    elseif evt == "help:icons" then
-        ui.updateTextArea(952, iconProviders, name)
-    elseif evt == "company" then
-        displayCompanyDialog(name)
-    elseif evt == "createJob" then
-        if tempData[name].jobName == nil or tempData[name].jobSalary == nil or tempData[name].jobEnergy == nil or tempData[name].minLvl == nil then
-            displayJobWizard(name)
-        else
-            local tempCompany = tempData[name].jobCompany
-            jobs[tempData[name].jobName] = Job(tempData[name].jobName, tempData[name].jobSalary, tempData[name].jobEnergy / 100, tempData[name].minLvl, tempData[name].qualification, name, tempData[name].jobCompany)
-            tfm.exec.chatMessage("<J>Successfully created the job <b>" .. tempData[name].jobName .. "</b></J>", name)
-            tempData[name] = {jobCompany = tempCompany}
-            ui.removeTextArea(500, name)
-        end
-    elseif evt == "createCompany" then
-        ui.addPopup(400, 1, "<p align='center'>Do you want to own a new company</p>", name, 300, 90, 200, true)
-    elseif evt == "selectJobName" then
-        ui.addPopup(601, 2, "<p align='center'>Please choose a name", name, 300, 90, 200, true)
-    elseif evt == "selectJobSalary" then
-        ui.addPopup(602, 2, "<p align='center'>Please choose the salary (<i>Should be a number lesser than " .. getMaxSalary(tempData[name].jobCompany) .."</i>)", name, 300, 90, 200, true)
-    elseif evt == "selectJobEnergy" then
-        ui.addPopup(603, 2, "<p align='center'>Please select the energy (<i>Should be a number in range 0 - 100</i>)", name, 300, 90, 200, true)
-    elseif evt == "chooseJobMinLvl" then
-        ui.addPopup(604, 2, "<p align='center'>Please select the minimum level (<i>Should be a number</i>", name, 300, 90, 200, true)
-    elseif evt == "chooseJobDegree" then
-        displayAllDegrees(name)
-    elseif evt == "getLottery" then
-        ui.addPopup(1000, 2, "<p align='center'>Please enter your choices (3 numbers between 0 and 100 and a letter) separated by spaces. <br><i>eg:15 20 30 B</i><br><br><b><i>Price: $20</i></b></p>", name, 300, 90, 200, true)
-    elseif evt == "checkLotto" then
-        displayLotto(name)
-    elseif evt:gmatch("%w+:%w+") then
-        local type = split(evt, ":")[1]
-        local val = split(evt, ":")[2]
-        if type == "buy" and players[name]:getMoney() - find(split(evt, ":")[3], healthPacks).price >= 0 then
-            local pack = find(split(evt, ":")[3], healthPacks)
-            players[name]:setMoney(-pack.price, true)
-            players[name]:grabItem(pack.name)
-        elseif type == "course" then
-            players[name]:setCourse(courses[val])
-            ui.removeTextArea(id, name)
-        elseif type == "job" then
-            players[name]:setJob(val)
-            eventTextAreaCallback(id, name, "close")
-        elseif type == "com" then
-            displayCompany(val, name)
-        elseif type == "degree" then
+	LineChart.handleClick(id, name, evt)
+	if evt == "work" then
+		players[name]:work()
+	elseif evt == "tips" then
+		displayTips(name)
+	elseif evt == "cmds" then
+		ui.removeTextArea(953, name)
+		ui.removeTextArea(954, name)
+		ui.removeTextArea(955, name)
+		displayHelp(name, "cmds")
+	elseif evt == "game" then
+		displayHelp(name, "game")
+	elseif evt == "credits" then
+		ui.removeTextArea(953, name)
+		ui.removeTextArea(954, name)
+		ui.removeTextArea(955, name)
+		displayHelp(name, "credits")
+	elseif string.sub(evt, 1, 4) == "page" then
+		local args = split(evt, ":")
+		updatePages(name, args[2], tonumber(args[3]))
+	elseif evt == "shop" then
+		displayShop(name, 1)
+	elseif evt == "courses" then
+		if players[name]:getLearningCourse() == "" then
+			displayCourses(name)
+		else
+			players[name]:learn()
+		end
+	elseif evt == "jobs" then
+		displayJobs(name, 1)
+	elseif evt == "inv" then
+		displayInventory(name)
+	elseif evt == "close" then
+		ui.removeTextArea(id, name)
+		if id == 400 then
+			ui.removeTextArea(401, name)
+			ui.removeTextArea(402, name)
+			ui.removeTextArea(403, name)
+			ui.removeTextArea(404, name)
+		elseif id == 450 then
+			ui.removeTextArea(451, name)
+			ui.removeTextArea(452, name)
+			ui.removeTextArea(453, name)
+		elseif id == 460 then
+			ui.removeTextArea(461, name)
+			ui.removeTextArea(462, name)
+			ui.removeTextArea(463, name)
+		elseif id == 800 then
+			ui.removeTextArea(801, name)
+			ui.removeTextArea(802, name)
+			ui.removeTextArea(803, name)
+		elseif id == 100 then
+			ui.removeTextArea(101, name)
+			ui.removeTextArea(102, name)
+			ui.removeTextArea(103, name)
+		elseif id == 300 then
+			ui.removeTextArea(301, name)
+			ui.removeTextArea(302, name)
+			ui.removeTextArea(303, name)
+		elseif id == 900 then
+			ui.removeTextArea(900, name)
+			ui.removeTextArea(901, name)
+		elseif id == 952 then
+			for i=950, 956, 1 do
+				ui.removeTextArea(i, name)
+			end
+		end
+	elseif evt == "help:icons" then
+		ui.updateTextArea(952, iconProviders, name)
+	elseif evt == "company" then
+		displayCompanyDialog(name)
+	elseif evt == "createJob" then
+		if tempData[name].jobName == nil or tempData[name].jobSalary == nil or tempData[name].jobEnergy == nil or tempData[name].minLvl == nil then
+			displayJobWizard(name)
+		else
+			local tempCompany = tempData[name].jobCompany
+			jobs[tempData[name].jobName] = Job(tempData[name].jobName, tempData[name].jobSalary, tempData[name].jobEnergy / 100, tempData[name].minLvl, tempData[name].qualification, name, tempData[name].jobCompany)
+			tfm.exec.chatMessage("<J>Successfully created the job <b>" .. tempData[name].jobName .. "</b></J>", name)
+			tempData[name] = {jobCompany = tempCompany}
+			ui.removeTextArea(500, name)
+		end
+	elseif evt == "createCompany" then
+		ui.addPopup(400, 1, "<p align='center'>Do you want to own a new company</p>", name, 300, 90, 200, true)
+	elseif evt == "selectJobName" then
+		ui.addPopup(601, 2, "<p align='center'>Please choose a name", name, 300, 90, 200, true)
+	elseif evt == "selectJobSalary" then
+		ui.addPopup(602, 2, "<p align='center'>Please choose the salary (<i>Should be a number lesser than " .. getMaxSalary(tempData[name].jobCompany) .."</i>)", name, 300, 90, 200, true)
+	elseif evt == "selectJobEnergy" then
+		ui.addPopup(603, 2, "<p align='center'>Please select the energy (<i>Should be a number in range 0 - 100</i>)", name, 300, 90, 200, true)
+	elseif evt == "chooseJobMinLvl" then
+		ui.addPopup(604, 2, "<p align='center'>Please select the minimum level (<i>Should be a number</i>", name, 300, 90, 200, true)
+	elseif evt == "chooseJobDegree" then
+		displayAllDegrees(name)
+	elseif evt == "getLottery" then
+		ui.addPopup(1000, 2, "<p align='center'>Please enter your choices (3 numbers between 0 and 100 and a letter) separated by spaces. <br><i>eg:15 20 30 B</i><br><br><b><i>Price: $20</i></b></p>", name, 300, 90, 200, true)
+	elseif evt == "checkLotto" then
+		displayLotto(name)
+	elseif evt:gmatch("%w+:%w+") then
+		local type = split(evt, ":")[1]
+		local val = split(evt, ":")[2]
+		if type == "buy" and players[name]:getMoney() - find(split(evt, ":")[3], healthPacks).price >= 0 then
+			local pack = find(split(evt, ":")[3], healthPacks)
+			players[name]:setMoney(-pack.price, true)
+			players[name]:grabItem(pack.name)
+		elseif type == "course" then
+			players[name]:setCourse(courses[val])
+			ui.removeTextArea(id, name)
+		elseif type == "job" then
+			players[name]:setJob(val)
+			eventTextAreaCallback(id, name, "close")
+		elseif type == "com" then
+			displayCompany(val, name)
+		elseif type == "degree" then
 			tempData[name].qualification = val
 			tempData[name].eduLvl = courses[val].level
 			salary, energy = getBestParamsJobs("salary", tempData[name].jobSalary or 1, tempData[name])
-            tempData[name].jobEnergy = energy
+			tempData[name].jobEnergy = energy
 			tempData[name].jobSalary = salary
-            ui.removeTextArea(id, name)
-            displayJobWizard(name)
-        elseif type == "use" then
-            players[name]:useItem(val)
-            players[name]:useMed(find(val, healthPacks))
-            displayInventory(name)
-        elseif type == "invest" then
-            ui.addPopup(700, 2, "Please enter the amount to invest. (Should be a valid number)", name, 300, 90, 200, true)
-            tempData[name].investing = val
-        elseif type == "buyShares" then
-            local comp = companies[val]
-            ui.addPopup(800, 2, "This company issues " .. comp:getUnownedShares() .. " shares.<br>Enter the amount you want to purchase (1 share = $100)", name, 300, 90, 200, true)
-            tempData[name].investing = val
-        elseif type == "issueShares" then
-            ui.addPopup(900, 2, "Please specify the number of shares you want to issue (Should be a valid number)", name, 300, 90, 200, true)
-            tempData[name].issuesSharesIn = val
-        elseif type == "profile" then
-            displayProfile(val, name)
-        elseif type == "jobInfo" then
-            displayJobInfo(val, name)
-        end
-    end
+			ui.removeTextArea(id, name)
+			displayJobWizard(name)
+		elseif type == "use" then
+			players[name]:useItem(val)
+			players[name]:useMed(find(val, healthPacks))
+			displayInventory(name)
+		elseif type == "invest" then
+			ui.addPopup(700, 2, "Please enter the amount to invest. (Should be a valid number)", name, 300, 90, 200, true)
+			tempData[name].investing = val
+		elseif type == "buyShares" then
+			local comp = companies[val]
+			ui.addPopup(800, 2, "This company issues " .. comp:getUnownedShares() .. " shares.<br>Enter the amount you want to purchase (1 share = $100)", name, 300, 90, 200, true)
+			tempData[name].investing = val
+		elseif type == "issueShares" then
+			ui.addPopup(900, 2, "Please specify the number of shares you want to issue (Should be a valid number)", name, 300, 90, 200, true)
+			tempData[name].issuesSharesIn = val
+		elseif type == "profile" then
+			displayProfile(val, name)
+		elseif type == "jobInfo" then
+			displayJobInfo(val, name)
+		end
+	end
 end
 
 function eventPopupAnswer(id, name, answer)
-    if id == 400 and answer == 'yes' then --for the popup creating a compnay
-        if players[name]:getMoney() < 5000 then
-        ui.addPopup(450, 0, "<p align='center'><b><font color='#CB546B'>Not enough money!", name, 300, 90, 200, true)
-    else
-        ui.addPopup(450, 2, "<p align='center'>Please choose a name<br>Price: $5000<br>Click submit to buy!</p>", name, 300, 90, 200, true)
-    end
-    elseif id == 450 and answer ~= '' then --for the popup to submit a name for the company
-        if companies[answer] then
-            tfm.exec.chatMessage('<R>[Error] Company already exists!</R>', name)
-            return
-        elseif answer:len() > 15 or answer:find("[^%w%s]") then
-            tfm.exec.chatMessage('<R>[Error] Name should contain only letters, numbers and spaces, which is lesser than 15 characters</R>', name)
-            return
-        end
-        companies[answer] = Company(answer, name)
-        players[name]:setMoney(-5000, true)
-        players[name]:addOwnedCompanies(answer)
-        displayCompany(answer, name)
-        tfm.exec.chatMessage("<J>Succesfully created the new company <b>" .. answer .. "</b></J>", name)
-    elseif id == 601 and answer ~= '' then --for the popup to submit the name for a new job
-        if answer:len() > 15 or answer:find("[^%w%s]") then
-            tfm.exec.chatMessage('<R>[Error] Name should contain only letters, numbers and spaces, which is lesser than 15 characters</R>', name)
-        elseif jobs[answer] then
-            tfm.exec.chatMessage('<R>[Error] Job already exists!</R>', name)
-        else
-            tempData[name].jobName = answer
-            displayJobWizard(name)
-        end
-    elseif id == 602 and tonumber(answer) and tonumber(answer) < getMaxSalary(tempData[name].jobCompany) then --for the popup to choose the salary for a new job
+	if id == 400 and answer == 'yes' then --for the popup creating a compnay
+		if players[name]:getMoney() < 5000 then
+		ui.addPopup(450, 0, "<p align='center'><b><font color='#CB546B'>Not enough money!", name, 300, 90, 200, true)
+	else
+		ui.addPopup(450, 2, "<p align='center'>Please choose a name<br>Price: $5000<br>Click submit to buy!</p>", name, 300, 90, 200, true)
+	end
+	elseif id == 450 and answer ~= '' then --for the popup to submit a name for the company
+		if companies[answer] then
+			tfm.exec.chatMessage('<R>[Error] Company already exists!</R>', name)
+			return
+		elseif answer:len() > 15 or answer:find("[^%w%s]") then
+			tfm.exec.chatMessage('<R>[Error] Name should contain only letters, numbers and spaces, which is lesser than 15 characters</R>', name)
+			return
+		end
+		companies[answer] = Company(answer, name)
+		players[name]:setMoney(-5000, true)
+		players[name]:addOwnedCompanies(answer)
+		displayCompany(answer, name)
+		tfm.exec.chatMessage("<J>Succesfully created the new company <b>" .. answer .. "</b></J>", name)
+	elseif id == 601 and answer ~= '' then --for the popup to submit the name for a new job
+		if answer:len() > 15 or answer:find("[^%w%s]") then
+			tfm.exec.chatMessage('<R>[Error] Name should contain only letters, numbers and spaces, which is lesser than 15 characters</R>', name)
+		elseif jobs[answer] then
+			tfm.exec.chatMessage('<R>[Error] Job already exists!</R>', name)
+		else
+			tempData[name].jobName = answer
+			displayJobWizard(name)
+		end
+	elseif id == 602 and tonumber(answer) and tonumber(answer) < getMaxSalary(tempData[name].jobCompany) then --for the popup to choose the salary for a new job
 		tempData[name].jobSalary = tonumber(answer)
 		_, energy = getBestParamsJobs("salary", tempData[name].jobSalary, tempData[name])
 		tempData[name].jobEnergy = energy
-        displayJobWizard(name)
-    elseif id == 603 and tonumber(answer) and tonumber(answer) > 0 and tonumber(answer) <= 100 then --for the popup to choose the energy for the job
-        tempData[name].jobEnergy = tonumber(answer)
+		displayJobWizard(name)
+	elseif id == 603 and tonumber(answer) and tonumber(answer) > 0 and tonumber(answer) <= 100 then --for the popup to choose the energy for the job
+		tempData[name].jobEnergy = tonumber(answer)
 		salary, energy = getBestParamsJobs("energy", tempData[name].jobEnergy, tempData[name])
-        tempData[name].jobSalary = salary
-        tempData[name].minLvl = 1
-        tempData[name].eduLvl = 0
-        tempData[name].qualification = nil
-        displayJobWizard(name)
-    elseif id == 604 and tonumber(answer) then --for the popup to choose the minimum level for the job
+		tempData[name].jobSalary = salary
+		tempData[name].minLvl = 1
+		tempData[name].eduLvl = 0
+		tempData[name].qualification = nil
+		displayJobWizard(name)
+	elseif id == 604 and tonumber(answer) then --for the popup to choose the minimum level for the job
 		tempData[name].minLvl = tonumber(answer)
-        salary, energy, minLvl = getBestParamsJobs("salary", tempData[name].jobSalary or 5, tempData[name])
+		salary, energy, minLvl = getBestParamsJobs("salary", tempData[name].jobSalary or 5, tempData[name])
 		tempData[name].jobEnergy = energy
 		tempData[name].jobSalary = tempData[name].jobSalary or 1
-        displayJobWizard(name)
-    elseif id == 700 and tonumber(answer) then --for the investment popups
-        players[name]:investTo(tempData[name].investing, tonumber(answer))
-    elseif id == 800 and tonumber(answer) then
-        players[name]:investTo(tempData[name].investing, tonumber(answer) * 100, true)
-    elseif id == 900 and tonumber(answer) then
-        companies[tempData[name].issuesSharesIn]:issueShares(tonumber(answer), name)
-        displayCompany(tempData[name].issuesSharesIn, name)
-    elseif id == 1000 then
-        players[name]:buyLottery(answer)
-    end
+		displayJobWizard(name)
+	elseif id == 700 and tonumber(answer) then --for the investment popups
+		players[name]:investTo(tempData[name].investing, tonumber(answer))
+	elseif id == 800 and tonumber(answer) then
+		players[name]:investTo(tempData[name].investing, tonumber(answer) * 100, true)
+	elseif id == 900 and tonumber(answer) then
+		companies[tempData[name].issuesSharesIn]:issueShares(tonumber(answer), name)
+		displayCompany(tempData[name].issuesSharesIn, name)
+	elseif id == 1000 then
+		players[name]:buyLottery(answer)
+	end
 end
 
 function eventChatCommand(name, msg)
-    if string.sub(msg, 1, 7) == "company" then
-        displayCompany(string.sub(msg, 9), name)
-    elseif string.sub(msg, 1, 7) == "profile" then
-        displayProfile(string.sub(msg, 9), name)
-    elseif string.sub(msg, 1, 1) == "p"  then
-        displayProfile(string.sub(msg, 3), name)
-    elseif msg == "help" then
-        displayHelp(name, "game")
-    elseif string.sub(msg, 1, 5) == "title" then
-        if string.sub(msg, 7) == "" then
-            displayTitleList(name)
-        else
-            players[name]:setTitle(string.sub(msg, 7))
-        end
-    --[[elseif msg == "save" then
-        system.savePlayerData(name, "v2" .. dHandler:dumpPlayer(name))]]
-    end
+	if string.sub(msg, 1, 7) == "company" then
+		displayCompany(string.sub(msg, 9), name)
+	elseif string.sub(msg, 1, 7) == "profile" then
+		displayProfile(string.sub(msg, 9), name)
+	elseif string.sub(msg, 1, 1) == "p"  then
+		displayProfile(string.sub(msg, 3), name)
+	elseif msg == "help" then
+		displayHelp(name, "game")
+	elseif string.sub(msg, 1, 5) == "title" then
+		if string.sub(msg, 7) == "" then
+			displayTitleList(name)
+		else
+			players[name]:setTitle(string.sub(msg, 7))
+		end
+	--[[elseif msg == "save" then
+		system.savePlayerData(name, "v2" .. dHandler:dumpPlayer(name))]]
+	end
 end
 
 function eventKeyboard(name, key, down, x, y)
-    if key == 72 then
-        displayHelp(name, "game", 1)
-    end
+	if key == 72 then
+		displayHelp(name, "game", 1)
+	end
 end
 
 function eventLoop(t,r)
-    Timer.run(t)
-    for name, player in next, players do
-        player:setHealth(player:getHealthRate(), true)
-    end
+	Timer.run(t)
+	for name, player in next, players do
+		player:setHealth(player:getHealthRate(), true)
+	end
 end
 
 --event handling ends
@@ -1549,9 +1549,9 @@ jobs["Cheese wholesaler"] = Job("Cheese wholesaler", 800, 0.2, 15, "Cheese tradi
 jobs["Fullstack cheese developer"] = Job("Fullstack cheese developer", 10000, 0.4, 15, "Fullstack cheese developing", "shaman", "Atelier801")
 
 for name, player in next, tfm.get.room.playerList do
-    eventNewPlayer(name)
+	eventNewPlayer(name)
 end
 
 for id, cmd in next, {"company", "p", "profile", "help", "title"} do
-    system.disableChatCommandDisplay(cmd, true)
+	system.disableChatCommandDisplay(cmd, true)
 end
