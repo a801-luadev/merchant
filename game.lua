@@ -17,10 +17,15 @@ tfm.exec.newGame([[<C><P F="0" L="1600"/><Z><S><S X="79" o="aac4d2" L="162" Y="1
 tips = {}
 
 local OWNER = "King_seniru#5890"
-local VERSION = "v1.1.0"
+local VERSION = "v1.1.1"
 local VERSION_TEXT = "Leaderboard release!!!"
 local VERSION_DESCRIPTION = [[
-    <b><PT>What's new</PT></b>
+
+    <b><PT>What's new (v1.1.1)</PT></b>
+
+    • Minor grammar fixes and improve the contrast of some text areas (Thanks <b>Blank#3495</b>)
+
+    <b><PT>v1.1.0</PT></b>
 
     • As I've promised, I added a leaderboard system to the game. Access it by pressing <b>L</b>
     • Updated help menu
@@ -85,7 +90,8 @@ local credits = [[
     <u>Icons and Images</u>
             <BV>• <a href='event:help:icons'>See all »</a></BV>
     <u>Editing</u>
-            <BV>• Haxor_333#0000                                                • Rail#9727</BV></b>
+            <BV>• Haxor_333#0000                                                • Rail#9727
+            • Blank#3495</b></BV>
     And special thanks for <BV><b>Haxor_333#0000</b></BV>, <BV><b>Dorjanoruci#0000</b></BV> and <BV><b>We talk a lot</b></BV> tribe members for encouring me to do this <3
 ]]
 
@@ -271,7 +277,7 @@ local timer = Timer("time-sys", function()
             year = year + 1
         end
     end
-    ui.updateTextArea(12, "<p align='center'><b>YR " .. year .. "</b><br><b>" .. day .. "</b> of <b>" .. months[month] .. "</b></p>")
+	ui.updateTextArea(12, "<p align='center'><b>YR " .. year .. "</b><br><b>" .. day .. "</b> of <b>" .. months[month] .. "</b></p>")
 end, 1000, true)
 
 local saveDataTimer = Timer("dataTimer", function()
@@ -382,7 +388,7 @@ function Player:setXP(val, add)
     end
     dHandler:set(self.name, "xp", self.xp)
     ui.addTextArea(2000, "", self.name, CONSTANTS.BAR_X, 370, ((self.xp - calculateXP(self.level)) / (calculateXP(self.level + 1) - calculateXP(self.level)))  * CONSTANTS.BAR_WIDTH, 17, 0x00ff00, 0x00ee00, 1, true)
-    ui.updateTextArea(3, "<p align='center'>Level " .. self.level .. " - " ..self.xp .. "/" .. calculateXP(self.level + 1) .. "XP", self.name)
+	ui.updateTextArea(3, "<p align='center'><font color = '#000000'>Level " .. self.level .. " - " ..self.xp .. "/" .. calculateXP(self.level + 1) .. "XP", self.name)
 end
 
 function Player:setTitle(newTitle)
@@ -420,7 +426,7 @@ function Player:setCourse(course)
     dHandler:set(self.name, "eduLvl", self.eduLvl)
     dHandler:set(self.name, "eduStream", self.eduStream)
     ui.updateTextArea(5, "<a href='event:courses'><font size='15'><b>Learn</b></font></a>", self.name)
-    ui.addTextArea(3000, "<p align='center'><b>Lessons left: 0 / " .. courses[self.learning].lessons .. "</b></p>", self.name, 480, 180, 300, 20, nil, nil, 0, false)
+    ui.addTextArea(3000, "<p align='center'><font color='#ffffff'><b>Lessons Learned: 0 / " .. courses[self.learning].lessons .. "</b></font></p>", self.name, 480, 180, 300, 20, nil, nil, 0, false)
 end
 
 function Player:setJob(job)
@@ -475,7 +481,7 @@ function Player:learn()
     if not (self.learning == "") and self.money > courses[self.learning].feePerLesson then
         self:addTitle("Little Learner")
         self.learnProgress = self.learnProgress + 1
-        ui.updateTextArea(3000, "<b><p align='center'>Lessons left: " .. self.learnProgress .. " / " .. courses[self.learning].lessons .. "</b></p>", self.name)
+    	ui.updateTextArea(3000, "<font color = '#ffffff'><b><p align='center'>Lessons Learned: " .. self.learnProgress .. " / " .. courses[self.learning].lessons .. "</b></p>", self.name)
         self:setMoney(-courses[self.learning].feePerLesson, true)
         if self.learnProgress >= courses[self.learning].lessons then
             self:addDegree(courses[self.learning].id)
@@ -1306,7 +1312,7 @@ function setUI(name)
     --school button
     ui.addTextArea(5, "<a href='event:courses'><font size='15'><b>Enter</b></font></a>", name, 600, 270, 60, 20, nil, nil, 0, false)
     if not p.learning == "" then
-        ui.addTextArea(3000, "<p align='center'><b>Lessons left: " .. p:getLearningProgress() .." / " .. courses[p.learning].lessons .. "</b></p>", name, 480, 180, 300, 20, nil, nil, 0, false)
+		ui.addTextArea(3000, "<font color = '#ffffff'><p align='center'><b>Lessons Learned: " .. p:getLearningProgress() .." / " .. courses[p.learning].lessons .. "</b></p>", name, 480, 180, 300, 20, nil, nil, 0, false)
     end
     --jobs button
     tfm.exec.addImage("16f88c66ed1.png", ":10", 620, 30) -- Job search image by Freepik in 'Flaticon.com'
