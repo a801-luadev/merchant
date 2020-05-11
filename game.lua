@@ -277,7 +277,7 @@ local timer = Timer("time-sys", function()
             year = year + 1
         end
     end
-	ui.updateTextArea(12, "<p align='center'><b>YR " .. year .. "</b><br><b>" .. day .. "</b> of <b>" .. months[month] .. "</b></p>")
+	ui.addTextArea(12, "<p align='center'><font color='#ffffff'><b>" .. months[month] .. " " .. day .. "<br>YR " .. year .. "</p>", name, 288, 180, 100, 100, nil, nil, 0, false)
 end, 1000, true)
 
 local saveDataTimer = Timer("dataTimer", function()
@@ -1327,7 +1327,7 @@ function setUI(name)
     tfm.exec.addImage("16f83fc33be.png", ":10", 150, 25) -- Bag image (icon made by Payungkead in 'flaticon.com')
     ui.addTextArea(9, "<a href='event:inv'>\t\n\t\n\t\n", name, 150, 25, 30, 30, nil, nil, 0, true)
     --Clock interface
-    ui.addTextArea(12, "<p align='center'><b>YR " .. year .. "</b><br><b>" .. day .. "</b> of <b>" .. months[month] .. "</b></p>", name, 288, 180, 100, 100, nil, nil, 0, false)
+    ui.addTextArea(12, "<p align='center'><font color='#ffffff'><b>" .. months[month] .. " " .. day .. "<br>YR " .. year .. "</p>", name, 288, 180, 100, 100, nil, nil, 0, false)
     --Lottery board
     tfm.exec.addImage("171ab7d78ec.png", "_50", 1510, 222)
     ui.addTextArea(13, "<font color='#000000' size='10'><p align='center'><b><a href='event:getLottery'>Buy Lottery!</a><br><br><a href='event:checkLotto'>Check</a></b></p></font>", name, 1525, 240, 70, 70, nil, nil, 0, false)
