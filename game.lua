@@ -45,8 +45,40 @@ local CONSTANTS = {
 local year = 3000
 local month = 1
 local day = 1
+local specialUIS = 0
 
 local months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}
+local communityFlags = {
+	xx = "1651b327097.png",
+	ar = "1651b32290a.png",
+	bg = "1651b300203.png",
+	br = "1651b3019c0.png",
+	cn = "1651b3031bf.png",
+	cz = "1651b304972.png",
+	de = "1651b306152.png",
+	ee = "1651b307973.png",
+	en = "1723dc10ec2.png",
+	e2 = "1723dc10ec2.png",
+	es = "1651b309222.png",
+	fi = "1651b30aa94.png",
+	fr = "1651b30c284.png",
+	gb = "1651b30da90.png",
+	hr = "1651b30f25d.png",
+	hu = "1651b310a3b.png",
+	id = "1651b3121ec.png",
+	il = "1651b3139ed.png",
+	it = "1651b3151ac.png",
+	jp = "1651b31696a.png",
+	lt = "1651b31811c.png",
+	lv = "1651b319906.png",
+	nl = "1651b31b0dc.png",
+	ph = "1651b31c891.png",
+	pl = "1651b31e0cf.png",
+	ro = "1651b31f950.png",
+	ru = "1651b321113.png",
+	tr = "1651b3240e8.png",
+	vk = "1651b3258b3.png"
+}
 
 local players = {}
 local healthPacks = {}
@@ -68,8 +100,10 @@ local closeSequence = {
     [5000] = {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010},
     [50000] = {50001}
 }
+local specialCloseSequence = {}
 
 local closeButton = "<p align='right'><font color='#ff0000' size='13'><b><a href='event:close'>X</a></b></font></p>"
+local specialCloseButton = "<p align='right'><font color='#ff0000' size='13'><b><a href='event:specialclose'>X</a></b></font></p>"
 local nothing = "<br><br><br><br><p align='center'><b><R><font size='15'>Nothing to display!"
 local cmds = [[
   <p align='center'><font size='20'><b><J>Commands</J></b></font></p>
@@ -888,35 +922,47 @@ function displayProfile(name, target)
 end
 
 function displayHelp(target, mode, page)
-    ui.addTextArea(950, "<B><J><a href='event:cmds'>Commands</a>", target, 30, 120, 75, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
-    ui.addTextArea(951, "<a href='event:game'><B><J>Gameplay", target, 30, 85, 75, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
-    ui.addTextArea(956, "<B><J><a href='event:credits'>Credits</a>", target, 30, 155, 75, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
-    ui.addTextArea(952, closeButton .. (mode == "game" and gameplay[page or 1] or (mode == "credits" and credits or cmds)), target, 110, 80, 600, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    handleSpecialCloseButton(5000, target)
+    ui.addTextArea(5001, "<B><J><a href='event:cmds'>Commands</a>", target, 30, 120, 75, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    ui.addTextArea(5002, "<a href='event:game'><B><J>Gameplay", target, 30, 85, 75, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    ui.addTextArea(5003, "<B><J><a href='event:credits'>Credits</a>", target, 30, 155, 75, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    ui.addTextArea(5000, closeButton .. (mode == "game" and gameplay[page or 1] or (mode == "credits" and credits or cmds)), target, 110, 80, 650, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
 
     if mode == "game" then
-        ui.addTextArea(953, "«",  target, 600, 300, 15, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
-        ui.addTextArea(954, "Page 1", target, 630, 300, 50, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
-        ui.addTextArea(955, "<a href='event:page:help:2'>»</a></p>", target, 695, 300, 15, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+        ui.addTextArea(5004, "«",  target, 630, 300, 15, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+        ui.addTextArea(5005, "Page 1", target, 660, 300, 50, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+        ui.addTextArea(5006, "<a href='event:page:help:2'>»</a></p>", target, 725, 300, 15, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
     end
 end
 
 
 function displayLeaderboard(target, mode, page)
     page = page or 1
-    local temp = "<p align='center'><font size='10'>"
-    local ranks, names, money, level, community = temp, temp, temp, temp, temp
+    local temp = "<p align='center'><font size='12'><D>"
+    local ranks, names, money, level, community = 
+        temp .. "<b>#</b><br></D><font size='10'><b>",
+        temp .. "<b>Name</b><br></D><font size='10'><b>",
+        temp .. "<b>Money</b><br></D><font size='10'><b>",
+        temp .. "<b>Level</b><br></D><font size='10'><b>",
+        temp .. "<b>Commu</b><br></D><font size='10'><b>"
     if mode == "room" then    
+        handleSpecialCloseButton(5000, target)
         local top = getTopPlayers((page - 1) * 10 + 1, page * 10)
+        specialUIS = specialUIS + 1
+        specialCloseSequence[5000 .. target] = {}
+        local entry = 1
         for k, data in next, top do
             local p = players[data.name]
             ranks = ranks .. "# " .. data.rank .. "<br>"
             names = names .. "<a href='event:profile:" .. data.name .. "'>" .. data.name .. "</a><br>"
             money = money .. "$" .. formatNumber(p.money) .. "<br>"
             level = level .. "Level " .. p.level .. "<br>"
-            community = community .. tfm.get.room.playerList[data.name].community .. "<br>"
+            specialCloseSequence[5000 .. target][entry] = tfm.exec.addImage(communityFlags[tfm.get.room.playerList[data.name].community], "&1", 710, 150 + ((entry - 1) * 12), target)
+            entry = entry + 1
         end
     elseif mode == "global" then
-        if #leaderboard == 0 then
+        return tfm.exec.chatMessage("<R>Leaderboard is closed temporarily for some bug fixes...</R>", target)
+        --[[if #leaderboard == 0 then
             return tfm.exec.chatMessage("<R>Leaderboard not loaded yet, please wait few minutes!</R>", target)
         end
         for i = (page - 1) * 10 + 1, page * 10 do
@@ -925,20 +971,20 @@ function displayLeaderboard(target, mode, page)
             money = money .. "$" .. formatNumber(leaderboard[i].money) .. "<br>"
             level = level .. "Level " .. leaderboard[i].lvl .. "<br>"
             community = community .. leaderboard[i].commu .. "<br>"
-        end
+        end]]
     end
     ui.addTextArea(5001, "<B><J><a href='event:room-lboard'>Room</a>", target, 30, 120, 75, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
     ui.addTextArea(5002, "<B><J><a href='event:g-lboard'>Global</a>", target, 30, 85, 75, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
 
-    ui.addTextArea(5000, closeButton .. "<p align='center'><b><font size='20'><J>Leaderboard</J></font><br>#\t\t\tName\t\t\tMoney\t\tLevel\t\tCommunity\t</b></p><br>", target, 110, 80, 600, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
-    ui.addTextArea(5003, ranks, target, 125, 145, 30, 125, CONSTANTS.BORDER_COLOR, CONSTANTS.BORDER_COLOR, 1, true) --155
-    ui.addTextArea(5004, names, target, 170, 145, 220, 125, CONSTANTS.BORDER_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
-    ui.addTextArea(5005, money, target, 405, 145, 80, 125, CONSTANTS.BORDER_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
-    ui.addTextArea(5006, level, target, 500, 145, 80, 125, CONSTANTS.BORDER_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
-    ui.addTextArea(5007, community, target, 595, 145, 80, 125, CONSTANTS.BORDER_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
-    ui.addTextArea(5008, "<a href='event:page:" .. mode .. "lboard:" .. (page - 1) .. "'>«</a>" ,  target, 600, 300, 15, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
-    ui.addTextArea(5009, "<p align='center'>Page " .. page, target, 630, 300, 50, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
-    ui.addTextArea(5010, "<a href='event:page:" .. mode .. "lboard:" .. (page + 1) .. "'>»</a></p>", target, 695, 300, 15, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    ui.addTextArea(5000, specialCloseButton .. "<p align='center'><b><font size='20'><J>Leaderboard</J></font><br>", target, 110, 80, 650, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    ui.addTextArea(5003, ranks, target, 125, 130, 40, 140, CONSTANTS.BORDER_COLOR, CONSTANTS.BORDER_COLOR, 1, true) --155
+    ui.addTextArea(5004, names, target, 180, 130, 200, 140, CONSTANTS.BORDER_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    ui.addTextArea(5005, money, target, 395, 130, 180, 140, CONSTANTS.BORDER_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    ui.addTextArea(5006, level, target, 590, 130, 80, 140, CONSTANTS.BORDER_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    ui.addTextArea(5007, community, target, 685, 130, 60, 140, CONSTANTS.BORDER_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    ui.addTextArea(5008, "<a href='event:page:" .. mode .. "lboard:" .. (page - 1) .. "'>«</a>" ,  target, 630, 300, 15, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    ui.addTextArea(5009, "<p align='center'>Page " .. page, target, 660, 300, 50, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    ui.addTextArea(5010, "<a href='event:page:" .. mode .. "lboard:" .. (page + 1) .. "'>»</a></p>", target, 725, 300, 15, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
 end
 
 function displayVersionDialogue(target)
@@ -1221,6 +1267,13 @@ function handleCloseButton(id, name)
     end
 end
 
+function handleSpecialCloseButton(id, name)
+    handleCloseButton(id, name)
+    for _, imgId in next, (specialCloseSequence[id .. tostring(name)] or {}) do
+        tfm.exec.removeImage(imgId)
+    end
+end
+
 function parseLeaderboardData(chunk)
     local entries = split(chunk, "|")
     local least = tonumber(entries[1])
@@ -1244,7 +1297,7 @@ end
 
 function saveData(force)
     print("[Stats] Attempting to save data (Players: " .. tfm.get.room.uniquePlayers .. " / 5)")
-    system.loadFile(0) -- requesting leaderboard data
+    --system.loadFile(0) -- requesting leaderboard data
     if force or tfm.get.room.uniquePlayers >= 5 then
         -- saving player data
         for name, _ in next, tfm.get.room.playerList do
@@ -1478,6 +1531,9 @@ function eventTextAreaCallback(id, name, evt)
     elseif evt == "close" then
         ui.removeTextArea(id, name)
         handleCloseButton(id, name)
+    elseif evt == "specialclose" then
+        ui.removeTextArea(id, name)
+        handleSpecialCloseButton(id, name)
     elseif evt == "help:icons" then
         ui.updateTextArea(952, iconProviders, name)
     elseif evt == "company" then
@@ -1713,7 +1769,7 @@ do
         system.disableChatCommandDisplay(cmd, true)
     end
 
-    system.loadFile(0)
+    --system.loadFile(0)
 
 end
 
