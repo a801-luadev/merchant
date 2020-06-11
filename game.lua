@@ -5,6 +5,7 @@ local a,b,c,d,e,f;local g='0123456789abcdef'function num2hex(h)local i=''while h
 local a={}a.__index=a;a._timers={}setmetatable(a,{__call=function(b,...)return b.new(...)end})function a.process()local c=os.time()local d={}for e,f in next,a._timers do if f.isAlive and f.mature<=c then f:call()if f.loop then f:reset()else f:kill()d[#d+1]=e end end end;for e,f in next,d do a._timers[f]=nil end end;function a.new(g,h,i,j,...)local self=setmetatable({},a)self.id=g;self.callback=h;self.timeout=i;self.isAlive=true;self.mature=os.time()+i;self.loop=j;self.args={...}a._timers[g]=self;return self end;function a:setCallback(k)self.callback=k end;function a:addTime(c)self.mature=self.mature+c end;function a:setLoop(j)self.loop=j end;function a:setArgs(...)self.args={...}end;function a:call()self.callback(table.unpack(self.args))end;function a:kill()self.isAlive=false end;function a:reset()self.mature=os.time()+self.timeout end;Timer=a
 --DataHandler V2
 local a={}a.VERSION='1.5'a.__index=a;function a.new(b,c,d)local self=setmetatable({},a)assert(b,'Invalid module ID (nil)')assert(b~='','Invalid module ID (empty text)')assert(c,'Invalid skeleton (nil)')for e,f in next,c do f.type=f.type or type(f.default)end;self.players={}self.moduleID=b;self.moduleSkeleton=c;self.moduleIndexes={}self.otherOptions=d;self.otherData={}self.originalStuff={}for e,f in pairs(c)do self.moduleIndexes[f.index]=e end;if self.otherOptions then self.otherModuleIndexes={}for e,f in pairs(self.otherOptions)do self.otherModuleIndexes[e]={}for g,h in pairs(f)do h.type=h.type or type(h.default)self.otherModuleIndexes[e][h.index]=g end end end;return self end;function a.newPlayer(self,i,j)assert(i,'Invalid player name (nil)')assert(i~='','Invalid player name (empty text)')self.players[i]={}self.otherData[i]={}j=j or''local function k(l)local m={}for n in string.gsub(l,'%b{}',function(o)return o:gsub(',','\0')end):gmatch('[^,]+')do n=n:gsub('%z',',')if string.match(n,'^{.-}$')then table.insert(m,k(string.match(n,'^{(.-)}$')))else table.insert(m,tonumber(n)or n)end end;return m end;local function p(c,q)for e,f in pairs(c)do if f.index==q then return e end end;return 0 end;local function r(c)local s=0;for e,f in pairs(c)do if f.index>s then s=f.index end end;return s end;local function t(b,c,u,v)local w=1;local x=r(c)b="__"..b;if v then self.players[i][b]={}end;local function y(n,z,A,B)local C;if z=="number"then C=tonumber(n)or B elseif z=="string"then C=string.match(n and n:gsub('\\"','"')or'',"^\"(.-)\"$")or B elseif z=="table"then C=string.match(n or'',"^{(.-)}$")C=C and k(C)or B elseif z=="boolean"then if n then C=n=='1'else C=B end end;if v then self.players[i][b][A]=C else self.players[i][A]=C end end;if#u>0 then for n in string.gsub(u,'%b{}',function(o)return o:gsub(',','\0')end):gmatch('[^,]+')do n=n:gsub('%z',','):gsub('\9',',')local A=p(c,w)local z=c[A].type;local B=c[A].default;y(n,z,A,B)w=w+1 end end;if w<=x then for D=w,x do local A=p(c,D)local z=c[A].type;local B=c[A].default;y(nil,z,A,B)end end end;local E,F=self:getModuleData(j)self.originalStuff[i]=F;if not E[self.moduleID]then E[self.moduleID]='{}'end;t(self.moduleID,self.moduleSkeleton,E[self.moduleID]:sub(2,-2),false)if self.otherOptions then for b,c in pairs(self.otherOptions)do if not E[b]then local G={}for e,f in pairs(c)do local z=f.type or type(f.default)if z=='string'then G[f.index]='"'..tostring(f.default:gsub('"','\\"'))..'"'elseif z=='table'then G[f.index]='{}'elseif z=='number'then G[f.index]=f.default elseif z=='boolean'then G[f.index]=f.default and'1'or'0'end end;E[b]='{'..table.concat(G,',')..'}'end end end;for b,u in pairs(E)do if b~=self.moduleID then if self.otherOptions and self.otherOptions[b]then t(b,self.otherOptions[b],u:sub(2,-2),true)else self.otherData[i][b]=u end end end end;function a.dumpPlayer(self,i)local m={}local function H(I)local m={}for e,f in pairs(I)do local J=type(f)if J=='table'then m[#m+1]='{'m[#m+1]=H(f)if m[#m]:sub(-1)==','then m[#m]=m[#m]:sub(1,-2)end;m[#m+1]='}'m[#m+1]=','else if J=='string'then m[#m+1]='"'m[#m+1]=f:gsub('"','\\"')m[#m+1]='"'elseif J=='boolean'then m[#m+1]=f and'1'or'0'else m[#m+1]=f end;m[#m+1]=','end end;if m[#m]==','then m[#m]=''end;return table.concat(m)end;local function K(i,b)local m={b,'=','{'}local L=self.players[i]local M=self.moduleIndexes;local N=self.moduleSkeleton;if self.moduleID~=b then M=self.otherModuleIndexes[b]N=self.otherOptions[b]b='__'..b;L=self.players[i][b]end;if not L then return''end;for D=1,#M do local A=M[D]local z=N[A].type;if z=='string'then m[#m+1]='"'m[#m+1]=L[A]:gsub('"','\\"')m[#m+1]='"'elseif z=='number'then m[#m+1]=L[A]elseif z=='boolean'then m[#m+1]=L[A]and'1'or'0'elseif z=='table'then m[#m+1]='{'m[#m+1]=H(L[A])m[#m+1]='}'end;m[#m+1]=','end;if m[#m]==','then m[#m]='}'else m[#m+1]='}'end;return table.concat(m)end;m[#m+1]=K(i,self.moduleID)if self.otherOptions then for e,f in pairs(self.otherOptions)do local u=K(i,e)if u~=''then m[#m+1]=','m[#m+1]=u end end end;for e,f in pairs(self.otherData[i])do m[#m+1]=','m[#m+1]=e;m[#m+1]='='m[#m+1]=f end;return table.concat(m)..self.originalStuff[i]end;function a.get(self,i,A,O)if not O then return self.players[i][A]else assert(self.players[i]['__'..O],'Module data not available ('..O..')')return self.players[i]['__'..O][A]end end;function a.set(self,i,A,C,O)if O then self.players[i]['__'..O][A]=C else self.players[i][A]=C end;return self end;function a.save(self,i)system.savePlayerData(i,self:dumpPlayer(i))end;function a.removeModuleData(self,i,O)assert(O,"Invalid module name (nil)")assert(O~='',"Invalid module name (empty text)")assert(O~=self.moduleID,"Invalid module name (current module data structure)")if self.otherData[i][O]then self.otherData[i][O]=nil;return true else if self.otherOptions and self.otherOptions[O]then self.players[i]['__'..O]=nil;return true end end;return false end;function a.getModuleData(self,l)local m={}for b,u in string.gmatch(l,'([0-9A-Za-z_]+)=(%b{})')do local P=self:getTextBetweenQuotes(u:sub(2,-2))for D=1,#P do P[D]=P[D]:gsub("[%(%)%.%%%+%-%*%?%[%]%^%$]","%%%0")u=u:gsub(P[D],P[D]:gsub(',','\9'))end;m[b]=u end;for e,f in pairs(m)do l=l:gsub(e..'='..f:gsub('\9',','):gsub("[%(%)%.%%%+%-%*%?%[%]%^%$]","%%%0")..',?','')end;return m,l end;function a.convertFromOld(self,Q,R)assert(Q,'Old data is nil')assert(R,'Old skeleton is nil')local function S(l,T)local m={}for U in string.gmatch(l,'[^'..T..']+')do m[#m+1]=U end;return m end;local E=S(Q,'?')local m={}for D=1,#E do local O=E[D]:match('([0-9a-zA-Z]+)=')local u=S(E[D]:gsub(O..'=',''):gsub(',,',',\8,'),',')local G={}for V=1,#u do if R[O][V]then if R[O][V]=='table'then G[#G+1]='{'if u[V]~='\8'then local I=S(u[V],'#')for W=1,#I do G[#G+1]=I[W]G[#G+1]=','end;if G[#G]==','then table.remove(G)end end;G[#G+1]='},'elseif R[O][V]=='string'then G[#G+1]='"'if u[V]~='\8'then G[#G+1]=u[V]end;G[#G+1]='"'G[#G+1]=','else if u[V]~='\8'then G[#G+1]=u[V]else G[#G+1]=0 end;G[#G+1]=','end end end;if G[#G]==','then table.remove(G)end;m[#m+1]=O;m[#m+1]='='m[#m+1]='{'m[#m+1]=table.concat(G)m[#m+1]='}'m[#m+1]=','end;if m[#m]==','then table.remove(m)end;return table.concat(m)end;function a.convertFromDataManager(self,Q,R)assert(Q,'Old data is nil')assert(R,'Old skeleton is nil')local function S(l,T)local m={}for U in string.gmatch(l,'[^'..T..']+')do m[#m+1]=U end;return m end;local E=S(Q,'§')local m={}for D=1,#E do local O=E[D]:match('%[(.-)%]')local u=S(E[D]:gsub('%['..O..'%]%((.-)%)','%1'),'#')local G={}for V=1,#u do if R[V]=='table'then local I=S(u[V],'&')G[#G+1]='{'for W=1,#I do if tonumber(I[W])then G[#G+1]=I[W]G[#G+1]=','else G[#G+1]='"'G[#G+1]=I[W]G[#G+1]='"'G[#G+1]=','end end;if G[#G]==','then table.remove(G)end;G[#G+1]='}'G[#G+1]=','else if R[V]=='string'then G[#G+1]='"'G[#G+1]=u[V]G[#G+1]='"'else G[#G+1]=u[V]end;G[#G+1]=','end end;if G[#G]==','then table.remove(G)end;m[#m+1]=O;m[#m+1]='='m[#m+1]='{'m[#m+1]=table.concat(G)m[#m+1]='}'end;return table.concat(m)end;function a.getTextBetweenQuotes(self,l)local m={}local X=1;local Y=0;local Z=false;for D=1,#l do local _=l:sub(D,D)if _=='"'then if l:sub(D-1,D-1)~='\\'then if Y==0 then X=D;Y=Y+1 else Y=Y-1;if Y==0 then m[#m+1]=l:sub(X,D)end end end end end;return m end;DataHandler=a
+local format = function(s, tab) return (s:gsub('($%b{})', function(w) return tab[w:sub(3, -2)] or w end)) end
 
 tfm.exec.disableAutoNewGame(true)
 tfm.exec.disableAutoShaman(true)
@@ -80,43 +81,10 @@ local communityFlags = {
 	vk = "1651b3258b3.png"
 }
 
-local players = {}
-local healthPacks = {}
-local courses = {}
-local jobs = {}
-local totalJobs = 0
-local companies = {}
-local leaderboard = {}
-local tempData = {} --this table stores temporary data of players when they are creating a new job. Generally contains data in this order: tempPlayer = {jobName = 'MouseClick', jobSalary = 1000, jobEnergy = 0, minLvl = 100, qualification = "a pro"}
-local closeSequence = {
-    [100] = {101, 102, 103},
-    [300] = {301, 302, 303},
-    [400] = {401, 402, 403, 404},
-    [450] = {451, 452, 453},
-    [460] = {461, 462, 463},
-    [800] = {801, 802, 803},
-    [900] = {901},
-    [952] = {950, 951, 953, 954, 955, 956},
-    [5000] = {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010},
-    [50000] = {50001}
-}
-local specialCloseSequence = {}
-
-local closeButton = "<p align='right'><font color='#ff0000' size='13'><b><a href='event:close'>X</a></b></font></p>"
-local specialCloseButton = "<p align='right'><font color='#ff0000' size='13'><b><a href='event:specialclose'>X</a></b></font></p>"
-local nothing = "<br><br><br><br><p align='center'><b><R><font size='15'>Nothing to display!"
-local cmds = [[
-  <p align='center'><font size='20'><b><J>Commands</J></b></font></p>
-  <b>!help:</b>  Displays this dialogue
-  <b>!company <i>[company name]:</i></b> Displays the specified compnay
-  <b>!p <i>[player name]</i> or !profile <i>[player name]</i></b> Displays information about the specified player
-
-  <p align='center'><font size='20'><b><J>Keys</J></b></font></p>
-  <b>H</b> Displays this dialogue
-  <b>L</b> Displays the leaderboard
-]]
-
-local credits = [[
+local translations = {
+    en = {
+        welcome = "<BV><b>Welcome to #merchant!</b></BV><br><N>For more information type <J><b>!help</b></J> or press <J><b>H</b></J></V><br><br><D>Warning! The game is under development. Your data might get deleted! Please report any bug to <b><V>King_seniru#5890</V></b></D><br><br>Check out the official thread at <PT><b><i>https://atelier801.com/topic?f=6&t=886315</i></b></PT>",
+        credits = [[
     <p align='center'><font size='20'><b><J>Credits</J></b></font></p>
     <b>All the credits go to these people for helping me with different things</b>
     <b><u>Coders</u>
@@ -127,24 +95,36 @@ local credits = [[
             <BV>• Haxor_333#0000                                                • Rail#9727
             • Blank#3495</b></BV>
     And special thanks for <BV><b>Haxor_333#0000</b></BV>, <BV><b>Dorjanoruci#0000</b></BV> and <BV><b>We talk a lot</b></BV> tribe members for encouring me to do this <3
-]]
+        ]],
+        commands = [[
+    <p align='center'><font size='20'><b><J>Commands</J></b></font></p>
+    <b>!help:</b>  Displays this dialogue
+    <b>!company <i>[company name]:</i></b> Displays the specified compnay
+    <b>!p <i>[player name]</i> or !profile <i>[player name]</i></b> Displays information about the specified player
 
-local iconProviders = closeButton .. [[
-    <a href='event:credits'>« Go back</a>
-    <p align='center'><font size='20'><b><J>Icons and Images</J></b></font></p>         <b><BV>Freepik</BV> from <BV>flaticons.com</BV></b>
-            • Work button       • Job search icon
-            • Companies icon
-        <b><BV>Vector Market</BV> from <BV>flaticons.com</BV></b>
-            • Idea bulb icon
-        <b><BV>Payungkead</BV> from <BV>flaticons.com</BV></b>
-            • Bag icon
-        <b><BV>Dinosoft labs</BV> from <BV>flaticons.com</BV></b>
-            • School image
-        <b><BV>Nikita Golubev</BV> from <BV>flaticons.com</BV></b>
-            • Lottery kiosk image
-]]
-
-local gameplay = {[[
+    <p align='center'><font size='20'><b><J>Keys</J></b></font></p>
+    <b>H</b> Displays this dialogue
+    <b>L</b> Displays the leaderboard
+        ]],
+        job_qualified = "<b><font size='13'>${name} <a href='event:jobInfo:${name}'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><VP><a href='event:${id}'> | Choose | </a></VP></b></p>Salary: ${salary} Energy: ${energy}%<br>Offered by <b> ${owner}</b> of <b> ${company}</b><br><br>",
+        job_disqualified = "<N><b><font size='13'>${name} <a href='event:jobInfo:${name}'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><N2>| Choose |</N2></b></p>Salary: ${salary} Energy: ${energy}%<br>Offered by <b>${owner}</b> of <b>${company}</b></N><br><br>",
+        job_info = "<p align='center'><font size='15'><b><BV>${name}</BV></b></font></p><br><br><b>Salary</b>: ${salary}<br><b>Energy</b>: ${energy}%<br><br><b><u>Requirements</u></b><br><br><b>Minimum level</b>: ${minLevel}<br><b>Qualifications</b>: ${qualifications}<br><br>Offered by <b>${owner}</b> of <b>${company}</b>",
+        nothing = "<br><br><br><br><p align='center'><b><R><font size='15'>Nothing to display!",
+        profile = "<p align='center'><font size='15'><b><BV>${name}</BV></b></font><br>« ${title} »</p><br><b>Level:</b> ${level}<BL><font size='12'> [${xp}XP / ${xpTotal}XP]</font></BL><br><b>Money:</b> $${money}<br><br><b>Working as a</b> ${job}<br><b>Learning</b>: ${learning}",
+        lotto = "<font color='#000000' size='10'><p align='center'><b><a href='event:getLottery'>Buy Lottery!</a><br><br><a href='event:checkLotto'>Check</a></b></p></font>",
+        lottoinfo = "<p align='center'><font size='20'><b><J>Lotto Info</J></b></font><br><br><b>This month's winning lotto: </b>",
+        nodrawings = "No drawings yet!",
+        lottonowin = "You have no wins in the past month!",
+        lottowin = "You have won $${win} in the past month",
+        lottobuy = "<p align='center'>Please enter your choices (3 numbers between 0 and 100 and a letter) separated by spaces. <br><i>eg:15 20 30 B</i><br><br><b><i>Price: $20</i></b></p>",
+        tips = {
+            "You Need $5000 To Start A New Company!", "You Gain Money From Your Workers!", "Look At The Stats of The Company Before You Apply for it!", "The Better The Job The Better The Income!", "Buy Items From The Shop To Gain Health!", "Some Jobs Needs A Specific Degree",
+            "To Level Up You Need To Work!", "You Will Spend Less Energy When Working if You have Educational Qualifications", "The Stats Of A Company Can Be Seen By Anyone", "While Working Your Health Bar Goes Down", "Patience is The Key To This Game.", "The Stock Market Dashboard Displays how Companies Perform in Each Month",
+            "You Can Buy Multiple Companies!", "You Can Have Only one Job at a Time", "Your Health will be Refreshed when You Level Up", "Recruit More Players to Have More Salary!", "Try your Best to Own a Company", "Make Sure You Consider About Energy and Salary When Choosing a Job", "The Red Bar Displays Your Health or Energy, While the Green Bar Displays your XP Percentage",
+            "Chat With Your Friends When You Are Out of Health", "Use Your Brain and Take Correct Decisions!", "If Your Job Seems to Take More Energy, Try to Choose Another!", "Consider About Your Health When Working", "When Taking A Course, You will Need to Pay Per Lesson Only. So Try to Enroll For the One With Higher Lessons",
+            "You Can Apply to Jobs According to Your Level and Degrees", "The Better Stats You Have The Better The Job You Can Have!", "Report Bugs To Developers", "The Game is More Fun with More Players", "Click Tips When You Need Help", "The Health Refreshes Every Moment <3", "There is a Chance for Luck Too! Buy a Lotto and Check Your Luck!", "Invest Other Companies to Have an Ownership Share"
+        },
+        help = {[[
     <p align='center'><font size='20'><b><J>Gameplay Overview</J></b></font></p>
     <font size='12'>This is a game which is largely based on businesses we see everywhere. You start as a little mouse with a basic job, but with a great story to write! Your goal is to earn money, buy companies, hire workers and be the best businessman in transformice!
     Click each title to know more about each thing in depth:
@@ -213,7 +193,50 @@ local gameplay = {[[
     Salary and the energy consumed is the factor that many workers are looking for. So be careful when choosing this!
     <b><J>GOOD LUCK!</J></b>
     </font>
-    ]]
+        ]]},        
+    }
+}
+
+local players = {}
+local healthPacks = {}
+local courses = {}
+local jobs = {}
+local totalJobs = 0
+local companies = {}
+local leaderboard = {}
+local tempData = {} --this table stores temporary data of players when they are creating a new job. Generally contains data in this order: tempPlayer = {jobName = 'MouseClick', jobSalary = 1000, jobEnergy = 0, minLvl = 100, qualification = "a pro"}
+local closeSequence = {
+    [100] = {101, 102, 103},
+    [300] = {301, 302, 303},
+    [400] = {401, 402, 403, 404},
+    [450] = {451, 452, 453},
+    [460] = {461, 462, 463},
+    [800] = {801, 802, 803},
+    [900] = {901},
+    [952] = {950, 951, 953, 954, 955, 956},
+    [5000] = {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010},
+    [50000] = {50001}
+}
+local specialCloseSequence = {}
+
+local closeButton = "<p align='right'><font color='#ff0000' size='13'><b><a href='event:close'>X</a></b></font></p>"
+local specialCloseButton = "<p align='right'><font color='#ff0000' size='13'><b><a href='event:specialclose'>X</a></b></font></p>"
+local iconProviders = closeButton .. [[
+    <a href='event:credits'>« Go back</a>
+    <p align='center'><font size='20'><b><J>Icons and Images</J></b></font></p>         <b><BV>Freepik</BV> from <BV>flaticons.com</BV></b>
+            • Work button       • Job search icon
+            • Companies icon
+        <b><BV>Vector Market</BV> from <BV>flaticons.com</BV></b>
+            • Idea bulb icon
+        <b><BV>Payungkead</BV> from <BV>flaticons.com</BV></b>
+            • Bag icon
+        <b><BV>Dinosoft labs</BV> from <BV>flaticons.com</BV></b>
+            • School image
+        <b><BV>Nikita Golubev</BV> from <BV>flaticons.com</BV></b>
+            • Lottery kiosk image
+]]
+
+local gameplay = {
 }
 
 local titles = {
@@ -730,11 +753,12 @@ end
 --game functions
 
 function displayShop(target, page)
+    local commu = tfm.get.room.playerList[target].community
     local medicTxt = ""
     for id, medic in next, {healthPacks[((page - 1) * 2) + 1], healthPacks[page * 2]} do
         medicTxt = medicTxt .. "<b><font size='13'>" .. medic.name  .. "</font></b><br><p align='right'><VP><a href='event:buy:" .. medic.uid .."'><b>| Buy |</b></a></VP></p>Price: " .. medic.price .. "  Energy: " .. (medic.regainVal * 100) .. "%<br>" .. medic.desc .. "<br><br>"
     end
-    ui.addTextArea(100, closeButton .. "<p align='center'><font size='20'><b><J>Shop</J></b></font></p><br></br>" .. (medicTxt == "" and nothing or medicTxt), target, 200, 90, 400, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    ui.addTextArea(100, closeButton .. "<p align='center'><font size='20'><b><J>Shop</J></b></font></p><br></br>" .. (medicTxt == "" and translate("nothing", commu) or medicTxt), target, 200, 90, 400, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
     ui.addTextArea(101, "<p align='center'><a href='event:page:shop:" .. page - 1 .."'>«</a></p>", target, 500, 310, 10, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
     ui.addTextArea(102, "Page " .. page, target, 523, 310, 50, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
     ui.addTextArea(103, "<p align='center'><a href='event:page:shop:" .. page + 1 .."'>»</a></p>", target, 585, 310, 15, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
@@ -752,6 +776,7 @@ function displayCourses(target)
 end
 
 function displayJobs(target, page)
+    local commu = tfm.get.room.playerList[target].community
     local qualifiedJobTxt = ""
     local disqualifedJobTxt = ""
     local p = players[target]
@@ -760,10 +785,11 @@ function displayJobs(target, page)
         if (page - 1) * 2 + 1 <= entry and entry <= page * 2 then
             if value[2] then
                 local job = value[1]
-                qualifiedJobTxt = qualifiedJobTxt .. "<b><font size='13'>" .. job.name .. " <a href='event:jobInfo:" .. job.name .. "'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><VP><a href='event:" .. job.uid .. "'> | Choose | </a></VP></b></p>Salary: " .. job.salary .. " Energy: " .. (job.energy * 100) .. "%<br>Offered by <b>" .. job.owner .. "</b> of <b>" .. job.company .. "</b><br><br>"
+                qualifiedJobTxt = qualifiedJobTxt .. translate("job_qualified", commu, nil, {name = job.name, id = job.id, salary = job.salary, energy = job.energy * 100, owner = job.owner, company = job.company})
             else
                 local job = value[1]
-                disqualifedJobTxt = disqualifedJobTxt .. "<N><b><font size='13'>" .. job.name .. " <a href='event:jobInfo:" .. job.name .. "'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><N2>| Choose |</N2></b></p>Salary: " .. job.salary .. " Energy: " .. (job.energy * 100) .. "%<br>Offered by <b>" .. job.owner .. "</b> of <b>" .. job.company .. "</b></N><br><br>"
+                disqualifedJobTxt = disqualifedJobTxt .. translate("job_disqualified", commu, nil, {name = job.name, salary = job.salary, energy = job.energy * 100, owner = job.owner, company = job.company})
+                --disqualifedJobTxt = disqualifedJobTxt .. "<N><b><font size='13'>" .. job.name .. " <a href='event:jobInfo:" .. job.name .. "'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><N2>| Choose |</N2></b></p>Salary: " .. job.salary .. " Energy: " .. (job.energy * 100) .. "%<br>Offered by <b>" .. job.owner .. "</b> of <b>" .. job.company .. "</b></N><br><br>"
             end
         elseif entry > page * 2 then
             break
@@ -773,7 +799,7 @@ function displayJobs(target, page)
 
     local jobTxt = qualifiedJobTxt .. disqualifedJobTxt
 
-    ui.addTextArea(300, closeButton .. "<p align='center'><font size='20'><b><J>Jobs</J></b></font></p><br><br>" .. (jobTxt == "" and nothing or jobTxt), target, 200, 90, 400, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    ui.addTextArea(300, closeButton .. "<p align='center'><font size='20'><b><J>Jobs</J></b></font></p><br><br>" .. (jobTxt == "" and translate("nothing", commu) or jobTxt), target, 200, 90, 400, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
     ui.addTextArea(301, "<p align='center'><a href='event:page:jobs:" .. page - 1 .."'>«</a></p>", target, 500, 310, 10, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
     ui.addTextArea(302, "Page " .. page, target, 523, 310, 50, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
     ui.addTextArea(303, "<p align='center'><a href='event:page:jobs:" .. page + 1 .."'>»</a></p>", target, 585, 310, 15, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
@@ -782,14 +808,22 @@ end
 function displayJobInfo(job, target)
     local job = jobs[job]
     ui.addTextArea(901, "", target, -10000, -10000, 20000, 20000, 0x333333, nil, 0.8, true)
-    ui.addTextArea(900, closeButton .. "<p align='center'><font size='15'><b><BV>" .. job.name .."</BV></b></font></p><br><br>" ..
+    --[[ui.addTextArea(900, closeButton .. "<p align='center'><font size='15'><b><BV>" .. job.name .."</BV></b></font></p><br><br>" ..
         "<b>Salary</b>: " .. job.salary .. "<br>" ..
         "<b>Energy</b>: " .. (job.energy * 100) .. "%<br><br>" ..
         "<b><u>Requirements</u></b><br><br>" ..
         "<b>Minimum level</b>: " .. job.minLvl .. "<br>" ..
         "<b>Qualifications</b>: " .. (job.qualifications or "NA") ..
-        "<br><br>Offered by <b>" .. job.owner .. "</b> of <b>" .. job.company .. "</b>",
-    target, 300, 90, 200, 200, CONSTANTS.BACKGROUND_COLOR, nil, 1, true)
+        "<br><br>Offered by <b>" .. job.owner .. "</b> of <b>" .. job.company .. "</b>",]]
+    ui.addTextArea(900, closeButton .. translate("job_info", tfm.get.room.playerList[target].community, nil, {
+        name = job.name,
+        salary = job.salary,
+        energy = job.energy * 100,
+        minLevel = job.minLvl,
+        qualifications = job.qualifications or "NA",
+        owner = job.owner,
+        company = job.company
+    }), target, 300, 90, 200, 200, CONSTANTS.BACKGROUND_COLOR, nil, 1, true)
 end
 
 function displayCompanyDialog(target, page)
@@ -895,39 +929,40 @@ function displayAllDegrees(target)
 end
 
 function displayInventory(target)
+    local commu = tfm.get.room.playerList[target].community
     local invTxt = ""
     for k, v in next, players[target]:getInventory() do
         invTxt = invTxt .. "<b><font size='12'>".. k .. "</font><a href='event:use:" .. k .."'><VP> | Use x" .. v .. " |</VP> </a></b> : <font size='10'>(Energy: " .. (find(k, healthPacks).regainVal * 100) .. "%)</font><br>"
     end
-    ui.addTextArea(700, closeButton .. "<p align='center'><font size='20'><b><J>Inventory</J></b></font></p><br>" .. (invTxt == "" and nothing or invTxt), target, 200, 90, 400, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    ui.addTextArea(700, closeButton .. "<p align='center'><font size='20'><b><J>Inventory</J></b></font></p><br>" .. (invTxt == "" and translate("nothing", commu) or invTxt), target, 200, 90, 400, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
 end
 
 function displayTips(target)
-    ui.addTextArea(800, tips[1], target, 6, 120, 120, 150, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+    local commu = tfm.get.room.playerList[target].community
+    ui.addTextArea(800, closeButton .. "<p align='center'><J><b>Tips!</b></J><br><br>" .. translate("tips", commu, 1), target, 6, 120, 120, 150, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
     ui.addTextArea(801, "«", target, 10, 285, 10, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
     ui.addTextArea(802, "Page 1", target, 35, 285, 50, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
     ui.addTextArea(803, "<p align='center'><a href='event:page:tip:2'>»</a></p>", target, 100, 285, 15, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
 end
 
 function displayProfile(name, target)
+    local commu = tfm.get.room.playerList[target].community
     local up = upper(name)
     local p = players[name] or players[up] or players[up .. "#0000"] or players[target]
     if p then
         ui.addTextArea(901, "", target, -10000, -10000, 20000, 20000, 0x333333, nil, 0.8, true)
-        ui.addTextArea(900, closeButton ..
-        "<p align='center'><font size='15'><b><BV>" .. p:getName() .."</BV></b></font><br>« " .. p:getTitle() .. " »</p><br><b>Level:</b> " .. tostring(p:getLevel()) .. "<BL><font size='12'> [" .. tostring(p:getXP()) .. "XP / " .. tostring(calculateXP(p:getLevel() + 1)) .. "XP]</font></BL><br><b>Money:</b> $" .. formatNumber(p:getMoney()) .. "<br><br><b>Working as a</b> " .. p:getJob() ..
-        "<br><b>Learning</b>: " .. (p:getLearningCourse() == "" and "NA" or p:getLearningCourse())
-        , target, 300, 100, 200, 140, CONSTANTS.BACKGROUND_COLOR, 0, 1, true)
+        ui.addTextArea(900, closeButton .. translate("profile", commu, nil, {name = p.name, title = p.title, level = p.level, xp = p.xp, xpTotal = calculateXP(p.level + 1), learning = p:getLearningCourse() == "" and "NA" or p:getLearningCourse(), job = p.job, money = formatNumber(p.money)}), 
+        target, 300, 100, 200, 140, CONSTANTS.BACKGROUND_COLOR, 0, 1, true)
     end
 end
 
 function displayHelp(target, mode, page)
+    local commu = tfm.get.room.playerList[target].community
     handleSpecialCloseButton(5000, target)
     ui.addTextArea(5001, "<B><J><a href='event:cmds'>Commands</a>", target, 30, 120, 75, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
     ui.addTextArea(5002, "<a href='event:game'><B><J>Gameplay", target, 30, 85, 75, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
     ui.addTextArea(5003, "<B><J><a href='event:credits'>Credits</a>", target, 30, 155, 75, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
-    ui.addTextArea(5000, closeButton .. (mode == "game" and gameplay[page or 1] or (mode == "credits" and credits or cmds)), target, 110, 80, 650, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
-
+    ui.addTextArea(5000, closeButton .. (mode == "game" and translate("help", commu, page or 1) or (mode == "credits" and translate("credits", commu) or translate("commands", commu))), target, 110, 80, 650, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
     if mode == "game" then
         ui.addTextArea(5004, "«",  target, 630, 300, 15, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
         ui.addTextArea(5005, "Page 1", target, 660, 300, 50, 15, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
@@ -1001,8 +1036,9 @@ function displayTitleList(target)
 end
 
 function displayLotto(target)
-    local txt = "<p align='center'><font size='20'><b><J>Lotto Info</J></b></font><br><br><b>This month's winning lotto: </b>" .. ((#latestLotto == 0) and 'No drawings yet!' or latestLotto[1] .. ", " .. latestLotto[2] ..  ", " .. latestLotto[3] .. ", " .. latestLotto[4]) .. "<br><br>"
-    txt = txt .. ((lottoWins[target] == nil or lottoWins[target] == 0) and "You have no wins in the past month!" or "You have won $" .. lottoWins[target] .. " in the past month") .. "</p>"
+    local commu = tfm.get.room.playerList[target].community
+    local txt = translate("lottoinfo", commu) .. ((#latestLotto == 0) and translate("nodrawings", commu) or latestLotto[1] .. ", " .. latestLotto[2] ..  ", " .. latestLotto[3] .. ", " .. latestLotto[4]) .. "<br><br>"
+    txt = txt .. ((lottoWins[target] == nil or lottoWins[target] == 0) and translate("lottonowin", commu) or translate("lottowin", commu, nil, lottoWins[target])) .. "</p>"
     ui.addTextArea(4000, closeButton .. txt, target, 200, 90, 400, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
 end
 
@@ -1053,10 +1089,6 @@ function find(name, tbl, normalLists)
         end
     end
     return nil
-end
-
-function createTip(tip, index)
-    tips[index] = closeButton .. "<p align='center'><J><b>Tips!</b></J><br><br>" .. tip
 end
 
 function checkLottoWinners(p)
@@ -1163,6 +1195,7 @@ function upper(str)
 	return string.upper(string.sub(str,1,1)) .. string.lower(string.sub(str,2))
 end
 
+
 function getTopCompanies(upto)
     --eww refactor these functions
     local temp = {}
@@ -1208,13 +1241,13 @@ end
 
 function getTotalPages(type, target)
     if type == 'tip' then
-        return #tips
+        return #translations.en.tips
     elseif type == 'shop' then
         return #healthPacks / 2 + (#healthPacks % 2)
     elseif type == 'jobs' then
         return totalJobs / 2 + (totalJobs % 2)
     elseif type == 'help' then
-        return #gameplay
+        return #translations.en.help
     elseif type == 'comp' then
         return math.ceil(players[target].totalCompanies / 8)
     elseif type == "roomlboard" then
@@ -1230,17 +1263,18 @@ function getTotalPages(type, target)
 end
 
 function updatePages(name, type, page)
+    local commu = tfm.get.room.playerList[name].community
     if not (page < 1 or page > getTotalPages(type, name)) then
         if type == 'tip' then
-            ui.updateTextArea(800, tips[page] or "", name)
+            ui.updateTextArea(800, closeButton .. "<p align='center'><J><b>Tips!</b></J><br><br>" .. translate("tips", commu, page), name)
             ui.updateTextArea(801, "<a href='event:page:tip:" .. (page - 1) .. "'>«</a>", name)
             ui.updateTextArea(802, "<p align='center'>Page " .. page .. "</p>", name)
             ui.updateTextArea(803, "<a href='event:page:tip:" .. (page + 1) .. "'>»</a>", name)
         elseif type == 'help' then
-            ui.updateTextArea(952, closeButton .. gameplay[page], name)
-            ui.updateTextArea(953, "<a href='event:page:help:" .. (page - 1) .. "'>«</a>",  name)
-            ui.updateTextArea(954, "<p align='center'>Page " .. page .. "</p>", name)
-            ui.updateTextArea(955, "<a href='event:page:help:" .. (page + 1) .. "'>»</a>", name)
+            ui.updateTextArea(5000, closeButton .. translate("help", commu, page), name)
+            ui.updateTextArea(5004, "<a href='event:page:help:" .. (page - 1) .. "'>«</a>",  name)
+            ui.updateTextArea(5005, "<p align='center'>Page " .. page .. "</p>", name)
+            ui.updateTextArea(5006, "<a href='event:page:help:" .. (page + 1) .. "'>»</a>", name)
         elseif type == 'shop' then
             displayShop(name, page)
         elseif type == 'jobs' then
@@ -1307,6 +1341,11 @@ function saveData(force)
     end
 end
 
+function translate(term, lang, page, kwargs)
+    local translation = translations[lang] and translations[lang][term] or translations.en[term]
+    return format((page and translation[page] or translation), kwargs)
+end
+
 function HealthPack(_name, _price, _regainVal, _adding, _desc)
     return {
         name = _name,
@@ -1347,6 +1386,7 @@ end
 
 function setUI(name)
     local p = players[name]
+    local commu = tfm.get.room.playerList[name].community
     ui.setMapName("Merchant")
     --textAreas and images
     --work
@@ -1383,7 +1423,7 @@ function setUI(name)
     ui.addTextArea(12, "<p align='center'><font color='#ffffff'><b>" .. months[month] .. " " .. day .. "<br>YR " .. year .. "</p>", name, 288, 180, 100, 100, nil, nil, 0, false)
     --Lottery board
     tfm.exec.addImage("171ab7d78ec.png", "_50", 1510, 222)
-    ui.addTextArea(13, "<font color='#000000' size='10'><p align='center'><b><a href='event:getLottery'>Buy Lottery!</a><br><br><a href='event:checkLotto'>Check</a></b></p></font>", name, 1525, 240, 70, 70, nil, nil, 0, false)
+    ui.addTextArea(13, translate("lotto", commu), name, 1525, 240, 70, 70, nil, nil, 0, false)
     --Version text
     ui.addTextArea(14, "<font color='#333333'><b><a href='event:version'>" .. VERSION .."</a></b></font>", name, 720, 315, 50, 20, nil, nil, 0, true)
     p:setXP(0, true)
@@ -1394,7 +1434,7 @@ function setUI(name)
     chart:showLabels()
     chart:setShowDataPoints(true)
     chart:show()
-    tfm.exec.chatMessage("<BV><b>Welcome to #merchant!</b></BV><br><N>For more information type <J><b>!help</b></J> or press <J><b>H</b></J></V><br><br><D>Warning! The game is under development. Your data might get deleted! Please report any bug to <b><V>King_seniru#5890</V></b></D><br><br>Check out the official thread at <PT><b><i>https://atelier801.com/topic?f=6&t=886315</i></b></PT>", name)
+    tfm.exec.chatMessage(translate("welcome", commu, nil), name)
 end
 
 --event handling
@@ -1495,6 +1535,7 @@ end
 
 function eventTextAreaCallback(id, name, evt)
     LineChart.handleClick(id, name, evt)
+    local commu = tfm.get.room.playerList[name].community
     if evt == "work" then
         players[name]:work()
     elseif evt == "tips" then
@@ -1561,7 +1602,7 @@ function eventTextAreaCallback(id, name, evt)
     elseif evt == "chooseJobDegree" then
         displayAllDegrees(name)
     elseif evt == "getLottery" then
-        ui.addPopup(1000, 2, "<p align='center'>Please enter your choices (3 numbers between 0 and 100 and a letter) separated by spaces. <br><i>eg:15 20 30 B</i><br><br><b><i>Price: $20</i></b></p>", name, 300, 90, 200, true)
+        ui.addPopup(1000, 2, translate("lottobuy", commu), name, 300, 90, 200, true)
     elseif evt == "checkLotto" then
         displayLotto(name)
     elseif evt == "room-lboard" then
@@ -1715,7 +1756,7 @@ do
     players["shaman"] = Player("shaman", {})
     companies["Atelier801"] = Company("Atelier801", "shaman")
 
-    --creating tips
+    --[[--creating tips
     for id, tip in next, ({
         "You Need $5000 To Start A New Company!", "You Gain Money From Your Workers!", "Look At The Stats of The Company Before You Apply for it!", "The Better The Job The Better The Income!", "Buy Items From The Shop To Gain Health!", "Some Jobs Needs A Specific Degree",
         "To Level Up You Need To Work!", "You Will Spend Less Energy When Working if You have Educational Qualifications", "The Stats Of A Company Can Be Seen By Anyone", "While Working Your Health Bar Goes Down", "Patience is The Key To This Game.", "The Stock Market Dashboard Displays how Companies Perform in Each Month",
@@ -1724,7 +1765,7 @@ do
         "You Can Apply to Jobs According to Your Level and Degrees", "The Better Stats You Have The Better The Job You Can Have!", "Report Bugs To Developers", "The Game is More Fun with More Players", "Click Tips When You Need Help", "The Health Refreshes Every Moment <3", "There is a Chance for Luck Too! Buy a Lotto and Check Your Luck!", "Invest Other Companies to Have an Ownership Share"
     }) do
         createTip(tip, id)
-    end
+    end]]
 
     --creating and storing HealthPack tables
     healthPacks[#healthPacks + 1] = HealthPack("Cheese", 5, 0.01, true,  "Just a cheese! to refresh yourself")
