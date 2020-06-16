@@ -48,9 +48,12 @@ local month = 1
 local day = 1
 local specialUIS = 0
 
+local closeButton = "<p align='right'><font color='#ff0000' size='13'><b><a href='event:close'>X</a></b></font></p>"
+local specialCloseButton = "<p align='right'><font color='#ff0000' size='13'><b><a href='event:specialclose'>X</a></b></font></p>"
+
 local months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}
 local communityFlags = {
-	xx = "1651b327097.png",
+    xx = "1651b327097.png",
 	ar = "1651b32290a.png",
 	bg = "1651b300203.png",
 	br = "1651b3019c0.png",
@@ -117,6 +120,17 @@ local translations = {
         lottonowin = "You have no wins in the past month!",
         lottowin = "You have won $${win} in the past month",
         lottobuy = "<p align='center'>Please enter your choices (3 numbers between 0 and 100 and a letter) separated by spaces. <br><i>eg:15 20 30 B</i><br><br><b><i>Price: $20</i></b></p>",
+        nocompanies = "<p align='center'>No owned companies<br>Do you want to own one?</p>",
+        companycreate = "<p align='center'>Please choose a name<br>Price: $5000<br>Click submit to buy!</p>",
+        newcompany = "<J>Succesfully created the new company <b>${company}</b></J>",
+        newcompany2 = "<p align='center'>Do you want to own a new company</p>",
+        newcompanybtn = "<a href='event:createCompany'>New Company</a>",
+        companyinfo = [[<p align='center'><font size='20'><b><J>${name}</J></b></font></p><br>
+        <b>Founder</b>: ${owner}<br>
+        <b>Total Owners / Shareholders:  </b>${shareholders}<i>  <a href='event:page:owners${name}:1'>(See all)</a></i>
+        <b>Total Workers:</b>                ${workers}<i>  <a href='event:page:workers${name}:1'>(See all)</a></i>]],
+        ownedcompanies = "<p align='center'><font size='20'><b><J>My Companies</J></b></font></p><br><br>",
+        companybrief = "<b><a href='event:${id}'>${name}</a></b> <i>(Your Ownership: ${ownedShares}%)</i><br>",
         tips = {
             "You Need $5000 To Start A New Company!", "You Gain Money From Your Workers!", "Look At The Stats of The Company Before You Apply for it!", "The Better The Job The Better The Income!", "Buy Items From The Shop To Gain Health!", "Some Jobs Needs A Specific Degree",
             "To Level Up You Need To Work!", "You Will Spend Less Energy When Working if You have Educational Qualifications", "The Stats Of A Company Can Be Seen By Anyone", "While Working Your Health Bar Goes Down", "Patience is The Key To This Game.", "The Stock Market Dashboard Displays how Companies Perform in Each Month",
@@ -193,6 +207,21 @@ local translations = {
     Salary and the energy consumed is the factor that many workers are looking for. So be careful when choosing this!
     <b><J>GOOD LUCK!</J></b>
     </font>
+        ]],
+    iconProviders = closeButton .. 
+    [[
+    <a href='event:credits'>« Go back</a>
+    <p align='center'><font size='20'><b><J>Icons and Images</J></b></font></p>         <b><BV>Freepik</BV> from <BV>flaticons.com</BV></b>
+            • Work button       • Job search icon
+            • Companies icon
+        <b><BV>Vector Market</BV> from <BV>flaticons.com</BV></b>
+            • Idea bulb icon
+        <b><BV>Payungkead</BV> from <BV>flaticons.com</BV></b>
+            • Bag icon
+        <b><BV>Dinosoft labs</BV> from <BV>flaticons.com</BV></b>
+            • School image
+        <b><BV>Nikita Golubev</BV> from <BV>flaticons.com</BV></b>
+            • Lottery kiosk image
         ]]},        
     }
 }
@@ -219,25 +248,6 @@ local closeSequence = {
 }
 local specialCloseSequence = {}
 
-local closeButton = "<p align='right'><font color='#ff0000' size='13'><b><a href='event:close'>X</a></b></font></p>"
-local specialCloseButton = "<p align='right'><font color='#ff0000' size='13'><b><a href='event:specialclose'>X</a></b></font></p>"
-local iconProviders = closeButton .. [[
-    <a href='event:credits'>« Go back</a>
-    <p align='center'><font size='20'><b><J>Icons and Images</J></b></font></p>         <b><BV>Freepik</BV> from <BV>flaticons.com</BV></b>
-            • Work button       • Job search icon
-            • Companies icon
-        <b><BV>Vector Market</BV> from <BV>flaticons.com</BV></b>
-            • Idea bulb icon
-        <b><BV>Payungkead</BV> from <BV>flaticons.com</BV></b>
-            • Bag icon
-        <b><BV>Dinosoft labs</BV> from <BV>flaticons.com</BV></b>
-            • School image
-        <b><BV>Nikita Golubev</BV> from <BV>flaticons.com</BV></b>
-            • Lottery kiosk image
-]]
-
-local gameplay = {
-}
 
 local titles = {
     [1] = "Newbie",
@@ -808,13 +818,6 @@ end
 function displayJobInfo(job, target)
     local job = jobs[job]
     ui.addTextArea(901, "", target, -10000, -10000, 20000, 20000, 0x333333, nil, 0.8, true)
-    --[[ui.addTextArea(900, closeButton .. "<p align='center'><font size='15'><b><BV>" .. job.name .."</BV></b></font></p><br><br>" ..
-        "<b>Salary</b>: " .. job.salary .. "<br>" ..
-        "<b>Energy</b>: " .. (job.energy * 100) .. "%<br><br>" ..
-        "<b><u>Requirements</u></b><br><br>" ..
-        "<b>Minimum level</b>: " .. job.minLvl .. "<br>" ..
-        "<b>Qualifications</b>: " .. (job.qualifications or "NA") ..
-        "<br><br>Offered by <b>" .. job.owner .. "</b> of <b>" .. job.company .. "</b>",]]
     ui.addTextArea(900, closeButton .. translate("job_info", tfm.get.room.playerList[target].community, nil, {
         name = job.name,
         salary = job.salary,
@@ -827,24 +830,25 @@ function displayJobInfo(job, target)
 end
 
 function displayCompanyDialog(target, page)
+    local commu = tfm.get.room.playerList[target].community
     page = page or 1
     eventTextAreaCallback(400, target, "close")
     if not next(players[target]:getOwnedCompanies()) then
-        ui.addPopup(400, 1, "<p align='center'>No owned companies<br>Do you want to own one?</p>", target, 300, 90, 200, true)
+        ui.addPopup(400, 1, translate("nocompanies", commu), target, 300, 90, 200, true)
     else
         local companyTxt = ""
         local p = players[target]
         local entry = 1
         for name, company in next, p:getOwnedCompanies() do
             if (page - 1) * 8 + 1 <= entry and entry <= page * 8 then
-                companyTxt = companyTxt .. "<b><a href='event:" .. company:getUID() .. "'>" .. company:getName() .. "</a></b> <i>(Your Ownership: " .. math.ceil(company:getShareHolders()[target].shares * 100) .. "%)</i><br>"
+                companyTxt = companyTxt .. translate("companybrief", commu, nil, {id = company:getUID(), name = company:getName(), ownedShares = math.ceil(company:getShareHolders()[target].shares * 100)})
             elseif entry > page * 8 then
                 break
             end
             entry = entry + 1
         end
-        ui.addTextArea(400, closeButton .. "<p align='center'><font size='20'><b><J>My Companies</J></b></font></p><br><br>" .. companyTxt, target, 200, 90, 400, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
-        ui.addTextArea(401, "<a href='event:createCompany'>New Company</a>", target, 500, 305, 100, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+        ui.addTextArea(400, closeButton .. translate("ownedcompanies", commu) .. companyTxt, target, 200, 90, 400, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+        ui.addTextArea(401, translate("newcompanybtn", commu), target, 500, 305, 100, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
         ui.addTextArea(402, "<p align='center'><a href='event:page:comp:" .. (page - 1) .. "'>«</a></p>", target, 200, 305, 10, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
         ui.addTextArea(403, "Page " .. page, target, 225, 305, 50, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
         ui.addTextArea(404, "<p align='center'><a href='event:page:comp:" .. (page + 1) .. "'>»</a></p>", target, 290, 305, 15, 20, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
@@ -852,16 +856,14 @@ function displayCompanyDialog(target, page)
 end
 
 function displayCompany(name, target)
+    local commu = tfm.get.room.playerList[target].community
     if companies[name] ~= nil then
         local com = companies[name]
         local isOwner = false
         tempData[target].jobCompany = name
         local companyTxt = ""
         local members = ""
-        ui.addTextArea(400, closeButton .. [[<p align='center'><font size='20'><b><J>]] .. name .. [[</J></b></font></p><br>
-        <b>Founder</b>: ]] ..  com:getOwner() .. [[<br>
-        <b>Total Owners / Shareholders:  </b>]] .. com.totalHolders .. [[<i>  <a href='event:page:owners]] .. com:getName() .. [[:1'>(See all)</a></i>
-        <b>Total Workers:</b>                ]] .. com.totalWorkers .. [[<i>  <a href='event:page:workers]] .. com:getName() .. [[:1'>(See all)</a></i>]], target, 200, 90, 400, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
+        ui.addTextArea(400, closeButton .. translate("companyinfo", commu, nil, {name = name, shareholders = com.totalHolders, workers = com.totalWorkers, owner = com:getOwner()}), target, 200, 90, 400, 200, CONSTANTS.BACKGROUND_COLOR, CONSTANTS.BORDER_COLOR, 1, true)
         for n, _ in next, com:getShareHolders() do
             if n == target then isOwner = true end
         end
@@ -1543,16 +1545,10 @@ function eventTextAreaCallback(id, name, evt)
     elseif evt == "version" then
         displayVersionDialogue(name)
     elseif evt == "cmds" then
-        ui.removeTextArea(953, name)
-        ui.removeTextArea(954, name)
-        ui.removeTextArea(955, name)
         displayHelp(name, "cmds")
     elseif evt == "game" then
         displayHelp(name, "game")
     elseif evt == "credits" then
-        ui.removeTextArea(953, name)
-        ui.removeTextArea(954, name)
-        ui.removeTextArea(955, name)
         displayHelp(name, "credits")
     elseif string.sub(evt, 1, 4) == "page" then
         local args = split(evt, ":")
@@ -1576,7 +1572,7 @@ function eventTextAreaCallback(id, name, evt)
         ui.removeTextArea(id, name)
         handleSpecialCloseButton(id, name)
     elseif evt == "help:icons" then
-        ui.updateTextArea(952, iconProviders, name)
+        ui.updateTextArea(5000, translate("help", commu, "iconProviders"), name)
     elseif evt == "company" then
         displayCompanyDialog(name)
     elseif evt == "createJob" then
@@ -1590,7 +1586,7 @@ function eventTextAreaCallback(id, name, evt)
             ui.removeTextArea(500, name)
         end
     elseif evt == "createCompany" then
-        ui.addPopup(400, 1, "<p align='center'>Do you want to own a new company</p>", name, 300, 90, 200, true)
+        ui.addPopup(400, 1, translate("newcompany2", commu), name, 300, 90, 200, true)
     elseif evt == "selectJobName" then
         ui.addPopup(601, 2, "<p align='center'>Please choose a name", name, 300, 90, 200, true)
     elseif evt == "selectJobSalary" then
@@ -1655,11 +1651,12 @@ function eventTextAreaCallback(id, name, evt)
 end
 
 function eventPopupAnswer(id, name, answer)
+    local commu = tfm.get.room.playerList[name].commu
     if id == 400 and answer == 'yes' then --for the popup creating a compnay
         if players[name]:getMoney() < 5000 then
         ui.addPopup(450, 0, "<p align='center'><b><font color='#CB546B'>Not enough money!", name, 300, 90, 200, true)
     else
-        ui.addPopup(450, 2, "<p align='center'>Please choose a name<br>Price: $5000<br>Click submit to buy!</p>", name, 300, 90, 200, true)
+        ui.addPopup(450, 2, translate("companycreate", commu), name, 300, 90, 200, true)
     end
     elseif id == 450 and answer ~= '' then --for the popup to submit a name for the company
         if companies[answer] then
@@ -1673,7 +1670,7 @@ function eventPopupAnswer(id, name, answer)
         players[name]:setMoney(-5000, true)
         players[name]:addOwnedCompanies(answer)
         displayCompany(answer, name)
-        tfm.exec.chatMessage("<J>Succesfully created the new company <b>" .. answer .. "</b></J>", name)
+        tfm.exec.chatMessage(translate("newcompany", commu, nil, {company=answer}), name)
     elseif id == 601 and answer ~= '' then --for the popup to submit the name for a new job
         if answer:len() > 15 or answer:find("[^%w%s]") then
             tfm.exec.chatMessage('<R>[Error] Name should contain only letters, numbers and spaces, which is lesser than 15 characters</R>', name)
