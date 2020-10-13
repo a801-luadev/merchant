@@ -17,11 +17,14 @@ tfm.exec.newGame([[<C><P F="0" L="1600"/><Z><S><S X="79" o="aac4d2" L="162" Y="1
 tips = {}
 
 local OWNER = "King_seniru#5890"
-local VERSION = "v1.1.1"
-local VERSION_TEXT = "Leaderboard release!!!"
+local VERSION = "v1.1.2"
+local VERSION_TEXT = "Minor updates"
 local VERSION_DESCRIPTION = [[
+    <b><PT>What's new (v1.1.2)</PT></b>
 
-    <b><PT>What's new (v1.1.1)</PT></b>
+    • Increased the price of shop items as many of you have requested!
+    
+	<b><PT>v1.1.1</PT></b>
 
     • Minor grammar fixes and improve the contrast of some text areas (Thanks <b>Blank#3495</b>)
 
@@ -1727,19 +1730,19 @@ do
     end
 
     --creating and storing HealthPack tables
-    healthPacks[#healthPacks + 1] = HealthPack("Cheese", 5, 0.01, true,  "Just a cheese! to refresh yourself")
-    healthPacks[#healthPacks + 1] = HealthPack("Candy", 10, 0.02, true, "Halloween Treat!")
-    healthPacks[#healthPacks + 1] = HealthPack("Apple", 15, 0.025, true, "A nutritious diet from shaman")
-    healthPacks[#healthPacks + 1] = HealthPack("Pastry", 30, 0.06, true, "King's favourite food")
-    healthPacks[#healthPacks + 1] = HealthPack("Lasagne", 200, 0.1, true, "Shh!!! Beware of Garfield :D")
-    healthPacks[#healthPacks + 1] = HealthPack("Cheese Pizza", 300, 0.15, true, "Treat from Italy - with lots of cheeese inside !!!")
-    healthPacks[#healthPacks + 1] = HealthPack("Magician`s Portion", 500, 0.25, true, "Restores 1/4 th of your health.")
-    healthPacks[#healthPacks + 1] = HealthPack("Rotten Cheese", 700, 0.35, true, "Gives you the power of vampire <font size='5'>(disclaimer)This won't make you a vampire</font>")
-    healthPacks[#healthPacks + 1] = HealthPack("Cheef`s food", 1000, 0.5, true, "Restores half of your health (Powered by Shaman)")
-    healthPacks[#healthPacks + 1] = HealthPack("Cheese Pizza - Large", 1200, 0.55, true, "More Pizza Power!")
-    healthPacks[#healthPacks + 1] = HealthPack("Vito`s Pizza", 1500, 0.6, true, "World's best pizza!")
-    healthPacks[#healthPacks + 1] = HealthPack("Vito`s Lasagne", 2000, 0.8, true, "World's best lasagne!")
-    healthPacks[#healthPacks + 1] = HealthPack("Ambulance!", 2500, 1, false, "Restores your health back! (Powered by Shaman!)")
+    healthPacks[#healthPacks + 1] = HealthPack("Cheese", 200, 0.01, true,  "Just a cheese! to refresh yourself")
+    healthPacks[#healthPacks + 1] = HealthPack("Candy", 300, 0.02, true, "Halloween Treat!")
+    healthPacks[#healthPacks + 1] = HealthPack("Apple", 350, 0.025, true, "A nutritious diet from shaman")
+    healthPacks[#healthPacks + 1] = HealthPack("Pastry", 2000, 0.06, true, "King's favourite food")
+    healthPacks[#healthPacks + 1] = HealthPack("Lasagne", 2500, 0.1, true, "Shh!!! Beware of Garfield :D")
+    healthPacks[#healthPacks + 1] = HealthPack("Cheese Pizza", 3000, 0.15, true, "Treat from Italy - with lots of cheeese inside !!!")
+    healthPacks[#healthPacks + 1] = HealthPack("Magician`s Portion", 4500, 0.25, true, "Restores 1/4 th of your health.")
+    healthPacks[#healthPacks + 1] = HealthPack("Rotten Cheese", 5500, 0.35, true, "Gives you the power of vampire <font size='5'>(disclaimer)This won't make you a vampire</font>")
+    healthPacks[#healthPacks + 1] = HealthPack("Cheef`s food", 7000, 0.5, true, "Restores half of your health (Powered by Shaman)")
+    healthPacks[#healthPacks + 1] = HealthPack("Cheese Pizza - Large", 7500, 0.55, true, "More Pizza Power!")
+    healthPacks[#healthPacks + 1] = HealthPack("Vito`s Pizza", 15000, 0.9, true, "World's best pizza!")
+    healthPacks[#healthPacks + 1] = HealthPack("Vito`s Lasagne", 16000, 0.8, true, "World's best lasagne!")
+    healthPacks[#healthPacks + 1] = HealthPack("Ambulance!", 18000, 1, false, "Restores your health back! (Powered by Shaman!)")
 
     --creating and storing Course tables
     courses["School"] = Course(1, "School", 20, 2, 1, "")
