@@ -223,7 +223,147 @@ local translations = {
         <b><BV>Nikita Golubev</BV> from <BV>flaticons.com</BV></b>
             • Lottery kiosk image
         ]]},        
+    },
+	["ar"] = {
+        welcome = "<BV><b>Welcome to #merchant!</b></BV><br><N>For more information type <J><b>!help</b></J> or press <J><b>H</b></J></V><br><br><D>Warning! The game is under development. Your data might get deleted! Please report any bug to <b><V>King_seniru#5890</V></b></D><br><br>Check out the official thread at <PT><b><i>https://atelier801.com/topic?f=6&t=886315</i></b></PT>",
+        credits = [[
+    <p align='center'><font size='20'><b><J>Credits</J></b></font></p>
+    <b>All the credits go to these people for helping me with different things</b>
+    <b><u>Coders</u>
+            <BV>• Overforyou#9290                                               • Cyanny#0000</BV>
+    <u>Icons and Images</u>
+            <BV>• <a href='event:help:icons'>See all »</a></BV>
+    <u>Editing</u>
+            <BV>• Haxor_333#0000                                                • Rail#9727
+            • Blank#3495</b></BV>
+    And special thanks for <BV><b>Haxor_333#0000</b></BV>, <BV><b>Dorjanoruci#0000</b></BV> and <BV><b>We talk a lot</b></BV> tribe members for encouring me to do this <3
+        ]],
+        commands = [[
+    <p align='center'><font size='20'><b><J>Commands</J></b></font></p>
+    <b>!help:</b>  Displays this dialogue
+    <b>!company <i>[company name]:</i></b> Displays the specified compnay
+    <b>!p <i>[player name]</i> or !profile <i>[player name]</i></b> Displays information about the specified player
+
+    <p align='center'><font size='20'><b><J>Keys</J></b></font></p>
+    <b>H</b> Displays this dialogue
+    <b>L</b> Displays the leaderboard
+        ]],
+        job_qualified = "<b><font size='13'>${name} <a href='event:jobInfo:${name}'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><VP><a href='event:${id}'> | Choose | </a></VP></b></p>Salary: ${salary} Energy: ${energy}%<br>Offered by <b> ${owner}</b> of <b> ${company}</b><br><br>",
+        job_disqualified = "<N><b><font size='13'>${name} <a href='event:jobInfo:${name}'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><N2>| Choose |</N2></b></p>Salary: ${salary} Energy: ${energy}%<br>Offered by <b>${owner}</b> of <b>${company}</b></N><br><br>",
+        job_info = "<p align='center'><font size='15'><b><BV>${name}</BV></b></font></p><br><br><b>Salary</b>: ${salary}<br><b>Energy</b>: ${energy}%<br><br><b><u>Requirements</u></b><br><br><b>Minimum level</b>: ${minLevel}<br><b>Qualifications</b>: ${qualifications}<br><br>Offered by <b>${owner}</b> of <b>${company}</b>",
+        nothing = "<br><br><br><br><p align='center'><b><R><font size='15'>Nothing to display!",
+        profile = "<p align='center'><font size='15'><b><BV>${name}</BV></b></font><br>« ${title} »</p><br><b>Level:</b> ${level}<BL><font size='12'> [${xp}XP / ${xpTotal}XP]</font></BL><br><b>Money:</b> $${money}<br><br><b>Working as a</b> ${job}<br><b>Learning</b>: ${learning}",
+        lotto = "<font color='#000000' size='10'><p align='center'><b><a href='event:getLottery'>Buy Lottery!</a><br><br><a href='event:checkLotto'>Check</a></b></p></font>",
+        lottoinfo = "<p align='center'><font size='20'><b><J>Lotto Info</J></b></font><br><br><b>This month's winning lotto: </b>",
+        nodrawings = "No drawings yet!",
+        lottonowin = "You have no wins in the past month!",
+        lottowin = "You have won $${win} in the past month",
+        lottobuy = "<p align='center'>Please enter your choices (3 numbers between 0 and 100 and a letter) separated by spaces. <br><i>eg:15 20 30 B</i><br><br><b><i>Price: $20</i></b></p>",
+        nocompanies = "<p align='center'>No owned companies<br>Do you want to own one?</p>",
+        companycreate = "<p align='center'>Please choose a name<br>Price: $5000<br>Click submit to buy!</p>",
+        newcompany = "<J>Succesfully created the new company <b>${company}</b></J>",
+        newcompany2 = "<p align='center'>Do you want to own a new company</p>",
+        newcompanybtn = "<a href='event:createCompany'>New Company</a>",
+        companyinfo = [[<p align='center'><font size='20'><b><J>${name}</J></b></font></p><br>
+        <b>Founder</b>: ${owner}<br>
+        <b>Total Owners / Shareholders:  </b>${shareholders}<i>  <a href='event:page:owners${name}:1'>(See all)</a></i>
+        <b>Total Workers:</b>                ${workers}<i>  <a href='event:page:workers${name}:1'>(See all)</a></i>]],
+        ownedcompanies = "<p align='center'><font size='20'><b><J>My Companies</J></b></font></p><br><br>",
+        companybrief = "<b><a href='event:${id}'>${name}</a></b> <i>(Your Ownership: ${ownedShares}%)</i><br>",
+        tips = {
+            "You Need $5000 To Start A New Company!", "You Gain Money From Your Workers!", "Look At The Stats of The Company Before You Apply for it!", "The Better The Job The Better The Income!", "Buy Items From The Shop To Gain Health!", "Some Jobs Needs A Specific Degree",
+            "To Level Up You Need To Work!", "You Will Spend Less Energy When Working if You have Educational Qualifications", "The Stats Of A Company Can Be Seen By Anyone", "While Working Your Health Bar Goes Down", "Patience is The Key To This Game.", "The Stock Market Dashboard Displays how Companies Perform in Each Month",
+            "You Can Buy Multiple Companies!", "You Can Have Only one Job at a Time", "Your Health will be Refreshed when You Level Up", "Recruit More Players to Have More Salary!", "Try your Best to Own a Company", "Make Sure You Consider About Energy and Salary When Choosing a Job", "The Red Bar Displays Your Health or Energy, While the Green Bar Displays your XP Percentage",
+            "Chat With Your Friends When You Are Out of Health", "Use Your Brain and Take Correct Decisions!", "If Your Job Seems to Take More Energy, Try to Choose Another!", "Consider About Your Health When Working", "When Taking A Course, You will Need to Pay Per Lesson Only. So Try to Enroll For the One With Higher Lessons",
+            "You Can Apply to Jobs According to Your Level and Degrees", "The Better Stats You Have The Better The Job You Can Have!", "Report Bugs To Developers", "The Game is More Fun with More Players", "Click Tips When You Need Help", "The Health Refreshes Every Moment <3", "There is a Chance for Luck Too! Buy a Lotto and Check Your Luck!", "Invest Other Companies to Have an Ownership Share"
+        },
+        help = {[[
+    <p align='center'><font size='20'><b><J>Gameplay Overview</J></b></font></p>
+    <font size='12'>This is a game which is largely based on businesses we see everywhere. You start as a little mouse with a basic job, but with a great story to write! Your goal is to earn money, buy companies, hire workers and be the best businessman in transformice!
+    Click each title to know more about each thing in depth:
+    <b><BV>
+            <a href='event:page:help:2'>• Working</a>                       <a href='event:page:help:6'>• Shop</a>
+            <a href='event:page:help:3'>• Learning</a>                      <a href='event:page:help:7'>• Jobs</a>
+            <a href='event:page:help:4'>• Companies</a>
+            <a href='event:page:help:5'>• Investing and Shares</a>
+    </BV></b></font>
+    ]],
+    [[
+    <p align='center'><font size='20'><b><J>Working</J></b></font></p>
+    <font size='12'>This is the starting point for many players in this game. Working gives you money, and also it increases your XP level. To work, simply click the button in the bottom-left corner saying <b>Work!</b>
+    As you work, your energy reduces. The amount of energy depends on the job you are currently doing. There are lots of jobs available (and you can create as well) and all of them have varying salaries and energy levels.
+    If you do a good job, then surely you will get lot of money with minimum effort. Please read the page at <a href='event:page:help:7'><b><BV>jobs</BV></b></a> to know more about them.
+    </font>
+    ]],
+    [[
+    <p align='center'><font size='20'><b><J>Learning</J></b></font></p>
+    <font size='12'>Learning makes a person better, so do here.
+    <b><u>Why learning?</u></b>
+    When you learn, you'll get qualifications to do many jobs with many benefits. Also according to the level of your education, the amount of energy you spend on jobs decreases. So why not learning?
+    <b><u>How?</u></b>
+    You can learn by entering the school. Then enroll a course of your choice and start learning. Your learning progress is displayed on top of the school, so you can plan things accordingly
+    </font>
+    ]],
+    [[
+    <p align='center'><font size='20'><b><J>Companies</J></b></font></p>
+    <font size='12'>Companies are the most important things in this game; and it's the fastest way to become rich! You can view information about a company using the <i><font color='#6A7495'>!company COMPANY_NAME</font></i> command.
+    There are 2 ways to own a company: By buying shares of an existing company or buying a new company for money.
+    To buy a company you need to spend $5000 in your hand. Click 'Company' button and follow the instructions. If you already own companies, click the 'Create a new company' button in companies menu. To buy shares of a company of a company, simply view the desired company and do 'Buy shares' if the company has issued shares). After that you'd get the ownership of that company and you can do anything.         <i><font color='#6A7495'>(to be  continued...)</font></i>
+    </font>
+    ]],
+    [[
+    <p align='center'><font size='20'><b><J>Companies - Investing, Issuing and buying shares</J></b></font></p>
+    <font size='12'>Share is based on the ownership for a ceratain company. Sometimes you may need more money to grow your business. In such cases issuing shares is a good idea. By doing so you'll improve the capital and also share the ownership of your company. Click the 'Issue Shares' button in the company's menu and follow the instructions. 1 share worths $100 in this game.
+    When a certain company issue shares in the above manner, the public will be able to buy some shares to get more profit. You can buy shares buy following the instructions mentioned in the previous section.
+    You can also increase the capital without issuing any sharing. That's by investing into your own company. Click the invest button and follow the instructions to invest!
+    </font>
+    ]],
+    [[
+    <p align='center'><font size='20'><b><J>Shop</J></b></font></p>
+    <font size='12'>
+    Shop includes healthpacks which can be used to increase your health. After buying things in shop, they will get stored in your inventory temporarily. So check your inventory and use the things you bought according to your choice!
+    </font>
+    ]],
+    [[
+    <p align='center'><font size='20'><b><J>Jobs</J></b></font></p>
+    <font size='12'>You need a job to work. Each job has different salaries and energies. You can apply for a job by visiting the job menu (NOTE: You can only see jobs that you are qualified). To become qualified for a certain job, your level should be higher than the minimum level required for that job. You may also need to complete some degrees by learning, to apply for some jobs. Jobs with higher level and educational level usually have low energy consumption and higher salaries. Also if you have achieved a certain educational level, you will spend less energy when working. So keep in mind that learning is always good!
+    Jobs are offered by company owners, so doing a job means you are working for a particular company. When you work you, company owners and company get profit...
+    </font>
+    ]],
+    [[
+    <p align='center'><font size='20'><b><J>Creating Jobs</J></b></font></p>
+    <font size='12'>You need to become an owner to create a job. You can start creating a job by clicking the 'Create job' button in the company. You would see a dialogue asking some information about the job
+        • Job Name (required): The name of the job
+        • Salary (required): The salary. For a company, there's a maximum limit of salary that could be assigned to a job, which depends on the amount of invested capital. It will cost more energy if you created the job with a salary close to the minimum amount, and vice-versa.
+        • Energy (required): The amount of energy spend. Energy depends on the salary, minimum level of the job and the qualifications for it.  <i><font color='#6A7495'>(to be  continued...)</font></i>
+    </font>
+    ]],
+    [[
+    <p align='center'><font size='20'><b><J>Creating Jobs</J></b></font></p>
+    <font size='12'><i><font color='#6A7495'>(from the last page...)</font></i>
+        • Minimum level (required): The minimum level of a player to apply for this job. Increasing the level would decrease the energy
+        • Qualifications (optional): The educational qualifications required for this job. Increasing this would decrease the energy further!
+    Salary and the energy consumed is the factor that many workers are looking for. So be careful when choosing this!
+    <b><J>GOOD LUCK!</J></b>
+    </font>
+        ]],
+    iconProviders = closeButton .. 
+    [[
+    <a href='event:credits'>« Go back</a>
+    <p align='center'><font size='20'><b><J>Icons and Images</J></b></font></p>         <b><BV>Freepik</BV> from <BV>flaticons.com</BV></b>
+            • Work button       • Job search icon
+            • Companies icon
+        <b><BV>Vector Market</BV> from <BV>flaticons.com</BV></b>
+            • Idea bulb icon
+        <b><BV>Payungkead</BV> from <BV>flaticons.com</BV></b>
+            • Bag icon
+        <b><BV>Dinosoft labs</BV> from <BV>flaticons.com</BV></b>
+            • School image
+        <b><BV>Nikita Golubev</BV> from <BV>flaticons.com</BV></b>
+            • Lottery kiosk image
+        ]]},        
     }
+
 }
 
 local players = {}
