@@ -112,7 +112,7 @@ local translations = {
     <b>H</b> Displays this dialogue
     <b>L</b> Displays the leaderboard
         ]],
-        job_qualified = "<b><font size='13'>${name} <a href='event:jobInfo:${name}'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><VP><a href='event:${id}'> | Choose | </a></VP></b></p>Salary: ${salary} Energy: ${energy}%<br>Offered by <b> ${owner}</b> of <b> ${company}</b><br><br>",
+        job_qualified = "<b><font size='13'>${name} <a href='event:jobInfo:${name}'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><VP><a href='event:job:${id}'> | Choose | </a></VP></b></p>Salary: ${salary} Energy: ${energy}%<br>Offered by <b> ${owner}</b> of <b> ${company}</b><br><br>",
         job_disqualified = "<N><b><font size='13'>${name} <a href='event:jobInfo:${name}'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><N2>| Choose |</N2></b></p>Salary: ${salary} Energy: ${energy}%<br>Offered by <b>${owner}</b> of <b>${company}</b></N><br><br>",
         job_info = "<p align='center'><font size='15'><b><BV>${name}</BV></b></font></p><br><br><b>Salary</b>: ${salary}<br><b>Energy</b>: ${energy}%<br><br><b><u>Requirements</u></b><br><br><b>Minimum level</b>: ${minLevel}<br><b>Qualifications</b>: ${qualifications}<br><br>Offered by <b>${owner}</b> of <b>${company}</b>",
         nothing = "<br><br><br><br><p align='center'><b><R><font size='15'>Nothing to display!",
@@ -251,7 +251,7 @@ local translations = {
     <b>H</b> يعرض هذا الحوار
     <b>L</b> يعرض لوحة الصدارة
         ]],
-        job_qualified = "<b><font size='13'>${name} <a href='event:jobInfo:${name}'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><VP><a href='event:${id}'> | اختر | </a></VP></b></p>راتب: ${salary} طاقة: ${energy}%<br>مقدمة من <b> ${owner}</b>من <b> ${company}</b><br><br>",
+        job_qualified = "<b><font size='13'>${name} <a href='event:jobInfo:${name}'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><VP><a href='event:job:${id}'> | اختر | </a></VP></b></p>راتب: ${salary} طاقة: ${energy}%<br>مقدمة من <b> ${owner}</b>من <b> ${company}</b><br><br>",
         job_disqualified = "<N><b><font size='13'>${name} <a href='event:jobInfo:${name}'><BV>ⓘ</BV></a></font></b><br><p align='right'><b><N2>| اختر |</N2></b></p>الراتب: ${salary} طاقة: ${energy}%<br>مقدمة من <b>${owner}</b> of <b>${company}</b></N><br><br>",
         job_info = "<p align='center'><font size='15'><b><BV>${name}</BV></b></font></p><br><br><b>Salary</b>: ${salary}<br><b>طاقة</b>: ${energy}%<br><br><b><u>المتطلبات</u></b><br><br><b>المستوى الادنى</b>: ${minLevel}<br><b>المؤهلات</b>: ${qualifications}<br><br>مقدمة من <b>${owner}</b> من <b>${company}</b>",
         nothing = "<br><br><br><br><p align='center'><b><R><font size='15'>لاشيء لعرضه!",
@@ -641,6 +641,7 @@ end
 
 function Player:setJob(job)
     local jobRef = jobs[job]
+print(job)
     if jobRef and jobRef.minLvl <= self.level and (jobRef.qualifications == nil or self.degrees[jobRef.qualifications] ~= nil) then
         self.job = job
         if self.company ~= jobRef.company then
@@ -938,7 +939,7 @@ function displayJobs(target, page)
         if (page - 1) * 2 + 1 <= entry and entry <= page * 2 then
             if value[2] then
                 local job = value[1]
-                qualifiedJobTxt = qualifiedJobTxt .. translate("job_qualified", commu, nil, {name = job.name, id = job.id, salary = job.salary, energy = job.energy * 100, owner = job.owner, company = job.company})
+                qualifiedJobTxt = qualifiedJobTxt .. translate("job_qualified", commu, nil, {name = job.name, id = job.name, salary = job.salary, energy = job.energy * 100, owner = job.owner, company = job.company})
             else
                 local job = value[1]
                 disqualifedJobTxt = disqualifedJobTxt .. translate("job_disqualified", commu, nil, {name = job.name, salary = job.salary, energy = job.energy * 100, owner = job.owner, company = job.company})
@@ -1094,6 +1095,7 @@ function displayProfile(name, target)
     local commu = tfm.get.room.playerList[target].community
     local up = upper(name)
     local p = players[name] or players[up] or players[up .. "#0000"] or players[target]
+print(p.job)
     if p then
         ui.addTextArea(901, "", target, -10000, -10000, 20000, 20000, 0x333333, nil, 0.8, true)
         ui.addTextArea(900, closeButton .. translate("profile", commu, nil, {name = p.name, title = p.title, level = p.level, xp = p.xp, xpTotal = calculateXP(p.level + 1), learning = p:getLearningCourse() == "" and "NA" or p:getLearningCourse(), job = p.job, money = formatNumber(p.money)}), 
